@@ -1,0 +1,332 @@
+\section{Physical realization and transfer at an exterior maximum}\label{sec:transfer}
+
+Two different precisions of matching enter the proof. At the inner scale it
+suffices to decide which of two exponentially small gaps is larger. At the
+exterior maximum two input ordinates a bounded physical distance apart
+have the same limiting scaled height. To distinguish their upper hits we
+first match the references and then compare ratios of gaps on each side.
+The estimates in~\eqref{eq:log-gap-quad} and~\eqref{eq:cap-fine} give these
+two comparisons.
+
+\subsection{Physical realization with one common reference over a quadratic germ}\label{subsec:quad-realize}
+Let $G_s(z)=E(z)+sC(z)$ ($s=\pm 1$, $z\ge 0$) be fixed polynomial profiles with $E$ even ($\deg E=m\ge 8$, leading coefficient $c>0$), $C$ odd ($\deg C=j<m$), $G_s(z)>0$ for all $z>0$, and low-order germs
+\begin{equation}\label{eq:quad-germs}
+  E(z) = \eta z^2 + O(z^4),\qquad C(z) = \gamma_3 \eta z^3 + O(z^5)\qquad (\eta>0,\ \gamma_3>0\text{ fixed}).
+\end{equation}
+The quadratic coefficient $\eta$ stays fixed as the spatial scale $L$ increases.
+Assume that on each side $s\in\{\pm 1\}$ independently:
+\begin{enumerate}
+  \item[\textup{(H1)}] \emph{Nondegenerate ordered fold windows.} The positive critical points of $G_s$ on $(0,\infty)$ consist of $K_s\ge 0$ nondegenerate local maxima $p_{s,l}$ and subsequent positive local minima $q_{s,l}$ ($0=:q_{s,0}<p_{s,1}<q_{s,1}<\dots<p_{s,K_s}<q_{s,K_s}$) satisfying $G_s''(p_{s,l})<0<G_s''(q_{s,l})$ and $G_s'(z)>0$ on $(0,\infty)\setminus\bigcup_{l=1}^{K_s}[p_{s,l},q_{s,l}]$, whose critical height windows $[\mu_{s,l},M_{s,l}]=[G_s(q_{s,l}),G_s(p_{s,l})]\subset(0,\infty)$ are pairwise disjoint and strictly increasing: $0=:\mu_{s,0}<\mu_{s,1}<M_{s,1}<\dots<\mu_{s,K_s}<M_{s,K_s}$.
+  \item[\textup{(H2)}] \emph{Transverse inner landings.} Because $G_s$ increases strictly on $[q_{s,l-1},p_{s,l}]$ from $\mu_{s,l-1}<\mu_{s,l}$ to $M_{s,l}>\mu_{s,l}$, each minimum level $\mu_{s,l}$ ($1\le l\le K_s$) admits a unique inner landing $r_{s,l}\in(q_{s,l-1},p_{s,l})$ solving $G_s(r_{s,l})=\mu_{s,l}$, which is transverse ($G_s'(r_{s,l})>0$) with $G_s(z)>\mu_{s,l}$ throughout $(r_{s,l},q_{s,l})\cup(q_{s,l},\infty)$.
+\end{enumerate}
+
+Write $\mathcal{C}_s=\{\mu_{s,l},M_{s,l}:1\le l\le K_s\}$ for the finite set of critical fold-endpoint heights on side $s$, and put $\mathcal{C}=\mathcal{C}_+\cup\mathcal{C}_-\subset(0,\infty)$. A positive height $Y>0$ is \emph{regular} when $Y\in(0,\infty)\setminus\mathcal{C}$—that is, away from the fold endpoints $\mu_{s,l},M_{s,l}$, \emph{including} interior window levels $\mu_{s,l}<Y<M_{s,l}$. For \emph{every} regular height $Y\in(0,\infty)\setminus\mathcal{C}_s$:
+\begin{itemize}
+  \item The largest positive root $v_s(Y)$ of $G_s(z)=Y$ lies outside $\bigcup_{l=1}^{K_s}[p_{s,l},q_{s,l}]$, so $G_s'(v_s(Y))>0$ and $G_s(z)>Y$ on $(v_s(Y),\infty)$ (transverse inward capture from $z=+\infty$).
+  \item The first positive root $r_s^{\mathrm{in}}(Y)=\min\{z>0:G_s(z)=Y\}$ satisfies $G_s(z)<Y$ on $[0,r_s^{\mathrm{in}}(Y))$ and $G_s'(r_s^{\mathrm{in}}(Y))>0$ (transverse outward capture from $z=0$): if $\mu_{s,l_0}<Y<M_{s,l_0}$ for some (unique) $l_0$, then $r_s^{\mathrm{in}}(Y)\in(r_{s,l_0},p_{s,l_0})$ lies on the inner rising branch above the transverse landing $r_{s,l_0}$, whereas if $Y\notin\bigcup_{l=1}^{K_s}[\mu_{s,l},M_{s,l}]$ then $r_s^{\mathrm{in}}(Y)=v_s(Y)$.
+\end{itemize}
+Accordingly, for every $Y\in(0,\infty)\setminus\mathcal{C}$ we define \emph{both} the incoming and upper retained actions by
+\begin{align}
+  J_s^I(Y) &= \int_0^{v_s(Y)}\frac{G_s'(z)^2}{z}\,\dd z - \sum_{l:\,\mu_{s,l}<Y}\int_{r_{s,l}}^{q_{s,l}}\frac{G_s'(z)^2}{z}\,\dd z,\label{eq:JI-def}\\
+  J_s^U(Y) &= \begin{cases}
+    \displaystyle\int_0^{r_{s,l_0}}\frac{G_s'(z)^2}{z}\,\dd z - \sum_{l<l_0}\int_{r_{s,l}}^{q_{s,l}}\frac{G_s'(z)^2}{z}\,\dd z, & \text{if }\mu_{s,l_0}<Y<M_{s,l_0},\\[1.1ex]
+    J_s^I(Y), & \text{if }Y\notin\bigcup_{l=1}^{K_s}[\mu_{s,l},M_{s,l}].
+  \end{cases}\label{eq:JU-def}
+\end{align}
+Inside a fold window the launch and the reference remain separated
+until the reference jumps to the inner landing $r_{s,l_0}$. Their gap
+contracts exponentially along the common part of the two paths below
+the jump. This is why the upper limit in~\eqref{eq:JU-def} is the same
+for all launch heights within that window.
+For negative entrance magnitude $w>0$, define the absolutely convergent integral
+\begin{equation}\label{eq:N-def}
+  N(w) = \int_0^\infty z\left(\frac{1}{w+G_+(z)} - \frac{1}{w+G_-(z)}\right)\dd z.
+\end{equation}
+
+Fix three separate finite sample sets: an upper-launch set $\mathcal{Y}_U\subset(0,\infty)\setminus\mathcal{C}$ on which $J_+^U(Y)-J_-^U(Y)\neq 0$ (which may include levels inside open fold windows $(\mu_{s,l},M_{s,l})$), a positive-incoming set $\mathcal{Y}_I\subset(0,\infty)\setminus\mathcal{C}$ on which $J_-^I(Y)-J_+^I(Y)\neq 0$, and a negative-incoming set $\mathcal{W}_N\subset(0,\infty)$ on which $N(w)\neq 0$. Choose a reference level $T>\max(\mathcal{Y}_U\cup\mathcal{Y}_I\cup\mathcal{C})$ ($\max\varnothing:=0$), and define the physical polynomial family at scale $L\gg 1$:
+\begin{equation}\label{eq:quad-field}
+  S = \frac{L^2}{\eta},\qquad \eps = \frac{L^2}{S^2} = \frac{\eta^2}{L^2},\qquad
+  F_{L,a}(x) = S\big(E(x/L)+C(x/L)\big) + ax,\quad a\in[-1,0].
+\end{equation}
+
+\begin{proposition}[Simultaneous physical realization over a quadratic core]\label{prop:physical-quad}
+For all sufficiently large $L$:
+\begin{enumerate}
+  \item[\textup{(i)}] Every upper launch $h>0$ and incoming ordinate $y\in\R$ has transverse lower-axis hits $w_s(h)$ and $I_s(y)$ on both sides $s=\pm 1$ for all $a\in[-1,0]$, there exists an interior parameter $a_L\in(-1,0)$ closing the common upper reference $w_+(ST)=w_-(ST)=:w_*$, and whenever $a\in(-1,0)$ one has $\D(h_*)>0$ at sufficiently small positive $h_*>0$.
+  \item[\textup{(ii)}] Uniformly in $a\in[-1,0]$, the positive endpoint gaps $g_s^U=w_s(ST)-w_s(SY)>0$ ($Y\in\mathcal{Y}_U$) and $g_s^I=I_s(SY)-w_s(ST)>0$ ($Y\in\mathcal{Y}_I$) satisfy
+  \begin{equation}\label{eq:log-gap-quad}
+    -\eps\log g_s^U \to J_s^U(Y)\ (Y\in\mathcal{Y}_U),\quad
+    -\eps\log g_s^I \to J_s^I(Y)\ (Y\in\mathcal{Y}_I)\quad (L\to\infty).
+  \end{equation}
+  At $a=a_L$, $\D(SY)=g_-^U-g_+^U$ has the strict sign of $J_+^U(Y)-J_-^U(Y)$ for every $Y\in\mathcal{Y}_U$, and $I_+(SY)-I_-(SY)=g_+^I-g_-^I$ has the strict sign of $J_-^I(Y)-J_+^I(Y)$ for every $Y\in\mathcal{Y}_I$.
+  \item[\textup{(iii)}] Uniformly in $a\in[-1,0]$ at each $w\in\mathcal{W}_N$, $(I_+(-Sw)-I_-(-Sw))/(S\eps)\to N(w)$ as $L\to\infty$, hence $I_+(-Sw)-I_-(-Sw)$ has the strict sign of $N(w)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i)~Since $G_s(z)>0$ for $z>0$, $G_s(z)\sim\eta z^2$ near $0$, and $G_s(z)\sim c z^m$ at $\infty$, there exists $c_0>0$ such that $G_s(z)\ge c_0 z^2$ for all $z\ge 0$. In physical coordinates $F_{L,a}(sx)=SG_s(x/L)+sax\ge (c_0/\eta)x^2-|x|\to+\infty$ as $x\to+\infty$ and $|F_{L,a}'(0)|=|a|\le 1<2$, so Lemmas~\ref{lem:half-returns}(iii) and~\ref{lem:incoming-rays}(i) guarantee global transverse half-returns $w_s(h)$ and $I_s(y)$ for all $a\in[-1,0]$. Moreover, when $a\in(-1,0)$, $F_{L,a}(x)-F_{L,a}(-x)=2ax+O_L(x^3)<0$ on $(0,x_0]$ for small $x_0>0$, so along~\eqref{eq:scalar-u} any small launch $h_*>0$ remaining in $x\le x_0$ satisfies $v_+(y)>v_-(y)$ down to $\Sigma_-$ and hence $\D(h_*)>0$.
+
+Write $v=x^2/2$ in physical units, so $\dd v/\dd(-y)=y-F_{L,a}(s\sqrt{2v})\le y-c_1 v+c_2$ with $c_1,c_2>0$ independent of $L,a$. Integrating downwards from $(0,ST)$ gives $v(y)\le C_1(1+y)$ for all $0\le y\le ST$ (and similarly for any arc entering at height $O(S)$ with $v=O(L^2)$, since $L^2 e^{-c_1\Delta y}$ decays exponentially over physical descent). On bounded physical sets,~\eqref{eq:quad-germs} and $S=L^2/\eta$ give $F_{L,a}(sx)\to x^2+sax$ in $C^2$. Hence for $y\ge 1$ and sufficiently small $v\le v_{\min}$, $\dd v/\dd(-y)\ge 1/2$, which drives every arriving arc into a fixed compact interval $[v_0,V_0]\subset(0,\infty)$ throughout $1\le y\le 8$, and the section $y=8$ is transverse since $\dot y=-x<0$ there.
+For the limiting fields $x^2+sax$ the incoming and terminal sections
+are both transverse. The derivative between them is continuous and
+nonzero on the compact set of section data and parameters. Compact
+flow dependence gives the same bounds for the physical fields. Thus the terminal-hit map $v(8)\mapsto B_s(\sqrt{2v(8)},8)$ has derivative bounded above and away from zero uniformly for large $L$ and $a\in[-1,0]$.
+
+To bracket the reference match at $ST$, set $Y_L=4\log L$. On $1\le y\le Y_L$, $v_\pm(y)\le C_1(1+Y_L)$ gives $x_\pm=O(\sqrt{\log L})$, where~\eqref{eq:quad-germs} yields $\partial_v(SE(x/L))=2+O((\log L)/L^2)$ and $SC(x/L)=\gamma_3 x^3/L+O((\log L)^{5/2}/L^3)$. Subtracting~\eqref{eq:scalar-u} for $s=+1$ and $s=-1$, the difference $d(y)=v_+(y)-v_-(y)$ satisfies
+\[
+  \frac{\dd d}{\dd(-y)} = -k(y)d - \big(SC(x_+/L)+ax_+\big) - \big(SC(x_-/L)+ax_-\big),\qquad 1\le k(y)\le 3
+\]
+for large $L$. Integrating from $y=Y_L$ down to $y=1$, the homogeneous memory $d(Y_L)\exp(-\int_1^{Y_L}k)$ is $O((\log L)e^{-Y_L})=O((\log L)L^{-4})$. At $a=0$, the forcing $-SC(x_+/L)-SC(x_-/L)$ is nonpositive on $[1,Y_L]$ and at most $-c_3/L$ throughout $y\in[1,2]$ (where $x_\pm\ge\sqrt{2v_0}>0$), dominating $O((\log L)L^{-4})$ and forcing $d(1)<0$. Since $SC(x/L)$ has positive cubic germ near zero and coercivity keeps $v_\pm(y)\le 2C_1$ bounded on $y\le 1$ all the way to the lower-axis hit, $x_\pm/L=O(1/L)$ stays strictly inside the positive-germ neighborhood of $C$ down to the hit. Likewise at $a=-1$, $ax+\gamma_3 x^3/L\le -\tfrac12 x<0$ on the entire bounded range of $x_\pm$ below $Y_L$, giving forcing at least $+c_4>0$ on $[1,2]$ and $d(1)>0$, with the opposite vector-field inequality holding down to the hit. Trajectory comparison on a single side therefore gives $w_+(ST)<w_-(ST)$ at $a=0$ and $w_+(ST)>w_-(ST)$ at $a=-1$, so continuity in $a$ yields $a_L\in(-1,0)$ with $w_+(ST)=w_-(ST)$.
+
+(ii)~In normalized coordinates $z=x/L$, $u=z^2/2$, $t=y/S$, equation~\eqref{eq:scalar-u} reads
+\[
+  \eps\,\frac{\dd u}{\dd(-t)} = t - P_{s,L}(u),\qquad P_{s,L}(u)=G_s(\sqrt{2u}) + \frac{sa\eta\sqrt{2u}}{L}.
+\]
+Fix a section $z_b>v_s(T)$ ($u_b=z_b^2/2$), so the reference $u_T(t)$ from $(0,T)$ stays strictly left of $u_b$ for all $t\le T$. For $Y\in\mathcal{Y}_I$, integrating $\dd t/\dd z=\eps z/(P_{s,L}-t)>0$ inward from $+\infty$ to $z_b$ brings the incoming ray to $(u_b,t_b)$ at $t_b=Y-O(\eps)$, where $u_{\mathrm{in}}(t_b)-u_T(t_b)=u_b-v_s(Y)^2/2+O(L^{-1}+\eps)>0$ is bounded above and away from zero; for $Y\in\mathcal{Y}_U$, the upper launch starts at $(0,Y)$ with $u_T(Y)-0=v_s(Y)^2/2+O(L^{-1}+\eps)>0$ bounded above and away from zero. Hence $g_s^U,g_s^I>0$, and any two ordered solutions $u_1>u_2$ satisfy
+\begin{equation}\label{eq:secant-exact}
+  \eps\,\frac{\dd}{\dd t}\log(u_1-u_2) = [P_{s,L}]_{u_1,u_2} := \frac{P_{s,L}(u_1)-P_{s,L}(u_2)}{u_1-u_2}.
+\end{equation}
+Choose $\rho>0$ smaller than half the minimum separation of the distinct
+heights in $\{0,Y,T\}\cup\mathcal C$, and remove the scaled height bands $\bigcup_{c_*\in\mathcal{C}_s}[c_*-\rho,c_*+\rho]\cup[0,\rho]$.
+On the compact complement of these bands, each tracked rising branch $u_s^*(t)$ of $G_s(\sqrt{2u})=t$ satisfies $\partial_u G_s\ge c_\rho>0$ and $|\dd u_s^*/\dd t|\le C_\rho$. Any narrow fixed tube $|u-u_s^*(t)|\le\nu$ has inward restoring speed $\ge\tfrac12 c_\rho\nu/\eps\gg C_\rho$ as $L\to\infty$: for $Y\in\mathcal{Y}_I$, $G_s>Y$ on $(v_s(Y),z_b]$ and $G_s'(v_s(Y))>0$ bring $u_{\mathrm{in}}$ from $u_b$ into the $v_s(t)^2/2$-tube within $O(\eps)$ descent (including when $\mu_{s,l_0}<Y<M_{s,l_0}$, where $v_s(t)>q_{s,l_0}$ tracks the outer branch smoothly down to $\mu_{s,l_0}$ and jumps with $u_T$ to the transverse landing $r_{s,l_0}$); for $Y\in\mathcal{Y}_U$ outside $\bigcup_l[\mu_{s,l},M_{s,l}]$, $G_s<Y$ on $[0,v_s(Y))$ brings $u_Y$ into the same $v_s(t)^2/2$-tube within $O(\eps)$ descent (with $u_T-u_Y$ bounded away from zero near $u_Y=0$). If $Y\in\mathcal{Y}_U$ satisfies $\mu_{s,l_0}<Y<M_{s,l_0}$, then by~(H1)--(H2) $G_s<Y$ on $[0,r_s^{\mathrm{in}}(Y))$ and $G_s'>0$ throughout $[r_{s,l_0},p_{s,l_0})$, so $u_Y$ enters the inner branch $(r_{s,l_0},p_{s,l_0})$ in $O(\eps)$ descent and tracks it past $\mu_{s,l_0}$ while $u_T$ tracks the outer branch down to $\mu_{s,l_0}$; at $t=\mu_{s,l_0}+\rho$, $u_T-u_Y\to(q_{s,l_0}^2-r_{s,l_0}^2)/2+O(\sqrt\rho)>0$ is bounded above and away from zero, so starting~\eqref{eq:secant-exact} at $t=\mu_{s,l_0}+\rho$ and entering the common landing tube around $r_{s,l_0}$ by $\mu_{s,l_0}-\rho$ omits the $[\mu_{s,l_0},M_{s,l_0}]$ outer segment and skips above $Y$, matching~\eqref{eq:JU-def}. The transition through each minimum takes place inside its excised
+band. At $t=\mu_{s,l}-\rho/2$,
+the vector field $\eps\,\dd u/\dd(-t)=t-P_{s,L}(u)$ points left with
+magnitude bounded below, for fixed $\rho$, between small neighborhoods
+of the landing branch and the old minimum, including the minimum itself.
+Indeed the limiting profile on this interval is at least $\mu_{s,l}$
+between the landing and the minimum, and the landing is transverse.
+The same bound holds a little beyond the minimum. An arc still on the
+right traverses this interval in $O_\rho(\eps)$ height and enters a
+fixed tube about the landing branch before $\mu_{s,l}-\rho$. An arc
+already in the tube stays there. This argument applies at each of the
+finitely many ordered minima.
+
+On $[8/S,\rho]$, $v\ge v_0$ gives $z\ge\sqrt{2v_0}/L$, keeping $(sa\eta/L)/\sqrt{2u}=O(1)$, so $[8/S,\rho]$ and the $O(\rho)$-width excised bands contribute $O(\rho)$ as $L\to\infty$, while conversion from $v_1-v_2=L^2(u_1-u_2)$ at $y=8$ to $g_s^X$ costs $O(\eps\log L)=o(1)$. On the common tubes $[P_{s,L}]_{u_1,u_2}\to\partial_u G_s(u_s^*(t))$; changing variables $t=G_s(z)$ ($\partial_u G_s\,\dd t=G_s'(z)^2\,\dd z/z$) and letting $L\to\infty$ then $\rho\downarrow 0$ proves~\eqref{eq:log-gap-quad}. At $w_+(ST)=w_-(ST)$, $\D(SY)=g_-^U-g_+^U$ and $I_+(SY)-I_-(SY)=g_+^I-g_-^I$, giving the stated signs.
+
+(iii)~At limiting ordinate $-Sw$ ($w\in\mathcal{W}_N$ fixed), write the inward scaled trajectory as $t_s(z)=-w-\eps V_s(z)$. Then~\eqref{eq:spatial-ode} becomes the integral fixed-point equation
+\[
+  V_s(z) = \int_z^\infty \frac{r\,\dd r}{w + G_s(r) + sa\eta r/L + \eps V_s(r)}.
+\]
+Since $G_s(r)\ge 0$ and $G_s(r)\sim c r^m$ ($m\ge 8$), $w+G_s(r)+sa\eta r/L\ge c_w(1+r^m)$ on $[0,\infty)$ for large $L$. On the complete metric space $\{V\in C_b([0,\infty)):0\le V\le M_w\}$ ($M_w=\int_0^\infty r/(c_w(1+r^m))\,\dd r$), the integral operator is a uniform contraction of Lipschitz constant $O(\eps)$ for large $L$, with $V_s(0)=\int_0^\infty r/(w+G_s(r))\,\dd r+O(1/L+\eps)$ uniformly in $a\in[-1,0]$. Since $I_s(-Sw)=-S t_s(0)=S(w+\eps V_s(0))$, subtracting $s=\pm 1$ and dividing by $S\eps$ gives $V_+(0)-V_-(0)\to N(w)$.
+\end{proof}
+
+\begin{lemma}[Unbounded-branch tail action and perturbation persistence]\label{lem:tail-action}
+Let $G_s=E+sC$ satisfy the hypotheses of Subsection~\ref{subsec:quad-realize} with leading terms $E(z)=cz^m+\dots$ ($c>0$) and $C(z)=bz^j+\dots$ ($j<m$, $b\neq 0$, $j\neq m-2$).
+\begin{enumerate}
+  \item[\textup{(i)}] As $R\to+\infty$ at regular heights $Y=E(R)$ above all critical levels,
+  \begin{equation}\label{eq:tail-action}
+    J_+^U(Y)-J_-^U(Y) = J_+^I(Y)-J_-^I(Y) = 2mcb\,\frac{j-m+2}{m+j-2}\,R^{m+j-2} + o\!\left(R^{m+j-2}\right),
+  \end{equation}
+  and as $w\to+\infty$, $w^{2-(j+2)/m}N(w)\to -2b\int_0^\infty v^{j+1}/(1+cv^m)^2\,\dd v$, so $\sgn N(w)=-\sgn b$.
+  \item[\textup{(ii)}] On already fixed finite sample sets $\mathcal{Y}_U,\mathcal{Y}_I\subset(0,\infty)\setminus\mathcal{C}$ and $\mathcal{W}_N\subset(0,\infty)$, every strict sign of $J_+^U-J_-^U$, $J_-^I-J_+^I$, and $N$ persists (with $\mathcal{Y}_U,\mathcal{Y}_I$ remaining disjoint from the perturbed critical set) when $C$ is perturbed by a sufficiently small odd term of degree in $[5,m-1]$, or when $E$ is perturbed by $\mu z^{m+2}$ for sufficiently small $\mu>0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i)~At $Y=E(R)$ ($R\to\infty$), $G_s(v_s)=E(R)$ gives $v_s(Y)=R-s\frac{b}{mc}R^{j-m+1}(1+o(1))$. On $[0,R]$, $(G_+')^2-(G_-')^2=4E'C'$ gives $\int_0^R 4E'(z)C'(z)\,\dd z/z = \frac{4mcjb}{m+j-2}R^{m+j-2}+o(R^{m+j-2})$. Adding the endpoint displacements $\int_R^{v_+} - \int_R^{v_-} = -2\frac{b}{mc}R^{j-m+1}\cdot\frac{(mcR^{m-1})^2}{R}(1+o(1))=-2mcb R^{m+j-2}+o(R^{m+j-2})$ and noting that the finitely many jump deletions are $O(1)$ gives $\big(\frac{4j}{m+j-2}-2\big)mcb=\frac{2(j-m+2)}{m+j-2}mcb$, proving~\eqref{eq:tail-action}. Rescaling $z=w^{1/m}v$ in~\eqref{eq:N-def} with $w+G_s(z)\ge c_1(w+z^m)$ gives the $N(w)$ limit by dominated convergence since $j<m\implies j+1<2m-1$.
+
+(ii)~Adding tiny higher-degree terms of order $\ge 5$ preserves the low-order germs~\eqref{eq:quad-germs}, simple folds, and transverse landings on compact sets, while a positive $\mu z^{m+2}$ or a sufficiently small odd term of degree $<m$ preserves $G_s'(z)>0$ on the tail and the uniform lower bound $w+G_s(z)\ge c_1(w+z^m)$, yielding continuity of $N(w)$ at each fixed $w$ by dominated convergence.
+\end{proof}
+
+\subsection{Matched-maximum transfer at two or three degrees of cost}\label{subsec:cap-transfer}
+The input at this stage is a polynomial and a list of actual incoming
+half-orbits. Proposition~\ref{prop:physical-quad} is one way to obtain
+them. Its separated folds and transverse landings make the singular
+action signs into physical comparisons. The transfer itself takes the
+transverse hits and their strict signs as data. An exterior maximum
+then has two jobs. Its reference heights on the two sides must agree,
+and its action difference must match one translated entrance pair.
+With those coefficients fixed, adjusting the opposite physical entrance
+ordinate by $o(1)$ gives each listed pair a common upper crossing and
+preserves its strict comparison.
+When $j=m-3$, the even displacement of order $\tau^2$ precedes the odd
+perturbation of order $\tau^3$, so the comparison uses the perturbed
+\emph{common even} profile. At the finer physical scale we instead use
+the common terminal map separately on each side.
+
+\begin{proposition}[Matched-maximum exterior transfer]\label{prop:cap-transfer}
+Let $P\in\R[x]$ have $P(0)=0$, even degree $m=\deg P\ge 6$ with leading coefficient $c=[x^m]P>0$, and highest odd power $j=m-g$ with $g\in\{1,3\}$ and $b=[x^j]P\neq 0$. Suppose $P$ possesses $q\ge 0$ hyperbolic limit cycles, and at a nonempty strictly decreasing finite list of ordinates $y_0>y_1>\dots>y_r$ and a real shift $\Delta\in\R$, both incoming trajectories in $I_{+,P}(y_i)-I_{-,P}(y_i-\Delta)$ exist, hit $\Sigma_-$ transversely, and exhibit $r$ strict sign changes ending with $\sigma=\sgn\big(I_{+,P}(y_r)-I_{-,P}(y_r-\Delta)\big)\in\{\pm 1\}$. Put $p=2-g\in\{+1,-1\}$. Then there is a nonempty open subset of exact-degree-$\max(m+2,j+4)$ polynomials (including rational polynomials) on which every field~\eqref{eq:lienard} has at least
+\begin{equation}\label{eq:cap-count}
+  q + r + 1 + \ind_{\{\sigma\neq\sgn(bp)\}}
+\end{equation}
+simultaneous hyperbolic limit cycles, retaining all $q$ compact cycles while placing the new upper crossings near $R^m\frac{2c}{m+2}\to+\infty$.
+\end{proposition}
+
+\input{tex/terminal-distortion}
+
+\begin{proof}[Proof of Proposition~\ref{prop:cap-transfer}]
+Let $R\gg 1$ be the outer spatial scale, $\tau=1/R$, and $\epsilon=\tau^{2m-2}$. Define
+\begin{align}
+  E_c(z) &= c\!\left(z^m - \frac{m}{m+2}z^{m+2}\right),\qquad A_c(z)=\frac{E_c'(z)}{z}=mc z^{m-2}(1-z^2),\nonumber\\
+  G(z)   &= b z^j(1-z^2) + \lambda z^{j+2}(1-z^2) + \theta z^{j+2},\nonumber\\
+  F_R(x) &= R^m E_c(x/R) + R^j G(x/R) + P(x) - cx^m - bx^j.\label{eq:cap-poly}
+\end{align}
+Because $R^m(x/R)^m=x^m$ and $R^j(x/R)^j=x^j$ cancel $-cx^m-bx^j$, $F_R\to P$ in $C^2$ on compact subsets of $\R$ uniformly for bounded $(\lambda,\theta)$, so all $q$ hyperbolic limit cycles of $P$ persist inside a fixed compact disk $K_0\subset\R^2$ for large $R$. On $z>0$, $E_c$ has a unique maximum $E_c(1)=\frac{2c}{m+2}>0$ at $z=1$ and a strictly falling root $v(Y)>1$ for every $Y<E_c(1)$, with $v(0)=\sqrt{(m+2)/m}$. Set $J_o(Y)=\int_1^{v(Y)}E_c'(z)^2\,\dd z/z$ (so $J_o'(Y)=A_c(v(Y))<0$) and $V(Y)=\int_1^{v(Y)}(A_c G'-A_c' G)\,\dd z$. At $\theta=0$, $A_c G'-A_c' G=A_c^2(G/A_c)'$ where $G(z)/A_c(z)=(b z^p + \lambda z^{p+2})/(mc)$. Since $p+2\in\{1,3\}$ is positive and $p\in\{+1,-1\}$ is nonzero, $\int_1^{v(0)}A_c^2(z^{p+2})'\,\dd z>0$ and $\sgn\int_1^{v(0)}A_c^2(bz^p)'\,\dd z=\sgn(bp)$, giving a unique $\lambda_0\neq 0$ (of sign $-\sgn(bp)$) at which $V(0)=0$. At $(\lambda,\theta)=(\lambda_0,0)$, the integrand of $V$ on $z>1$ has the sign of $bp+(p+2)\lambda_0 z^2$; vanishing of $\int_1^{v(0)}$ forces its unique positive root to lie strictly inside $(1,v(0))$, so the integrand has strict sign $-\sgn(bp)$ throughout $[v(0),v(-1/2)]$, proving $\sgn V(-1/2)=-\sgn(bp)$ at $(\lambda_0,0)$.
+
+\emph{Absolute actions and the two matches.} In scaled variables $z=x/R$, $U=z^2/2$, $t=y/R^m$, running $X_{s,F_R}$ \emph{backwards} in $x>0$ increases $t$ according to $\epsilon\,\dd U/\dd t=\phi_s(U)-t$, where $\Phi_s(z)=\phi_s(z^2/2)=E_\tau(z)+s\tau^g(G(z)+O(\tau^2))$ and $E_\tau(z)=E_c(z)+O(\tau^2)$ collects all even powers of $P(x)-cx^m$. Fix a right wall $z_c>v(-1)$ with $E_c(z_c)<-2$ and a section $U_e=z_e^2/2$ with $z_e=1/2$. Let $H_s^*$ be the scaled backward upper-axis hit from $(U,t)=(0,-1)$, let $h_s(\eta)$ be that from $(U_e,\eta)$ for small $|\eta|$, and put $g_s(\eta)=H_s^*-h_s(\eta)>0$ (positive by arc order since the $(0,-1)$ arc lies near $v(0)^2/2>U_e$ at $t=\eta$). Let $g_s^b>0$ be the analogous gap from $(U,t)=(0,-1/2)$. 
+Write $u_s(t)$ for the falling root of $\phi_s(u)=t$ and $M_s$ for
+the actual maximum near $z=1$. All constants below are uniform for
+$(\lambda,\theta)$ in a fixed compact neighborhood of $(\lambda_0,0)$,
+for both sides and for $y$ in any fixed compact interval. The wall
+at $z_c$ points inward throughout the passage. On $[0,z_c]$ the
+global maximum stays near $1$ by compact convergence and local
+nondegeneracy. In particular the compact core cannot create a competing
+maximum at these heights.
+
+Fix $0<b_0<E_c(z_e)$. For a launch at $a_0=\tau^m y$ from $U_e$, or
+at $a_0=-1/2$ from the axis, the reference from $-1$ is already
+$O(\epsilon)$ from the falling root at $a_0$. Indeed, before capture
+the velocity towards a fixed root neighborhood is at least $c/\epsilon$
+in magnitude. This follows from $\phi_s(U)-t>c$ on the compact
+approach outside that neighborhood at the specified launches, including
+the initial launch at $-1$. Inside a fixed neighborhood of the regular
+falling root, $|U-u_s|$ has upper right derivative bounded by
+$-c|U-u_s|/\epsilon+C$. Thus capture in an $O(\epsilon)$ tube takes
+$O(\epsilon|\log\epsilon|)$ in $t$. The initial separation from the
+reference is bounded above and away from zero. During capture the
+secant of $\phi_s$ stays bounded, since either its arguments lie away
+from zero or they have a fixed positive separation. On the common tube
+it differs from $\phi_s'(u_s(t))$ by $O(\epsilon)$. Integration of the
+scalar difference equation up to $b_0$ gives, for
+$d_s(a_0)=U_s^*(b_0)-U_s(b_0;a_0)>0$,
+\begin{equation}\label{eq:entry-distortion}
+ \epsilon\log d_s(a_0)
+ =\int_{a_0}^{b_0}\phi_s'(u_s(t))\,\dd t+O(\epsilon|\log\epsilon|).
+\end{equation}
+The integral is uniformly negative by a fixed amount. The interval
+$B_s$ between the extreme section values, including the reference,
+therefore has length $O(e^{-c_3/\epsilon})$ for some $c_3>0$.
+
+Every $\xi\in B_s$ tracks the falling branch up to $t=M_s-4\tau^4$.
+On the retained branch $-\phi_s'\ge c\tau^2$, $|u_s'|\le C\tau^{-2}$,
+and $\phi_s''$ is bounded. A tube of radius $\tau^5$ points inward
+because $c\tau^7/\epsilon\gg\tau^{-2}$ for $m\ge6$, and contains all
+the arcs at $b_0$. If an arc is still above the axis at $M_s+\tau^4$,
+then $\epsilon U'\le-\tau^4$ until it exits, in an additional
+$O(\epsilon/\tau^4)$ of height. Its exit $K_s(\xi)$ consequently lies
+within $O(\tau^4)$ of $M_s$.
+
+Choose a fixed $0<u_c<U_e$ so small that on the final strip
+$0\le U\le 2u_c$ near $M_s$ one has $t-\phi_s(U)\ge\nu>0$.
+Up to $u_c$, $f=\phi_s(U)-t$ has uniformly bounded first two
+$U$ derivatives. Inside the retained tube $f_U<0$, also between
+its arcs. The remaining interval before crossing $u_c$ has length
+$O(\tau^4)$, so the quantity $D$ of Lemma~\ref{lem:terminal-distortion}
+is $O(\tau^4)$. The inverse strip has $f_t=-1$, $f_{tt}=0$.
+Thus the lemma gives
+\begin{equation}\label{eq:cap-osc}
+ \operatorname{osc}_{B_s}(\epsilon\log K_s')=O(e^{-c_4/\epsilon})
+ \qquad(0<c_4<c_3)
+\end{equation}
+for small $\tau$. For the absolute size we also have
+\begin{equation}\label{eq:Ks-deriv}
+ K_s'(\xi)=\frac{\epsilon}{K_s(\xi)}
+ \exp\!\left(\epsilon^{-1}\int_{b_0}^{K_s(\xi)}
+                           \phi_s'(U(t;\xi))\,\dd t\right).
+\end{equation}
+Indeed differentiate first at a section $U=u>0$ and then let
+$u\downarrow0$. On the last strip $\dd t/\dd U=\epsilon/(\phi_s(U)-t)$,
+and $\int_0^{u_c}|\phi_s'|\,\dd U$ is uniformly finite, including
+the possible $U^{-1/2}$ term. Hence this part of the integral costs
+$O(\epsilon)$, the section factor tends to $\epsilon/K_s$, and the
+inverse-chart derivative converges by the proof of the lemma.
+On the retained tube the action error is $O(\tau^5)$, and both the
+omitted root integral and the actual fold passage above $u_c$ cost
+$O(\tau^4)$. Together with~\eqref{eq:entry-distortion} and a secant
+of $K_s$, this gives the absolute falling action to $O(\tau^4+
+\epsilon|\log\epsilon|)$.
+Let $\widehat z_e$ and $\widehat z_s$ be the respective cap maximizers
+of $E_\tau$ and $\Phi_s$, and $v_e(Y),v_s(Y)$ their falling roots at
+height $Y$. Set $M_\tau=E_\tau(\widehat z_e)$,
+$A_\tau=E_\tau'/z$ and
+$J_{o,\tau}(Y)=\int_{\widehat z_e}^{v_e(Y)}E_\tau'(z)^2\,\dd z/z$.
+For $Y$ near $0$ or $-1/2$, the upper endpoint of the positive action
+moves by $-s\tau^gG(v_e)/E_\tau'(v_e)+O(\tau^{2g}+\tau^{g+2})$.
+Its lower endpoint contributes zero at first order because
+$E_\tau'(\widehat z_e)=0$. The coefficient of $s\tau^g$ is consequently
+\[
+ 2\int_{\widehat z_e}^{v_e(Y)} A_\tau G'\,\dd z-A_\tau(v_e(Y))G(v_e(Y))
+ =\int_{\widehat z_e}^{v_e(Y)}(A_\tau G'-A_\tau'G)\,\dd z
+ = V(Y)+O(\tau^2).
+\]
+De Maesschalck and Huzak compute this first variation near a center
+\cite[Proposition~1]{DMH2015}. For $F=F_e+\delta F_o$ with $F_e$ even,
+$F_o$ odd and $f_e=F_e'/z$, their integral from the right endpoint to
+the left endpoint at the same height is $I=2\delta I_1+O(\delta^2)$, where
+$I_1(x)=\int_0^x(f_e'F_o-f_eF_o')\,\dd z$.
+Our positive action runs from the maximum to the falling root. With
+$(f_e,F_o)=(A_\tau,G)$ its coefficient is the negative increment
+$I_1(\widehat z_e)-I_1(v_e(Y))$. The action enters $\epsilon\log g_s$
+with a minus sign. We keep the actual even profile on this interval to control the
+remainder uniformly in the matching parameters.
+The maximum height changes by $s\tau^g\theta+O(\tau^{2g}+\tau^{g+2})$
+since $\widehat z_e=1+O(\tau^2)$ and $G(1)=\theta$. Replacing the
+bounded physical launch level $\tau^m y$ by zero in the absolute
+action costs $O(\tau^m)$. For $g\in\{1,3\}$ all these remainders
+and the $O(\tau^4)$ passage error are $O(\tau^{g+1})$. We obtain
+\begin{align}
+  H_s^* &= M_\tau + s\tau^g\theta + O(\tau^{g+1}),\nonumber\\
+  \epsilon\log g_s(\tau^m y) &= -J_{o,\tau}(0) - s\tau^g V(0) + O(\tau^{g+1}),\label{eq:cap-coarse}\\
+  \epsilon\log g_s^b &= -J_{o,\tau}(-1/2) - s\tau^g V(-1/2) + O(\tau^{g+1}).\nonumber
+\end{align}
+
+On the rectangle $\mathcal{Q}_\tau=[\lambda_0-\rho_0,\lambda_0+\rho_0]\times[-\sqrt\tau,\sqrt\tau]$ ($0<\rho_0<|\lambda_0|/2$ fixed), $H_+^*-H_-^*=2\tau^g\theta+O(\tau^{g+1})$ has opposite signs on the $\theta=\pm\sqrt\tau$ faces, and $\epsilon\log(g_+(\tau^m\Delta)/g_-(0))=-2\tau^g V(0)+O(\tau^{g+1})$ has opposite signs on the $\lambda=\lambda_0\pm\rho_0$ faces because $\partial_\lambda V(0)>0$. Orienting the continuous residual vector $F_{\mathrm{res}}(\lambda,\theta)$ outward on the boundary of $\mathcal{Q}_\tau$ and applying Brouwer's fixed-point theorem to $\operatorname{proj}_{\mathcal{Q}_\tau}\big((\lambda,\theta)-\nu F_{\mathrm{res}}(\lambda,\theta)\big)$ ($\nu>0$ small) yields an interior root $(\lambda_R,\theta_R)\in\operatorname{int}\mathcal{Q}_\tau$ solving simultaneously
+\begin{equation}\label{eq:cap-matches}
+  H_+^* = H_-^* =: H_*,\qquad g_+(\tau^m\Delta) = g_-(0),
+\end{equation}
+with $\theta_R=O(\tau)$ and $\lambda_R=\lambda_0+O(\tau)\neq 0$. Thus $F_R$ has exact degree $\max(m+2,j+4)$.
+
+\emph{Matching a finite list at physical resolution.}
+The error in~\eqref{eq:cap-coarse} is of order $\tau^{g+1}$, whereas a
+bounded difference of physical ordinates has scaled size $\tau^m$.
+To resolve that smaller scale, split propagation at $t=b_0$ and use
+the same terminal map $K_s$ for every launch on a given side.
+Equations~\eqref{eq:entry-distortion} and~\eqref{eq:cap-osc} apply on the
+entire interval between the launches and the reference. By
+Lemma~\ref{lem:terminal-distortion}, comparing the two positive terminal
+gaps costs at most $O(e^{-c_4/\epsilon})$ in their scaled log ratio. Hence
+\begin{align}
+ \frac{\epsilon}{\tau^m}\log\frac{g_s(\tau^m y)}{g_s(\tau^m y_0)}
+ &= -\tau^{-m}\int_{\tau^m y_0}^{\tau^m y}\phi_s'(u_s(t))\,\dd t
+       +O\!\left(\frac{\epsilon|\log\epsilon|+e^{-c_4/\epsilon}}{\tau^m}\right)
+       \nonumber\\
+ &= -A_c(v(0))(y-y_0)+o(1).\label{eq:cap-fine}
+\end{align}
+The error is uniform for $y,y_0$ in compact sets,
+since $\epsilon|\log\epsilon|/\tau^m=(2m-2)\tau^{m-2}|\log\tau|\to0$.
+At $v(0)^2=(m+2)/m$ the coefficient is
+$-A_c(v(0))=2c((m+2)/m)^{(m-2)/2}>0$.
+At $U_e$ the backward field points right, so earlier launches lie
+farther right and $h_s(\tau^m y)$ decreases strictly with $y$.
+Using~\eqref{eq:cap-matches} and~\eqref{eq:cap-fine} with base ordinates
+$\Delta$ on the positive side and zero on the negative side brackets
+the opposite ordinate between $y-\Delta-\rho$ and $y-\Delta+\rho$ for
+every fixed $\rho>0$ and all sufficiently small $\tau$.
+Strict monotonicity gives a unique $y_-=y-\Delta+o(1)$ with
+$h_-(\tau^m y_-)=h_+(\tau^m y)$.
+
+To continue these matched arcs inward, take $Z_R=R z_e=R/2$.
+On $X_0\le x\le Z_R$, division of~\eqref{eq:cap-poly} by $x^m$ gives
+$F_R(sx)/x^m=c(1-\tfrac{m}{m+2}(x/R)^2)+O(x^{-1})$ uniformly
+for the bounded matching parameters. Thus $F_R(sx)\ge c_0x^m$ there
+for fixed $c_0>0$ and sufficiently large fixed $X_0$.
+We already have $F_R\to P$ on compact sets in $C^2$.
+Corollary~\ref{cor:transverse-entry} applies at $y_i$ on the positive
+side and at $y_i-\Delta$ on the negative side. Its local uniformity
+and continuity allow the negative launch to move to $y_-$.
+At their common physical upper height $R^m h_+(\tau^m y_i)$ the
+half-return difference therefore converges to
+$I_{+,P}(y_i)-I_{-,P}(y_i-\Delta)$. The list is finite and the signs
+are strict, so all $r$ changes persist together, in increasing upper height.
+
+\emph{The last two heights.} Since $J_o(0)<J_o(-1/2)$, both backward upper hits $H_*-g_\pm^b$ from $(0,-R^m/2)$ lie strictly above all section upper hits $h_+(\tau^m y_i)$ and strictly below $H_*$. By~\eqref{eq:cap-coarse}, $\epsilon\log(g_+^b/g_-^b)=-2\tau^g V(-1/2)+O(\tau^{g+1})$ has strict sign $-\sgn V(-1/2)=\sgn(bp)$. If $g_+^b>g_-^b$, the plus upper hit $H_*-g_+^b$ is smaller than the minus upper hit $h_{\mathrm{dir}}:=H_*-g_-^b$, so monotonicity of $w_+$ on the origin-free strip $[R^m h_+(\tau^m y_0),R^m H_*]$ (Lemma~\ref{lem:half-returns}(iii), as both endpoints return transversely to $\Sigma_-$) gives $w_+(R^m h_{\mathrm{dir}})>R^m/2=w_-(R^m h_{\mathrm{dir}})$, i.e., $\D(R^m h_{\mathrm{dir}})>0$; if $g_+^b<g_-^b$, reversing roles gives $\D<0$ at $R^m(H_*-g_+^b)$. Thus a sample of strict sign $\sgn(bp)$ precedes $R^m H_*$, where $\D(R^m H_*)=0$. The entrance list has $r$ changes and ends with sign $\sigma$.
+The direct sample adds one change exactly when $\sigma\ne\sgn(bp)$.
+Keep it as the representative of the last run if the signs agree.
+Detuning the matched reference to $-\sgn(bp)$ then adds one more
+change in either case. Proposition~\ref{prop:sard}(i) on
+$[R^m h_+(\tau^m y_0),R^m H_*]$ realizes all these brackets at one
+regular value. The $q$ hyperbolic cycles in $K_0$ persist, disjoint
+from the new heights $\asymp R^m E_c(1)$, giving~\eqref{eq:cap-count}.
+\end{proof}
+
+\input{tex/terminal-example}

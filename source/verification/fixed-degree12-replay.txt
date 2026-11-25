@@ -1,0 +1,42 @@
+reference/checks/verify_seed.py: OK
+Fixed diagnostic polynomial equals its exact rational input.
+Actual H_+^* - H_-^* in (6.99e-100, 7e-100), scaled upper-axis heights.
+At h=S*(Phi_+(d)+Phi_-(d))/2 the plus half returns and the minus half escapes.
+Rational escape-test h approximately 8.220526E+465
+Actual -log(g_s(y/S)) in (4.81e777, 4.83e777) for both sides and -20 <= y <= 1.
+Actual (eps/eta)*log(g_+(Delta/S)/g_-(0)) in (8.57e-5, 8.58e-5).
+At lambda=1e-10, d=6/5, theta=0, a=mid J: true -log(g_s(0)) in (4.81e177, 4.83e177).
+Fixed rational degree-12 field, exact compact half-returns and divergence.
+  (3.494474846805, 3.494474846808): signs +1/-1, integral difference in (0.00235, 0.00236)
+  (3.848603188665, 3.848603188668): signs -1/+1, integral difference in (-4.1e-5, -3.6e-5)
+  (3.978624148391, 3.978624148394): signs +1/-1, integral difference in (1.5e-5, 2.1e-5)
+  (4.324131925377, 4.324131925381): signs -1/+1, integral difference in (-1.5e-5, -9e-6)
+  (4.454460589336, 4.454460589341): signs +1/-1, integral difference in (1.8e-5, 2.6e-5)
+Outer matching box at lambda=1E-40, theta radius=1E-39
+  Theta face -1 gives (H_+^*-H_-^*)/lambda^3 in ('-46.75', '-46.74').
+  Theta face +1 gives (H_+^*-H_-^*)/lambda^3 in ('92.96', '92.97').
+  Radius face -1 gives (eps/eta)*log(g_+(Delta/S)/g_-(0)) in ('-2.974e-13', '-2.972e-13').
+  Radius face +1 gives (eps/eta)*log(g_+(Delta/S)/g_-(0)) in ('4.704e-13', '4.707e-13').
+  At any actual cap match theta/lambda belongs to (-3.4, -3.2).
+  At a cap match |theta + lambda*H(d)/beta| < 1E-70
+Actual D(ST) > 2e-32 at a_- and < -6e-32 at a_+ uniformly in d, theta.
+In the original fixed diagnostic field, actual D(ST) < -2e-32.
+Uniform actual compact signs in the joint parameter box: +,-,+,-,+.
+  Any mixed shoulder signs require |D(ST)| < exp(-4e775).
+  For fixed d,theta this requires |a-a_*(d,theta)| < exp(-3e775).
+At matching hits, fine entrance pairing obeys |y_minus - (y_plus-3/500)| < 1e-12.
+At any joint match, actual outer section return signs: -,+,-.
+  At a joint match the direct t=-1/2 sample has actual return sign +.
+  Uniform (eps/eta)*log(g_+^b/g_-^b) in (3.8, 5.5).
+  On the box: section gaps < exp(-4e777), direct gaps < exp(-3e780).
+Fixed rational variant with theta=-1e-20 has |a|<2 and degree twelve.
+Outer plus section launches at y=9 and y=-1 give actual D signs - and +.
+At every zero between them eps*(I_+ - I_-) < -8e-6, giving a repelling cycle.
+The rational upper-axis enclosure and exact coefficients are in inputs/outer-variant-field.json.
+Fixed rational degree-12 field, exact compact half-returns and divergence.
+  (3.494474846805, 3.494474846808): signs +1/-1, integral difference in (0.00235, 0.00236)
+  (3.848603188665, 3.848603188668): signs -1/+1, integral difference in (-4.1e-5, -3.6e-5)
+  (3.978624148391, 3.978624148394): signs +1/-1, integral difference in (1.5e-5, 2.1e-5)
+  (4.324131925377, 4.324131925381): signs -1/+1, integral difference in (-1.5e-5, -9e-6)
+  (4.454460589336, 4.454460589341): signs +1/-1, integral difference in (1.8e-5, 2.6e-5)
+Six disjoint hyperbolic limit cycles certified for this one rational variant.

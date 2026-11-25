@@ -1,0 +1,330 @@
+\section{A second construction using remote odd powers}\label{sec:remote}
+A second profile construction gains fourteen cycles for every four
+degrees. Each stationary inflection splits on both reflected sides.
+Moment conditions at separated radii prescribe two cubic fold windows
+at each inflection. A gap between the highest odd power and the even
+degree allows further sign changes on the last rising branch while
+the earlier samples stay fixed. Propositions~\ref{prop:physical-quad},
+\ref{prop:cap-transfer} and~\ref{prop:sard} realize this single profile
+and close its orbits. The resulting bounds have the same asymptotic
+coefficient as Theorem~\ref{thm:main-asymptotic} and smaller finite-degree
+constants.
+
+\begin{proposition}[Cycle counts from remote powers]\label{prop:remote-odd}
+For integers $h\ge1$ and $e\in\{0,1,2,3\}$ one has
+\begin{equation}\label{eq:remote-formula}
+ \HH(10+4h+e)\ge14h+c_e,\qquad(c_0,c_1,c_2,c_3)=(9,10,13,14).
+\end{equation}
+The bounds hold on nonempty open sets of exact-degree coefficients.
+In particular $\HH(n)\ge(7n-63)/2$ for $n\ge14$.
+\end{proposition}
+
+\subsection{Two cubic windows at separated heights}
+For real $a<0,b$, let $f(v)=v^3+av+b$, $k=\sqrt{-a/3}$,
+$\mu=b-2k^3$, $M=b+2k^3$, and
+\[
+ P_a(v)=\int_0^v(3r^2+a)^2\,\dd r=\tfrac95v^5+2av^3+a^2v.
+\]
+The largest increasing inverse skips $[-2k,k]$ at $\mu$.
+For $T\ne\mu,M$ let $v$ be the largest root of $f(v)=T$ and set
+\begin{align}
+ J^I_{a,b}(T)&=P_a(v)-\ind_{T>\mu}\{P_a(k)-P_a(-2k)\},\nonumber\\
+ J^U_{a,b}(T)&=
+ \begin{cases} P_a(-2k),&\mu<T<M,\\ J^I_{a,b}(T),&\text{otherwise}.
+ \end{cases}                                                     \label{eq:remote-cubic}
+\end{align}
+The half-returns follow the original flow forward on the right and
+backward on the left. In this orientation the physical ordinate, hence
+the cubic height, decreases. An entrance from the right follows the
+largest root in $J^I_{a,b}$. For a launch with $\mu<T<M$, the singular
+launch path follows the inner rising branch. The reference follows the
+outer rising branch to $v=k$ and jumps to $v=-2k$ at height $\mu$.
+Just below $\mu$ both singular paths follow the inner branch with $v<-2k$.
+Thus $-2k$ is the upper integration endpoint for their common segment
+in $J^U_{a,b}(T)$.
+
+\begin{lemma}[Action differences at two cubic windows]\label{lem:skew-cubic}
+For every sufficiently large $C>0$, there exist $\alpha<-1$ and $\Lambda$
+for which the two differences
+\[
+ D^X(T)-\Lambda
+ =J^X_{\alpha+1,-C}(T)-J^X_{\alpha-1,C}(T)-\Lambda,\qquad X=U,I,
+\]
+have, at finite regular samples in increasing order, respectively seven
+and three strict changes. Both lists start positive and end negative.
+The samples for the two lists can be chosen independently.
+\end{lemma}
+\begin{proof}
+Write $a_\pm=\alpha\pm1$, $k_\pm=\sqrt{-a_\pm/3}$. The windows will be
+disjoint. At $M_+=-C+2k_+^3$ the upper difference jumps up by
+$P_{a_+}(2k_+)-P_{a_+}(k_+)>0$. At $M_-=C+2k_-^3$ it jumps down by
+the corresponding positive amount for the minus profile. We equalize the
+midpoints $L_C,R_C$ of the two jumps.
+
+Take $\alpha=-t C^{2/9}$ with $1/4\le t\le3$. For large $C$ both
+$a_\pm<0$, and the two window widths are $O(C^{1/3})$. At $Y\gg|a|^{3/2}$
+the positive root $v^3+av=Y$ satisfies
+\begin{equation}
+ P_a(v)=\tfrac95Y^{5/3}-aY+O(a^2Y^{1/3}).                     \label{eq:inverse}
+\end{equation}
+Indeed $v/Y^{1/3}=1-a/(3Y^{2/3})+O(a^2/Y^{4/3})$ by the implicit
+function theorem at 1. Oddness gives the negative-root expansion at
+large negative $Y$. At the first jump the regular minus root has
+$|Y|=2C-2k_+^3$. At the second the regular plus root has
+$Y=2C+2k_-^3$. All the endpoint and skip terms involving only $k_\pm$
+are $O(k_+^5+k_-^5)=o(C)$. Expansion of \eqref{eq:inverse} at $2C$
+therefore gives, uniformly in $t$,
+\[
+ \frac{R_C-L_C}{C}=
+ 12\,2^{2/3}(t/3)^{3/2}-4+o(1).
+\]
+The first term comes from the sum $2(k_-^3+k_+^3)$ of the height
+increments and the second from $a_+-a_-=2$. This expression has opposite
+signs at $t=1/4$ and $t=3$. Continuity in $t$ gives a common midpoint
+$\Lambda\sim(9/5)(2C)^{5/3}$.
+
+At $T=0$ both differences are asymptotic to $(18/5)C^{5/3}$. Their
+ratios to $\Lambda$ tend to $2^{-2/3}<1$.
+At $T=C^2$ both are asymptotic to $6CT^{2/3}$, by
+\eqref{eq:inverse} at $T+C,T-C$. Here the $O(T)$ linear term, the
+$O(|\alpha|^2T^{1/3})$ error and the skips are all lower order.
+Thus both exceed $\Lambda$ there. With $C,\alpha$ now fixed,
+$D^U,D^I=-2T+O_{C,\alpha}(|T|^{2/3})$ at either infinity.
+Take successive samples far to the left, immediately before and after
+$M_+$, at 0, immediately before and after $M_-$, at $C^2$, and far
+to the right. These give $+,-,+,-,+,-,+,-$ for the upper difference.
+The two tails, 0 and $C^2$ give $+,-,+,-$ for the incoming difference.
+All samples stay off both pairs of critical values.
+\end{proof}
+
+\subsection{Simultaneous preparation at separated radii}
+Write $u=z^2/2$ and fix $h\ge1$. Here $B_u$ denotes the derivative of $B(\sqrt{2u})$. Choose separated $0<q_1<\cdots<q_h$
+and set
+\[
+ B(z)=\tfrac32 z^3\prod_{i=1}^h(1-z^2/q_i^2),\qquad
+ E_0(z)=\int_0^z vB(v)^2\,\dd v,\qquad J=3+2h .
+\]
+We call each $q_i$ a \emph{shoulder} of the unperturbed profile.
+It is a stationary inflection. The polynomial $B$ has a simple zero there, so $E_0'=zB^2$
+has a double zero and $E_0'''(q_i)=2q_i B'(q_i)^2>0$. The prepared
+perturbation opens a maximum and a minimum near $q_i$ on each side.
+The initial even degree is $m_0=2J+2=8+4h$. Write $s_i=(-1)^i$.
+
+\begin{lemma}[Simultaneous sign lists at separated radii]\label{lem:remote-base}
+There are positive profiles $G_s=E_\eta+sC$ of the above type, of even degree
+$m_0$ and highest odd degree $j_0=J+2$, with germs
+\[
+ E_\eta(z)=\eta z^2+O_\eta(z^8),\qquad
+ C(z)=\tfrac32\eta z^3+O_\eta(z^5)
+\]
+for a fixed $\eta>0$. At each shoulder $q_i$ of $E_0$, in increasing order of
+positive regular height, the signs of $J_+^U-J_-^U$ and $J_-^I-J_+^I$ are
+\[
+ s_i(+,-,+,-,+,-,+,-),\qquad -s_i(+,-,+,-),
+\]
+respectively. At increasing negative entrance magnitudes $w$ there are
+$h+1$ alternating signs of $N(w)$ beginning negative. The leading sign
+of $C$ is $\beta_0=-(-1)^h$.
+\end{lemma}
+\begin{proof}
+Choose the radii and the odd height-splitting mode $H$ together. Write $H=z^5C_0(z^2)$ with $C_0(0)=-1$ and $\deg C_0\le h$. Require
+\[
+ \int_0^{q_i}B^2H'\,\dd z=0,\qquad 1\le i\le h.
+\]
+The prefix
+integral equations are square in the remaining coefficients. Subtracting
+successive equations gives one zero integral on each $(q_{i-1},q_i)$,
+$q_0=0$. In the homogeneous system $H_z/z^4$, a polynomial in
+$z^2$ of degree at most $h$, would have a positive root in each interval
+and a root at zero. Hence the system is invertible. For its solution
+the same $h$ interior roots force the top degree.
+
+The case of zero shoulders has $B=(3/2)z^3$, $H=-z^5$.
+Assume the first $i$ radii and their moment solution have been chosen. Suppose the old top terms are $b z^j$, $a z^{j+2}$, with $ab<0$.
+Append $q=L$ by multiplying $B$ by $1-z^2/L^2$. In the new system
+write the odd shape as an old-degree trial polynomial plus
+$\lambda L^{-2}z^{j+4}$. The old rows converge to the preceding
+invertible system, with zero limiting coefficient in the new column.
+In the new row put $z=Lv$ and divide by $b^2 L^{3j+2}$. In the limit
+the old rows have fixed the trial top coefficient at $a$, and the new
+row is
+\[
+ \int_0^1 v^{2j}(1-v^2)^2\big((j+2)a v^{j+1}
+                            +(j+4)\lambda v^{j+3}\big)\,\dd v=0.
+\]
+The new diagonal coefficient is positive. Thus all old coefficients
+converge and $\lambda\to-aD_j$, where
+\[
+ D_j=\frac{(j+2)(3j+8)}{(j+4)(3j+2)}>1 .
+\]
+The numerator exceeds the denominator by $8$.
+Consequently $H(L)/L^{j+2}\to a(1-D_j)$, of the opposite sign to $a$.
+The sign of $B_z(L)$ is opposite to $b$, and the new top signs are
+again opposite. Strict inequalities at earlier shoulders persist. All
+limits here follow coefficientwise after the indicated substitution.
+
+For $w>0$ write
+\[
+ K(w)=\int_0^\infty \frac{zB(z)}{(w+E_0(z))^2}\,\dd z .
+\]
+Fix the old flight samples before enlarging $L$. The new primitives and
+odd shapes converge on compact sets. For large $z$ the contribution of
+the old top square to the new $E_0$ equals
+\[
+ b^2 z^{2j+2}\left(\frac1{2j+2}-\frac{2(z/L)^2}{2j+4}
+                                +\frac{(z/L)^4}{2j+6}\right).
+\]
+The bracket is bounded below by a positive multiple of $1+(z/L)^4$,
+as follows by integrating a square or by its negative discriminant.
+Every lower contribution is $O(z^{2j}(1+(z/L)^4))$ for $z\ge1$,
+uniformly in $L\ge1$. The new $|B|$ is bounded by
+$Cz^j(1+(z/L)^2)$. These give an integrable tail bound for every old
+sample. At large $w$ the new $K$ has the sign of the new top odd
+coefficient. Scaling $z=w^{1/\deg E_0}v$ in the top-degree range gives
+a nonzero signed limit after division by $w^{(\deg B+2)/\deg E_0-2}$.
+Bounded abscissas contribute $O(w^{-2})$. Thus the new large-$w$ sign is that of $-b$, whereas the preceding
+large-$w$ sign was that of $b$. At the zero-shoulder start,
+$B=(3/2)z^3$ makes the integrand of $K$ positive for every $w>0$.
+Keeping each old sample before taking the next large $w$ proves the induction.
+
+At each radius put $u_i=q_i^2/2$ and set
+$b_i=|B_u(u_i)|$, $l_i=\sqrt{3/b_i}$, $d_i=b_i l_i$ and $r_i=b_i^2 l_i$.
+Choose $g>0$ so that $gH(q_i)/(s_i d_i)=-C_i$ is negative of sufficiently
+large magnitude at every $i$. The cubic comparison in
+Lemma~\ref{lem:skew-cubic} gives $\alpha_i,\Lambda_i$ for the two graphs
+$v^3+(\alpha_i\pm1)v\mp C_i$ and the two lists in the statement.
+To specify their offsets on the polynomial, put
+$a_{s,i}=\alpha_i+s s_i$. For $a<0$ let
+\[
+ p_a(v)=9v^5/5+2av^3+a^2v,\quad k=\sqrt{-a/3},\quad
+ d(a)=p_a(k)-p_a(-2k).
+\]
+
+For the two even controls consider the map
+\[
+ {\cal L}(V)=\left((V(q_i))_{i=1}^h,
+          \left(\int_0^{q_i}V B'\,\dd z\right)_{i=1}^h\right),
+ \qquad V\in z^6\R_{\le 2h}[z^2].
+\]
+If $\mathcal L(V)=0$, divisibility at the $q_i$ and evenness give $V=BW$
+with $W=z^3P(z^2)$, $\deg P\le h$. Consecutive moment differences and
+$B(q_i)=B(0)=0$ give $\int_{q_{i-1}}^{q_i}B^2 W'\,\dd z=0$, $q_0=0$.
+If $[z^6]V=0$ then $W=z^5P_0(z^2)$, $\deg P_0\le h-1$.
+Consequently $W'/z^2$ has degree at most $h$ in $z^2$ and vanishes at zero.
+Unless identically zero it also has a positive root in each of the $h$
+disjoint intervals, a contradiction. Thus $W$ is zero. The restriction of $\mathcal L$ to
+$\mathcal V_0=z^8\R_{\le 2h-1}[z^2]$ (zero $z^6$ coefficient) is
+therefore an isomorphism onto $\R^{2h}$. The full space has dimension
+$2h+1$ and its one-dimensional kernel is spanned by $B^2$, since
+$\int_0^{q_i}B^2B'\,\dd z=0$. Choose $D=2+V$ with $V\in\mathcal V_0$
+first, and then $Z\in\mathcal V_0$, by specifying all $2h$ coordinates
+of each image:
+\begin{align}
+ D(q_i)&=\alpha_i b_i,& \int_0^{q_i} D B'\,\dd z&=0,\nonumber\\
+ Z(q_i)&=0,&4\int_0^{q_i}(Z B'+g D H')\,\dd z
+ &=\sum_{l<i}r_l\{d(a_{+,l})-d(a_{-,l})\}-s_i r_i\Lambda_i .
+                                                              \label{eq:offset}
+\end{align}
+The constant two in $D$ supplies the quadratic germ. Its contribution
+to the last row, including $2gH(q_i)$ inside the integral value, is
+included when choosing $Z$.
+
+Set $(E_\eta)_u=B^2+\eta D+\eta^{3/2}Z$, $E_\eta(0)=0$, and
+$C=\eta B+g\eta^{3/2}H$. For small $z$ both $u$-slopes dominate a
+positive multiple of $z^6+\eta$, since $B_u=O(z)$. At the other end
+$B^2$ dominates the perturbations in leading coefficient. On intermediate
+compact sets outside the roots it gives a positive slope as well. Near
+$u_i$, in $u=u_i+l_i\sqrt\eta\,v$ and
+$t=E_\eta(q_i)+d_i\eta^{3/2}T$, the two profiles in $T$ converge in $C^3$
+on bounded $v$ intervals to
+$v^3+a_{s,i}v-s s_i C_i$. Outside a large fixed multiple of $\sqrt\eta$
+the quadratic growth of $B^2$ in $u-u_i$ dominates the perturbation of
+the slope. This gives just two simple folds there on each side.
+Their heights tend to distinct positive values for distinct $i$.
+In particular the profiles are positive away from zero.
+
+Before skips, the difference of actions up to $u_i$ is
+$4\int_0^{u_i} (E_\eta)_u C_u\,\dd u$. Its terms of orders $\eta,\eta^{3/2},\eta^2$
+vanish by $\int B^2 B'\,\dd z=B^3/3$ at the endpoints, the $H$ moments and
+\eqref{eq:offset}. The remaining leading term is the left side of
+\eqref{eq:offset} times $\eta^{5/2}$. The local primitive is
+$r_i\eta^{5/2}p_{a_{s,i}}(v)+o(\eta^{5/2})$. Each earlier completed
+jump deletes $r_l\eta^{5/2}d(a_{s,l})+o(\eta^{5/2})$. An axis launch
+trapped inside a window uses the landing $v=-2k$, while an incoming
+launch uses the largest entry root and the deletion at its minimum.
+Thus \eqref{eq:offset} gives exactly the common offset of the cubic
+comparison, with the physical side labels interchanged for $s_i=-1$.
+All selected inequalities are strict for one sufficiently small $\eta$.
+Finally $N(w)/(-2\eta)\to K(w)$ at all the finite negative samples by
+dominated convergence with the weight $1+z^{m_0}$. This proves the lemma.
+\end{proof}
+
+\subsection{Adding the odd powers and closing the incoming list}
+\begin{proof}[Proof of Proposition~\ref{prop:remote-odd}]
+At the last shoulder of Lemma~\ref{lem:remote-base} the upper,
+positive-incoming and negative-incoming lists end with signs
+$(\beta_0,-\beta_0,\beta_0)$. Lemma~\ref{lem:tail-action} at
+$j_0=5+2h$ gives the opposite signs farther out. Now introduce the
+$h$ odd powers of degrees $j_0+2,\ldots,m_0-3$ in order. Choose each
+coefficient with sign opposite to the preceding leading odd term and
+small enough to preserve every sample already fixed. Only then choose
+the new positive and negative ordinates far enough out to record the
+next signs. Each list gains $h+1$ changes, and the final leading odd
+coefficient has sign $(-1)^h\beta_0=-1$.
+
+For $e\in\{0,1,2,3\}$ take the first $e$ terms of the ordered list
+\[
+  \bigl(-\delta_1 z^{m_0-1},\quad \delta_2 z^{m_0+2},\quad
+        -\delta_3 z^{m_0+1}\bigr).
+\]
+At each step choose $\delta_i>0$ small enough to preserve the previous
+samples, then select the new ordinates. Each addition switches
+the relation between the current odd and even degrees from $j<m-2$
+to $j=m-1$ or conversely. This adds a change to the upper and
+positive-incoming lists and leaves the last negative-entrance sign
+positive. With all ordinates fixed, choose the common reference and
+apply Proposition~\ref{prop:physical-quad}.
+
+Proposition~\ref{prop:physical-quad}(i) gives $\D(h_*)>0$ for a
+sufficiently small $h_*>0$, preceding the negative sign at the
+first shoulder. The shoulders contribute $7h$ internal changes,
+and the last sign of each agrees with the first of the next. The far levels
+contribute $h+1+e$ changes. Detuning the reference to the sign opposite
+the last sample adds the final change. Proposition~\ref{prop:sard}(i)
+then gives one linear coefficient with a simple zero in every selected
+bracket, hence $q=1+7h+(h+1+e)+1=8h+3+e$ distinct compact hyperbolic cycles.
+
+In decreasing ordinate the positive incoming list has $3h+(h+1)+e$
+changes and ends positive. Its join to the first negative-ordinate
+sign contributes one. The negative list has $h+(h+1)$ changes.
+Thus the unshifted total is $6h+3+e$ and the final sign is positive.
+For even $e$, take one sufficiently small positive $\Delta$ preserving
+the whole list, then append a sufficiently negative ordinate. Indeed for
+the fixed physical polynomial of even degree $m$, $I_s(-w)=w+O(w^{2/m-1})$
+as $w\to\infty$ by the same positive integral equation. The translated
+difference tends to $-\Delta$. This supplies one further change.
+For odd $e$ take $\Delta=0$.
+
+Use the matched-maximum theorem of Proposition~\ref{prop:cap-transfer}. For an
+input of even degree $m$ and highest odd degree $j=m-g$, $g=1$ or $3$,
+with top odd coefficient $b$, it gives
+\[
+ q+r+1+\mathbf1_{\{\sigma\ne\sgn((2-g)b)\}}
+ \quad\text{at exact degree }\max(m+2,j+4).
+\]
+Here $r$ counts incoming changes at a single translation and $\sigma$
+is the final sign. In this construction $b<0$. The final sign is
+negative for $g=3$ and positive for $g=1$, so the
+indicator is always one. The exact degrees and counts are
+\[
+\begin{array}{c|cc|cc|cc}
+ e & m & j & q & r & \deg F_{\rm final}&\text{cycles}\\
+ \hline
+ 0&m_0&m_0-3&8h+3&6h+4&m_0+2&14h+9\\
+ 1&m_0&m_0-1&8h+4&6h+4&m_0+3&14h+10\\
+ 2&m_0+2&m_0-1&8h+5&6h+6&m_0+4&14h+13\\
+ 3&m_0+2&m_0+1&8h+6&6h+6&m_0+5&14h+14 .
+\end{array}
+\]
+Hyperbolic persistence gives the asserted open sets at each degree.
+\end{proof}

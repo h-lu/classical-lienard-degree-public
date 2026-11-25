@@ -1,0 +1,5 @@
+outer-variant: all 13 coefficients match the Section S5 generator; theta=-1e-20, degree 12.
+Rational enclosure: both endpoints agree with the formulas in scaled height.
+Plus cap: five Bernstein intervals certify M_+ < P_+(d) + m_lift on 0 <= z <= 2.
+Plus escape at the rational upper endpoint: height losses <= 2*epsilon/rho < rho and <= 25*epsilon/256 < rho. The half-return is undefined there.
+fixed-diagnostic: all 13 coefficients match the Section S5 generator; theta=+1e-20, degree 12.

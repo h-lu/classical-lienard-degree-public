@@ -1,0 +1,197 @@
+\section{Half-returns, incoming trajectories and regularization}\label{sec:foundations}
+
+\subsection{Unique ray crossing, reflected half-returns, and trapping}\label{subsec:half-returns}
+A nonconstant periodic orbit is a regular Jordan curve. Its vector-field index is one, so it encloses the unique equilibrium $(0,0)$.
+
+\begin{lemma}[Positive-ray uniqueness, monotonicity, and trapping]\label{lem:half-returns}
+Let $F\in\R[x]$ satisfy $F(0)=0$, and set $G_s(x)=F(sx)$ for $s\in\{+1,-1\}$ and $x\ge 0$.
+\begin{enumerate}
+  \item[\textup{(i)}] Every nonconstant periodic orbit $\Gamma$ of~\eqref{eq:lienard} intersects the open positive $y$-ray $\Sigma_+=\{(0,h):h>0\}$ transversely to the right ($\dot x=h>0$), and does so at \emph{exactly one} point.
+  \item[\textup{(ii)}] The substitution $(x,y,\tau)\mapsto(-x,y,-\tau)$ carries the backward left-half-plane trajectory of~\eqref{eq:lienard} from $(0,h)$ onto the forward right-half-plane trajectory of $X_-(x,y)=(y-G_-(x),-x)$ from $(0,h)$. On $x>0$, $\dot y=-x<0$ and $u=x^2/2$ satisfies the scalar equation
+  \begin{equation}\label{eq:scalar-u}
+    \frac{\dd u}{\dd(-y)} = y - G_s(\sqrt{2u}).
+  \end{equation}
+  Whenever the forward trajectory $z(\tau)=(x(\tau),y(\tau))$ of $X_s=(y-G_s(x),-x)$ from $(q,h)$—with either $q=0$ and $h>0$, or $q>0$ and $h\in\R$—satisfies $x(\tau)>0$ for $\tau\in(0,\tau_s)$ until hitting $\Sigma_-=\{(0,-w):w>0\}$ at $z(\tau_s)=(0,-B_s(q,h))$, the hit is transverse ($\dot x=-B_s(q,h)<0$) and real-analytic in $(q,h)$ and the coefficients of $F$. Writing $w_s(h)=B_s(0,h)$ for $h>0$, a zero of $\D(h)=w_+(h)-w_-(h)$ glues the two half-trajectories into a nonconstant periodic orbit meeting $\Sigma_+$ solely at $(0,h)$.
+  \item[\textup{(iii)}] \emph{(Trapping on strips and coercive half-planes.)} Suppose for a given $s\in\{\pm 1\}$ that $(0,h_1)$ and $(0,h_2)$ ($0<h_1<h_2$) have transverse half-returns $w_s(h_1)$ and $w_s(h_2)$. Then $w_s(h)$ is defined, real-analytic, and strictly increasing with $w_s'(h)>0$ on $[h_1,h_2]$. If $|F'(0)|<2$ and $(0,h_2)$ has a transverse half-return, the same holds on $(0,h_2]$. If $|F'(0)|<2$ and $\lim_{x\to+\infty}G_s(x)=+\infty$, then $B_s(q,h)$ exists (with $x(\tau)>0$ on $(0,\tau_s)$ and transverse hit on $\Sigma_-$) whenever either $q=0$ and $h>0$, or $q>0$ and $h\in\R$, and increases strictly with $q\ge 0$ for fixed $h>0$ and with $q>0$ for fixed $h\le 0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i)~Along a nonconstant periodic solution $(x(\tau),y(\tau))$, $y$ attains a global maximum $h_{\max}$ and minimum $h_{\min}$ at times where $\dot y=-x=0$ and $\ddot y=-\dot x=-y$ (since $F(0)=0$). Uniqueness at the equilibrium $(0,0)$ excludes $y=0$ there, so $\ddot y(t_{\max})\le 0$ forces $h_{\max}>0$ and $\ddot y(t_{\min})\ge 0$ forces $h_{\min}<0$. Thus $\Gamma\cap\Sigma_+\neq\varnothing$. Starting from any $(0,h_1)\in\Gamma\cap\Sigma_+$, $\dot x=h_1>0$ carries $\Gamma$ into $x>0$, where $\dot y=-x<0$ decreases $y$ strictly; since $\dot x=y>0$ on $\Sigma_+$ and $(0,0)$ is an equilibrium, $\Gamma$ first returns to $x=0$ at some $(0,y_{-,1})\in\Sigma_-$ ($\dot x=y_{-,1}<0$), enters $x<0$ where $\dot y=-x>0$, and similarly first returns to $x=0$ at some $(0,h_2)\in\Sigma_+$. By non-intersection of distinct trajectories in $x>0$ and $x<0$, $h_2>h_1$ would force the subsequent return heights along $\Gamma$ to satisfy $y_{-,2}<y_{-,1}$ and $h_3>h_2>\dots$ monotonically without closing, and similarly $h_2<h_1$ is impossible; hence $h_2=h_1$, so $\Gamma\cap\Sigma_+=\{(0,h_1)\}$.
+
+(ii)~For $X(\tau)=-x(-\tau)$, $Y(\tau)=y(-\tau)$ one has $X'=Y-F(-X)$ and $Y'=-X$, proving the reflection conjugacy, and $\dd(x^2/2)/\dd(-y)=x\dot x/(-\dot y)=y-G_s(x)$ on $x>0$. At $(0,-w)$ with $w>0$, $\dot x=-w-G_s(0)=-w<0$, so the implicit function theorem for analytic vector fields yields analyticity of the hitting time $\tau_s$ and $B_s(q,h)$ across all $(q,h)$ in $(\{0\}\times(0,\infty))\cup((0,\infty)\times\R)$ satisfying the hypothesis. Gluing the forward $X_+$-arc from $(0,h)$ ($h>0$) to $(0,-w)$ and the time-reversed reflected $X_-$-arc from $(0,-w)$ back to $(0,h)$ produces a periodic orbit whose $x>0$ and $x<0$ segments avoid $x=0$, meeting $\Sigma_+$ only at $(0,h)$.
+
+(iii)~Inside $x>0$, returning arcs from $(0,h_i)$ are smooth graphs $x=\xi_i(y)$ over $y\in[-w_s(h_i),h_i]$ meeting $x=0$ only at their endpoints. By uniqueness for $X_s$, for $h\in(h_1,h_2)$ the forward arc from $(0,h)$ enters $x>0$ ($\dot x(0)=h>0$) and is trapped in the compact, origin-free strip bounded by $x=0$, $x=\xi_1(y)$, and $x=\xi_2(y)$. Since $\dot y=-x<0$ on $x>0$, $y$ decreases strictly; it cannot accumulate inside $x>0$, nor at $(0,0)$ (excluded by $\xi_1$), so it must hit $x=0$ at some $-w_s(h)\in(-w_s(h_2),-w_s(h_1))$. Transversality at both ends of the arc and orientation preservation of the flow map give $w_s'(h)>0$. When only an upper trap $(0,h_2)$ is given and $|F'(0)|<2$, an arc remaining in $x>0$ inside the compact region bounded by $x=0$ and $\xi_2$ would have decreasing bounded $y$, forcing its $\omega$-limit set into $x=0$ and hence by invariance into $\{(0,0)\}$; near $(0,0)$, however, the polar angular velocity $\dot\varphi=(x\dot y-y\dot x)/(x^2+y^2)=-1+yG_s(x)/(x^2+y^2)$ satisfies $\limsup_{(x,y)\to(0,0)}\dot\varphi\le -1+|F'(0)|/2<0$, making approach to $(0,0)$ inside $x>0$ impossible. Finally suppose $G_s(x)\to+\infty$ and start at $(q,h)$ with either
+$q=0$, $h>0$, or $q>0$, $h\in\R$. The arc enters or starts in $x>0$.
+While it stays there, $y\le h$ and
+$\dd u/\dd(-y)=y-G_s(\sqrt{2u})<0$ whenever $G_s(\sqrt{2u})>h$.
+Thus $x$ has a finite upper bound $x_{\max}$. If $y$ decreases without
+bound, eventually $y-\min_{[0,x_{\max}]}G_s<-1$, so $\dot x<-1$
+forces an axis hit. If $y$ stays bounded, an arc remaining in $x>0$
+has a compact $\omega$-limit set on the axis, where only the origin
+can belong to an invariant set. For $h\le0$ the ordinate has already
+decreased strictly below zero. For $h>0$ the angular estimate above
+excludes approach to the origin in this half-plane. In either case the
+first hit is on $\Sigma_-$, where $\dot x=y<0$.
+The smooth planar arcs from ordered starts at the same height cannot cross. Their transverse lower-axis hits are therefore strictly ordered, including when the inner start is $q=0$, $h>0$.
+\end{proof}
+
+\subsection{Incoming trajectories from spatial infinity}\label{subsec:incoming}
+Several of our constructions compare trajectories entering from $x=+\infty$ at prescribed limiting ordinates before an outer maximum turns them into closed-orbit candidates.
+
+\begin{lemma}[Existence, contraction, and negative-tail asymptotics of incoming rays]\label{lem:incoming-rays}
+Suppose $P\in\R[x]$ has $P(0)=0$, $|P'(0)|<2$, even degree $m=\deg P\ge 4$ with positive leading coefficient $c=[x^m]P>0$, and write $G_s(x)=P(sx)$ on $x\ge 0$ for $s\in\{\pm 1\}$.
+\begin{enumerate}
+  \item[\textup{(i)}] For every $y_0\in\R$ and $s\in\{\pm 1\}$, there exists a unique maximal trajectory of $X_s=(y-G_s(x),-x)$ in $x>0$ satisfying $\lim_{x\to+\infty}y(x)=y_0$. It reaches $\Sigma_-$ transversely at $(0,-I_{s,P}(y_0))$ with $I_{s,P}(y_0)>0$ depending jointly continuously on the ordinate and the coefficients at fixed degree $m$ under these hypotheses.
+  \item[\textup{(ii)}] If $P_\nu\to P$ uniformly with derivatives on compact subsets of $\R$ and there exist $X_0>0$ and $c_0>0$ such that $P_\nu(sx)\ge c_0 x^m$ on $[X_0,Z_\nu]$ with $Z_\nu\to+\infty$, then the lower-axis hit magnitude of $X_{s,P_\nu}$ launched from $(Z_\nu,y)$ converges to $I_{s,P}(y)$ uniformly on compact intervals of $y$.
+  \item[\textup{(iii)}] For each of these coercive polynomials, as $w\to+\infty$,
+  \begin{equation}\label{eq:incoming-neg-tail}
+    I_{s,P}(-w) = w + O\!\left(w^{2/m-1}\right) = w + o(1).
+  \end{equation}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i)~Given $y_0\in\R$, choose $X_1>0$ so large that $G_s(x)\ge y_0+2+\tfrac12 c x^m$ for all $x\ge X_1$. On $\{(x,y):x\ge X_1,\ y\le y_0+1\}$ we have $\dot x=y-G_s(x)<0$, and inward integration from $(X,y_0)$ ($X>X_1$) obeys the spatial ODE
+\begin{equation}\label{eq:spatial-ode}
+  \frac{\dd y}{\dd x} = \frac{x}{G_s(x)-y} > 0.
+\end{equation}
+Thus $y(x)\le y_0$ on $[X_1,X]$, and $0<\dd y/\dd x\le 2x/(c x^m)=O(x^{1-m})$ is integrable since $m\ge 4$. Moreover, $\partial_y[x/(G_s(x)-y)]=x/(G_s(x)-y)^2>0$, so for any two solutions $y_1>y_2$ of~\eqref{eq:spatial-ode}, $\dd(y_1-y_2)/\dd x>0$, meaning $|y_1(x)-y_2(x)|$ \emph{contracts} as $x$ decreases toward $X_1$. Sending $X\to+\infty$ therefore gives a unique Cauchy limit at $x=X_1$, and uniqueness holds for any inward solution with $\lim_{x\to\infty}y(x)=y_0$. From $x=X_1$, Lemma~\ref{lem:half-returns}(iii) continues the trajectory to a transverse hit $(0,-I_{s,P}(y_0))$, continuously in $y_0$. In a small fixed-degree coefficient neighborhood the leading coefficient stays above $c/2$ and the other coefficients stay bounded. The inward tail estimate is therefore uniform (with a larger $X_1$); compact flow dependence up to the transverse hit gives joint continuity.
+
+(ii)~Fix a bounded closed interval of launch ordinates. Choose $X_1\ge X_0$ so large that, for these launches,
+the denominator in~\eqref{eq:spatial-ode} is at least $c_0x^m/2$ on the
+inward tail $x\ge X_1$ (up to $Z_\nu$ for $P_\nu$). Indeed the ordinate
+only decreases inward, and $P(sx)\ge c_0x^m$ follows by taking $\nu\to\infty$
+at fixed $x\ge X_0$. At any $X\ge X_1$ the drift from the launch
+ordinate is at most $C X^{2-m}$, by integration of $2x^{1-m}/c_0$.
+For $P$, inward contraction as in~\eqref{eq:spatial-ode} thus gives a
+unique limiting tail for every such ordinate.
+
+At fixed $X$, replace each tail by a launch at $(X,y)$ for its own
+field. The error at $X_1$ is at most $CX^{2-m}$ on either side of this
+comparison, since the spatial right-hand side is increasing in the
+ordinate and integration is inward. The two finite launches converge
+to each other at $X_1$ uniformly in $y$ by compact dependence on
+$[X_1,X]$. Taking $\nu\to\infty$ first and then $X\to\infty$ gives
+uniform convergence of the section data. The limiting data are
+continuous in $y$ by the same contraction.
+From $X_1$ each limiting arc with a transverse lower hit stays in $x>0$ until a finite
+first hit with $\dot x=-I_{s,P}(y)<0$. Compact flow dependence and
+transversality continue that first hit to a closed neighborhood of
+its entrance ordinate and give uniform convergence there. By part~(i) every ordinate of the chosen interval has such a hit.
+A finite cover gives uniform convergence on the interval.
+
+(iii)~Let $M_0=\max_{x\ge 0,\ s=\pm 1}(-G_s(x))\ge 0$. For $w>2M_0+2$, $G_s(x)+w\ge c_1(w+x^m)$ on the entire half-line $x\ge 0$ for a constant $c_1>0$. Along the inward trajectory from $y(\infty)=-w$, $y(x)\le -w$ for all $x\ge 0$, so $G_s(x)-y(x)\ge G_s(x)+w\ge c_1(w+x^m)$. Integrating~\eqref{eq:spatial-ode} over $[0,\infty)$ yields
+\[
+  0 < I_{s,P}(-w)-w \le \int_0^\infty\frac{x\,\dd x}{c_1(w+x^m)} = w^{2/m-1}\int_0^\infty\frac{v\,\dd v}{c_1(1+v^m)} = O\!\left(w^{2/m-1}\right),
+\]
+which tends to zero as $w\to+\infty$ since $m\ge 4>2$.
+\end{proof}
+
+\begin{localcorollary}[Continuity at selected transverse entrances]\label{cor:transverse-entry}
+Fix $s\in\{\pm1\}$. Let $P,P_\nu\in\R[x]$ vanish at zero, and let
+$P$ have even degree $m\ge4$ with positive leading coefficient. Suppose
+$P_\nu\to P$ in $C^1$ on compact sets, and $P_\nu(sx)\ge c_0x^m$
+on $[X_0,Z_\nu]$ for fixed $c_0,X_0>0$ and $Z_\nu\to\infty$.
+Suppose the incoming $P$-rays at a finite list of ordinates have
+transverse first hits on $\Sigma_-$. Each listed ordinate lies in the
+interior of a compact interval on which $I_{s,P}$ exists and is
+continuous. On the union of these intervals, for all large $\nu$ the
+$P_\nu$-launches from $(Z_\nu,y)$ also have first hits on $\Sigma_-$,
+and their magnitudes converge uniformly to $I_{s,P}(y)$.
+\end{localcorollary}
+
+\begin{proof}
+The inward tail construction in the proof of Lemma~\ref{lem:incoming-rays}(i)
+uses coercivity and inward contraction. Its comparison at two truncation
+radii in part~(ii) therefore still gives uniform convergence at $X_1$
+on a bounded interval containing the list. For each selected limiting
+arc, its transverse first hit extends by compact flow dependence to a
+closed neighborhood of its ordinate. The finite union of these
+neighborhoods gives the assertion.
+\end{proof}
+
+\subsection{Linear-coefficient monotonicity and simultaneous Sard regularization}\label{subsec:regularization}
+For the original field $X_a=(y-\mathring F(x)-ax,-x)$,
+$\det(X_a,\partial_a X_a)=-x^2$. Increasing $a$ rotates the field clockwise
+off the vertical axis. This is rotation with the exceptional line $x=0$, in the theory developed by Duff and Perko~\cite{Duff1953,Perko1975,Perko1993}.
+To convert sign-changing brackets or matched references into simultaneous \emph{hyperbolic} limit cycles at unchanged polynomial degree, we vary only the linear coefficient $a=[x^1]F$.
+
+\begin{lemma}[Rotational parameter sensitivity]\label{lem:rotational}
+Write $F_a(x)=\mathring{F}(x)+ax$ with $\mathring{F}(0)=0$, so $G_{s,a}(x)=\mathring{F}(sx)+sax$.
+\begin{enumerate}
+  \item[\textup{(i)}] At any fixed starting point $(q,h)$ with either $q=0$ and $h>0$, or $q>0$ and $h\in\R$, for which the forward trajectory $z(\tau)=(x(\tau),y(\tau))$ of $X_{s,a}$ satisfies $x(\tau)>0$ for all $\tau\in(0,\tau_s)$ and hits $\Sigma_-$ transversely at $z(\tau_s)=(0,-B_{s,a}(q,h))$ ($B_{s,a}(q,h)>0$, $\tau_s>0$),
+  \begin{equation}\label{eq:rot-half}
+    B_{s,a}(q,h)\,\partial_a B_{s,a}(q,h) = -s\int_0^{\tau_s} x(\tau)^2\exp\!\left(-\int_\tau^{\tau_s} G_{s,a}'(x(v))\,\dd v\right)\dd\tau,
+  \end{equation}
+  so $\sgn\partial_a B_{s,a}(q,h)=-s$. In particular, for $q=0$ and $h>0$, $\partial_a w_+(h,a) < 0 < \partial_a w_-(h,a)$ and $\partial_a\D(h,a)<0$ wherever both half-returns exist.
+  \item[\textup{(ii)}] If $\Pi_a(h)$ is the first full forward return of $X_{F_a}$ on $\Sigma_+$ with return time $T_h>0$ along $(x(\tau),y(\tau))$, then
+  \begin{equation}\label{eq:rot-full}
+    \Pi_a(h)\,\partial_a \Pi_a(h) = -\int_0^{T_h} x(\tau)^2\exp\!\left(-\int_\tau^{T_h} F_a'(x(v))\,\dd v\right)\dd\tau < 0.
+  \end{equation}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Along $z(\tau)$ from the $a$-independent point $z(0)=(q,h)$ (for any $h\in\R$ when $q>0$, and $h>0$ when $q=0$), let $\eta(\tau)=\partial_a z(\tau)$ with $\eta(0)=0$, and put $\omega(\tau)=\det\big(X_{s,a}(z(\tau)),\,\eta(\tau)\big)$. Since $\dot\eta=DX_{s,a}(z)\eta+\partial_a X_{s,a}(z)$ with $\operatorname{tr} DX_{s,a}=-G_{s,a}'(x)$ and $\partial_a X_{s,a}=(-sx,0)$, Liouville's determinant identity gives
+\[
+  \dot\omega(\tau) = -G_{s,a}'(x(\tau))\,\omega(\tau) + \det\!\begin{pmatrix} y-G_{s,a}(x) & -sx \\ -x & 0 \end{pmatrix} = -G_{s,a}'(x(\tau))\,\omega(\tau) - s x(\tau)^2.
+\]
+Variation of constants from $\omega(0)=0$ gives $\omega(\tau_s)=-s\int_0^{\tau_s}x(\tau)^2\exp(-\int_\tau^{\tau_s}G_{s,a}'(x(v))\,\dd v)\,\dd\tau$. Differentiating $z(\tau_s(a),a)=(0,-B_{s,a})$ with respect to $a$ gives $\eta(\tau_s)+(\partial_a\tau_s)X_{s,a}(0,-B_{s,a})=(0,-\partial_a B_{s,a})$. Since $X_{s,a}(0,-B_{s,a})=(-B_{s,a},0)$, taking determinants with $X_{s,a}(0,-B_{s,a})$ eliminates $\partial_a\tau_s$ and yields $\omega(\tau_s)=B_{s,a}\partial_a B_{s,a}$, proving~\eqref{eq:rot-half}. Since $x(\tau)>0$ on $(0,\tau_s)$ and $B_{s,a}(q,h)>0$, the integral is strictly positive and $\sgn\partial_a B_{s,a}(q,h)=-s$. For~\eqref{eq:rot-full}, apply the identical determinant calculation to the full vector field $X_{F_a}$ ($\partial_a X_{F_a}=(-x,0)$) up to $(0,\Pi_a(h))$ where $X_{F_a}(0,\Pi_a(h))=(\Pi_a(h),0)$ and $\det\big((\Pi_a,0),(0,\partial_a \Pi_a)\big)=\Pi_a\partial_a \Pi_a$.
+\end{proof}
+
+\begin{proposition}[Simultaneous reference detuning, Sard regularization, and odd-degree barrier]\label{prop:sard}
+Let $F_{a_*}(x)=\sum_{j=2}^n a_j x^j + a_* x$ have exact degree $n\ge 2$ ($a_n\neq 0$).
+\begin{enumerate}
+  \item[\textup{(i)}] Suppose $0<h_0<h_1<\dots<h_N$ lie in an open interval $I_h\subset(0,\infty)$ on which both transverse half-returns $w_\pm(h,a_*)$ exist. Assume there is a common sign $\sigma_{\mathrm{det}}\in\{+1,-1\}$ such that, after setting $\sigma_i=\sgn\D(h_i,a_*)$ when $\D(h_i,a_*)\neq 0$ and $\sigma_i=\sigma_{\mathrm{det}}$ at every matched reference height where $\D(h_i,a_*)=0$, the sequence $(\sigma_0,\dots,\sigma_N)$ strictly alternates ($\sigma_{i-1}\sigma_i=-1$ for $1\le i\le N$). Suppose in addition that $F_{a_*}$ already possesses $q_0\ge 0$ hyperbolic limit cycles contained in a compact region $K_0\subset\R^2$ disjoint from $\{(0,h):h\in[h_0,h_N]\}$. Then there is a regular value $a_{\rm reg}$ arbitrarily close to $a_*$ and an open neighborhood $\mathcal{V}\subset\{(c_1,\dots,c_n)\in\R^n:c_n\neq 0\}$ of the resulting field on which every system~\eqref{eq:lienard} has at least $q_0+N$ geometrically distinct hyperbolic limit cycles.
+  \item[\textup{(ii)}] Suppose $|a_*|<2$, $n$ is even, and $0<h_0<\dots<h_N$ have strict alternating signs $\D(h_i,a_*)$ ending with $\D(h_N,a_*)>0$. Then for each sufficiently small $\rho>0$ one can choose $a_{\mathrm{reg}}$ arbitrarily close to $a_*$ such that every system in an open exact-degree-$(n+1)$ neighborhood of $F_{a_{\mathrm{reg}}}(x)+\rho x^{n+1}$ has at least $N+1$ distinct hyperbolic limit cycles.
+\end{enumerate}
+Each open coefficient neighborhood in \textup{(i)} or \textup{(ii)} contains a rational vector by density.
+\end{proposition}
+
+\begin{proof}
+(i)~By openness of transverse hits and hyperbolic persistence on $K_0$, choose $\delta_0>0$ so small that for $|a-a_*|<\delta_0$: (a)~both $w_\pm(h,a)$ remain defined and smooth on $[h_0,h_N]$, (b)~every strict sign $\D(h_i,a_*)\neq 0$ retains its sign $\sigma_i$, and (c)~all $q_0$ hyperbolic cycles in $K_0$ persist as distinct hyperbolic limit cycles inside a slightly larger compact set $K_0'$ still disjoint from $\{(0,h):h\in[h_0,h_N]\}$. Define the open detuning interval $I_{\mathrm{det}}=(a_*,a_*+\delta_0)$ if $\sigma_{\mathrm{det}}=-1$, and $I_{\mathrm{det}}=(a_*-\delta_0,a_*)$ if $\sigma_{\mathrm{det}}=+1$. By Lemma~\ref{lem:rotational}(i), $\partial_a\D(h_i,a)<0$, so for every $a\in I_{\mathrm{det}}$ each matched reference height with $\D(h_i,a_*)=0$ acquires $\sgn\D(h_i,a)=\sigma_{\mathrm{det}}$. Hence at every $a\in I_{\mathrm{det}}$, the $N$ pairwise disjoint open brackets $B_i=(h_{i-1},h_i)$ satisfy $\D(h_{i-1},a)\D(h_i,a)<0$.
+
+On the open set $U=\big(\bigcup_{i=1}^N B_i\big)\times I_{\mathrm{det}}$, $\D$ is smooth and $\partial_a\D<0$ everywhere, so $0$ is a regular value of $\D$ and $Z=\{(h,a)\in U:\D(h,a)=0\}$ is a smooth one-dimensional submanifold. By Sard's theorem applied to the smooth projection $\pi_a:Z\to I_{\mathrm{det}}$, there exists a regular value $a_{\mathrm{reg}}\in I_{\mathrm{det}}$ of $\pi_a$. At any $(r,a_{\mathrm{reg}})\in Z$, a nonzero tangent vector $(\dot h,\dot a)\in T_{(r,a_{\mathrm{reg}})}Z$ satisfies $(\partial_h\D)\dot h+(\partial_a\D)\dot a=0$ and $d\pi_a(\dot h,\dot a)=\dot a\neq 0$; hence $\partial_h\D(r,a_{\mathrm{reg}})\neq 0$. By the intermediate value theorem, each $B_i$ contains at least one zero $r_i\in B_i$ of $\D(\cdot,a_{\mathrm{reg}})$. Near $(0,r_i)$, the first-return map on $\Sigma_+$ is $\Pi=w_-^{-1}\circ w_+$, whose derivative at $r_i$ (where $w_+(r_i)=w_-(r_i)$ and $w_\pm'(r_i)>0$ by Lemma~\ref{lem:half-returns}(iii)) is
+\[
+  \Pi'(r_i) = \frac{w_+'(r_i,a_{\mathrm{reg}})}{w_-'(r_i,a_{\mathrm{reg}})} > 0.
+\]
+Since $w_+'(r_i)-w_-'(r_i)=\partial_h\D(r_i,a_{\mathrm{reg}})\neq 0$, we have $\Pi'(r_i)\neq 1$, so the closed orbit $\Gamma_i$ through $(0,r_i)$ is hyperbolic. By Lemma~\ref{lem:half-returns}(i), each periodic orbit meets $\Sigma_+$ exactly once; since $r_1<\dots<r_N$ lie in disjoint intervals $B_i$ and $\{(0,r_i)\}\cap K_0'=\varnothing$, the $q_0+N$ hyperbolic limit cycles are mutually distinct. By the implicit function theorem applied to the $q_0+N$ hyperbolic fixed points of the Poincaré map under smooth variations of $(c_1,\dots,c_n)$, all $q_0+N$ hyperbolic limit cycles persist on an open neighborhood $\mathcal{V}$ of $(a_{\mathrm{reg}},a_2,\dots,a_n)$ with $c_n\neq 0$.
+
+(ii)~For sufficiently small $\rho>0$, all $N+1$ transverse half-returns $w_\pm(h_i)$ and their strict signs persist for $F=F_{a_*,\rho}$. Since $\deg F=n+1$ is odd with positive leading coefficient $\rho>0$, both $F(x)$ and $L(x)=-F(-x)$ satisfy $\lim_{x\to+\infty}F(x)=\lim_{x\to+\infty}L(x)=+\infty$ and $|F'(0)|=|a_*|<2$. By Lemma~\ref{lem:half-returns}(iii), the forward half-return maps $A_F$ and $A_L$ exist and increase strictly on $(0,\infty)$, and the global forward full return on $\Sigma_+$ is $\Pi=A_L\circ A_F$. Since $A_L(w_-(h))=h$ by time-reversal and rotation $(x,y,\tau)\mapsto(-x,-y,\tau)$, strict monotonicity of $A_L$ implies $\sgn(\Pi(h_i)-h_i)=\sgn(w_+(h_i)-w_-(h_i))$ for $0\le i\le N$; in particular $\Pi(h_N)-h_N>0$. Choose $M>0$ such that $L(x)\ge 2x-M$ for all $x\ge 0$. Along any forward right-half-plane trajectory of $(y-L(x),-x)$, the function $\psi(x,y)=y-x+M+1$ has $\psi(0,w)=w+M+1>0$ and, wherever $\psi(x,y)=0$, $\dot\psi=-x-(y-L(x))=L(x)-2x+M+1\ge 1>0$. Hence $\psi>0$ up to the lower hit $(0,-A_L(w))$, forcing $A_L(w)\le M+1$ for every $w>0$. Choosing $h_{N+1}>\max(h_N,M+1)$ gives $\Pi(h_{N+1})=A_L(A_F(h_{N+1}))\le M+1<h_{N+1}$, adding an $(N+1)$-th bracket $(h_N,h_{N+1})$. Applying the exact same Sard argument to $\Pi_a(h)-h$ using~\eqref{eq:rot-full} ($\partial_a(\Pi_a(h)-h)<0$, so $\Pi'(r_i)\neq 1$ at a regular value $a_{\mathrm{reg}}$) gives $N+1$ hyperbolic cycles on a nonempty open exact-degree-$(n+1)$ set.
+\end{proof}
+Section~S3 of the electronic supplement uses part \textup{(ii)} to
+pass from a sextic seed to an odd-degree field with one more bracket.
+
+
+\paragraph{Strict brackets in earlier constructions.}
+A common regular value already gives simultaneous hyperbolicity in
+the classical trinomial construction of Chen, Jin, Li and Zhou.
+They parameterize cycles by the linear coefficient. Lemma~3.1
+identifies regular points of the parameter graph with hyperbolic
+cycles, and the proof of Theorem~1.2 selects three cycles at one
+regular value~\cite[\S3]{CJLZ2026}. Cao, Chen and Tang use a half-width
+parameterization~\cite[\S9, (82)--(84)]{CCT2026}. In our setting the
+half-return identity~\eqref{eq:rot-half} covers off-axis launches of
+either ordinate sign. Proposition~\ref{prop:sard}(i) gives the matched
+references one direction of detuning while earlier compact cycles
+persist. Part~(ii) supplies the exterior bracket for an even-degree
+input with $|a_*|<2$ and final sign $\D(h_N,a_*)>0$.
+
+The odd-degree steps in two earlier constructions illustrate what the
+outer annulus contributes. In the septic example following (11)
+of~\cite{DMD2011}, four hyperbolic cycles persist and a further cycle
+has odd multiplicity. At degree $n=2k+1$, De Maesschalck and Huzak
+retain $2k-2=n-3$ hyperbolic cycles and use a trapping annulus and
+the Poincar\'e--Bendixson theorem to obtain an additional isolated
+outer cycle~\cite[\S3.2]{DMH2015}. The annulus gives existence from the direction
+of the flow at its boundaries. Theorem~2 of~\cite{DMD2011} and Theorem~1
+of~\cite{DMH2015} state hyperbolic existence in both parities.
+
+In the Palomar construction, the even-degree step preserves the strict
+return signs and the odd-degree barrier adds an opposite outer
+sign~\cite[proof of Theorem~2]{Palomar2026}. At a fixed degree these
+brackets persist under a small change of the linear coefficient.
+The regular-value argument in Proposition~\ref{prop:sard}(i) then
+gives simple return zeros in all the brackets for one nearby field.
+This is the hyperbolic comparison derived in Table~\ref{tab:exact-degrees}.

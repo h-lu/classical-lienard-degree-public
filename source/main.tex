@@ -1,0 +1,263 @@
+\documentclass[11pt]{article}
+\input{tex/preamble}
+\hypersetup{pdfauthor={Haibo Lu},pdftitle={Relative return gaps and a 7/2 asymptotic lower bound for hyperbolic limit cycles in classical Lienard systems},
+pdfsubject={Finite entrance lists and exact primitive degree}}
+\title{Relative return gaps and a $7/2$ asymptotic lower bound\\ for hyperbolic limit cycles in classical Li\'enard systems}
+\author{Haibo Lu\\[2pt]
+\small Shanghai Institute of Technology, Shanghai 201418, China\\
+\small Correspondence: \nolinkurl{luhaibo1985@gmail.com}\\
+\small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
+\date{24 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the classical Li\'enard equation $\ddot x+F'(x)\dot x+x=0$, let $n$
+be the exact degree of the polynomial $F$. For every $n\ge14$ we
+construct a nonempty open set of coefficients for which at least
+$\lceil(7n-48)/2\rceil$ geometrically distinct hyperbolic limit cycles
+coexist. The asymptotic coefficient of this bound is $7/2$, compared
+with one in the $n-2$ construction of De Maesschalck and Huzak.
+
+After reflecting the left half-plane and reversing time there, we compare
+lower-axis hits for three families of trajectories. One starts on the
+positive $y$-axis. The other two enter from spatial infinity with
+positive or negative limiting ordinate. A shallow well, a local maximum
+followed outwards by a nearby minimum on one reflected profile, adds
+three, three and one sign changes to the respective lists. To turn
+the incoming comparisons into return brackets we add higher powers that create a distant
+maximum on each side. Tracing a finite entrance backwards past this
+maximum takes it to the upper axis. Ratios of exponentially small gaps
+from a matched reference determine an $o(1)$ adjustment of the opposite
+entrance ordinate that gives exactly the same upper crossing. This
+preserves every strict comparison in a fixed finite list. A single
+change of the linear coefficient gives hyperbolic cycles in the
+resulting brackets. The construction retains the cycles in a fixed
+compact region and gains seven cycles for every two additional degrees.
+\end{abstract}
+
+\section{Coexisting cycles at fixed primitive degree}\label{sec:intro}
+How many limit cycles can coexist when the restoring force is linear and the polynomial primitive $F$ has exact degree $n$? We write the scalar
+equation $\ddot x+F'(x)\dot x+x=0$ as
+\begin{equation}\label{eq:lienard}
+ \dot x=y-F(x),\qquad \dot y=-x,\qquad
+ F(x)=\sum_{j=1}^n a_jx^j,\qquad a_n\ne0 .
+\end{equation}
+A vertical translation removes the constant term. The remaining
+coefficients are unrestricted. Throughout, $n$ is the exact degree
+of the primitive $F$, so the damping has degree $n-1$.
+Let $H(n)$ be the supremum, over all fields~\eqref{eq:lienard} of exact
+degree $n$, of the number of geometrically distinct isolated periodic
+orbits in one field. Define $\HH(n)$ by counting hyperbolic orbits
+(transverse multiplier different from one) and $H_{\le}(n)$ by counting
+isolated orbits over degrees at most $n$. Thus
+$\HH(n)\le H(n)\le H_{\le}(n)$. The following bound comes from
+placing successive families of cycles on separated spatial scales.
+
+\begin{theorem}[Exact-degree lower bound]\label{thm:main-asymptotic}
+For every integer $n\ge14$ there is a nonempty open subset of
+$\{(a_1,\ldots,a_n)\in\R^n:a_n\ne0\}$ on which every field~\eqref{eq:lienard}
+has at least $L(n)$ geometrically distinct hyperbolic limit cycles, where
+\begin{equation}\label{eq:parity-bounds}
+ L(n)=\left\lceil\frac{7n-48}{2}\right\rceil
+ =\begin{cases}(7n-48)/2,& n\ \mathrm{even},\\ (7n-47)/2,& n\ \mathrm{odd}.\end{cases}
+\end{equation}
+In particular $\liminf_{n\to\infty}\HH(n)/n\ge7/2$. By density, the
+open set at each degree contains a rational coefficient vector.
+\end{theorem}
+
+\begin{corollary}[Low degrees of the octic construction]\label{cor:octic-low}
+At exact degrees $8,10,11,12,13$ there are nonempty open sets with at
+least $9,10,15,18,22$ coexisting hyperbolic cycles, respectively.
+\end{corollary}
+Section~\ref{subsec:prove-asymptotic} proves the corollary with zero or
+one well insertion. The first insertion raises the odd count from
+fifteen at eleven to twenty-two at thirteen and the even count from
+eighteen at twelve to twenty-five at fourteen.
+
+\paragraph{The classical degree problem.}
+Lins, de Melo and Pugh proposed a maximum of $k$ cycles at degrees
+$2k+1$ and $2k+2$~\cite[pp.~335--336]{LMP1977}. A quartic has at most
+one cycle, hyperbolic when present~\cite[Theorem~1.1]{LiLlibre2012}.
+Odani's odd quintics attain two hyperbolic cycles~\cite{Odani1996}.
+The upper bounds of Rychkov, Li and Lu, and Chen, Chen and Xiao concern
+odd quintics, a given nondegenerate slow--fast cycle, and the small-parameter
+regime for a fixed quintic, respectively~\cite{Rychkov1975,LiLu2014,CCX2026}.
+With the upper bound stated in the quintic preprint
+\cite[Theorem~1.1]{OpenAIQuintic2026}, Odani's lower example would give
+$H_{\le}(5)=H(5)=\HH(5)=2$.
+
+Dumortier, Panazzolo and Roussarie obtained four cycles at primitive
+degree seven, disproving the proposed maximum~\cite[Theorems~1.1 and
+1.3]{DPR2007}. De Maesschalck and Dumortier used a canard orbit through
+a prescribed section height to obtain $\lfloor(n-1)/2\rfloor+2$
+hyperbolic cycles at every exact $n\ge6$~\cite[Theorem~2 and
+Proposition~1]{DMD2011}. De Maesschalck and Huzak raised the
+hyperbolic bound to $n-2$ for both parities~\cite[Theorem~1]{DMH2015}.
+Their near-center construction uses a monotone positive branch of the even primitive and one slow divergence integral.
+Its nonzero first-order term has at most $n-3$ positive zeros, and their
+construction includes a reference cycle. They conjectured $n-2$ as a
+maximum for the classical system~\cite[Proposition~3 and Remark~2]{DMH2015}.
+
+At each exact $n\ge6$ the Palomar repository preprint constructs
+$\lfloor(n-1)/2\rfloor+4$ isolated cycles, including six throughout
+a sextic coefficient box and seven for a specified septic
+\cite[Theorems~1--2, Corollary~19 and Proposition~21]{Palomar2026}.
+These are already counterexamples to the proposed $n-2$ maximum at
+degrees six through nine. The preprint's strict sign brackets give
+the same counts of hyperbolic cycles in nearby fields by
+Proposition~\ref{prop:sard}(i). The first improvement over these
+combined bounds is from seven to nine at degree eight
+(Table~\ref{tab:exact-degrees}). The octic construction in
+Section~\ref{sec:wells} compares \emph{actions}, the magnitudes of the
+reduced slow divergence integrals over the slow arcs shared by a trajectory
+and its reference.
+The supplement uses validated sextic shooting and entrance data to
+obtain ten cycles at degree nine and to improve the octic counts
+from ten to fourteen at degree ten and from eighteen to nineteen at
+degree twelve~\cite[\S\S S3--S5]{ElectronicSupplement}. In the supplement's
+notation, $\eta>0$ controls the splitting of a stationary inflection into
+two folds. For every sufficiently small value, three matching equations
+and one regular choice of the linear coefficient give nineteen coexisting
+hyperbolic cycles in one field. Persistence gives a nonempty open set,
+which contains rational members by density. The supplement also specifies
+two rational degree-twelve fields. One has exactly five hyperbolic cycles
+in its weak full-return domain. The other has at least six, including a
+repelling outer cycle
+\cite[Remark~SA.1 and Proposition~SB.1]{ElectronicSupplement}.
+
+\input{tex/existence-table}
+
+For unrestricted planar polynomial fields of total degree at most $D$,
+the multiple-center construction of Christopher and Lloyd~\cite[\S3]{CL1995},
+with the count corrected by Li, Chan and Chung~\cite[Proposition~5]{LCC2002},
+gives a lower bound of order $D^2\log D$. Han and Li sharpened the
+asymptotic bound for all large degrees~\cite{HL2012}. Within a single nest
+around one equilibrium, De Maesschalck and Torregrosa obtain at least
+$(D-1)^2/2$ isolated cycles at odd degree $D$ with two variable polynomial
+components~\cite[Theorems~1 and~4, system~(1)]{DMT2025}. The classical field~\eqref{eq:lienard}
+has total degree $D=n$ and fixed second component $-x$. Every cycle
+surrounds its sole equilibrium, the origin. Smale discusses
+this subclass after his general degree question~\cite[Problem~13,
+second version, (4)--(5)]{Smale1998}. Cen, Chen, Tian
+and Zhao proposed a maximum of $k-1$ cycles when $F$ has exactly $k$
+nonzero monomials~\cite{Cen2026}. For trinomials with two
+odd powers below the leading even power $x^{2N}$ and opposite signs
+on the odd coefficients, Chen, Jin, Li and Zhou obtain at least two
+cycles for suitable coefficients and exponents at every $N\ge3$.
+At $N=5$ they construct three hyperbolic cycles at degree ten, exceeding
+the proposed maximum for $k=3$~\cite[Theorems~1.1--1.2 and \S3]{CJLZ2026}.
+Table~\ref{tab:exact-degrees} fixes the degree and allows all lower powers.
+
+\paragraph{From entrance comparisons to closed orbits.}
+Reflect the left half-plane and reverse time there so that both
+half-orbits run forward in $x>0$. For a launch at $(0,h)$ with $h>0$,
+write $-w_+(h)$ and $-w_-(h)$ for the first hits on the negative
+$y$-axis. Equality closes an orbit. Our first list compares the two
+hit magnitudes at a sequence of upper-axis launches. For the other
+two lists, prescribe the limiting ordinate $y$ of a trajectory as
+$x\to+\infty$ on each reflected side and follow it inwards to the
+lower axis. We call the trajectory a positive or negative entrance
+according to the sign of $y$. In a fold window an upper launch and a
+positive entrance reach different rising branches and accumulate
+different slow divergence integrals. A negative entrance crosses the
+whole profile, and its lower hit records the drift during that flight
+(Figure~\ref{fig:mechanisms}(a)).
+
+Closing the two sides in one polynomial requires both the upper-axis
+crossing and the gaps from a common reference there. Local canard
+transition maps describe how a gap depends on the entrance point.
+Dumortier and Roussarie give smooth exponential
+actions for the section maps in a two-parameter unfolding and derive
+entrance-derivative asymptotics~\cite[\S2, Definition~2.1, (5)--(7),
+Remark~5.2]{DR2007}. At a matched pair they rescale the two entrance coordinates by $\epsilon$ and expand their actions, obtaining exponential terms controlled by the entrance derivatives~\cite[\S6, (22)--(24)]{DR2007}. De Maesschalck, Dumortier and Roussarie write the
+signed separation from a reference center manifold as an exponential
+whose action depends smoothly on the entrance
+\cite[\S2.3, (1)]{DMDR2023}. Their 2025 sequel treats local cyclicity
+for planar two-layer canard cycles with specified layers and connections
+\cite[p.~1]{DMDR2025}. For a smooth exponential action, differentiation
+in the entrance coordinate already gives a local log-gap ratio.
+
+The entry--exit integral relates accumulated attraction to subsequent
+repulsion~\cite[(1.4)]{DMS2016}. Huzak, Jard\'on-Kojakhmetov and Kuehn
+show that along a control curve the exit ordinate tracks a function
+of the entrance, the slow relation function. The approximation has absolute $o(1)$ error on the prescribed compact
+intervals. In the regime with a threshold, entrances below it follow
+the slow relation and those above it have a common limiting exit
+\cite[author version~2, Proposition~2]{HJK2025}.
+
+We add higher powers to the input polynomial to form a distant
+maximum on each reflected side (Figure~\ref{fig:mechanisms}(b)). A
+launch on a finite exterior section approximates the original entrance
+from infinity when followed inwards. Traced backwards, the same arc
+reaches the outer falling branch, passes its maximum and hits the
+positive $y$-axis. Thus the incoming comparison becomes a comparison
+of half-returns once the two upper hits agree. Write $R$ for the
+exterior length, $m$ for the even input degree and $z=|x|/R$. On each side
+we trace a reference arc backwards from the lower axis. Two
+coefficients make the reference arcs meet at the same upper-axis point
+and match one pair of entrances on the section $z=1/2$. Their
+\emph{physical ordinates} are $y_+=\Delta$ on the positive side
+and $y_-=0$ on the negative side. Other ordinates a bounded physical
+distance apart differ by only $O(\tau^m)$ in the scaled height
+$t=y/R^m$, where $\tau=1/R$.
+The error bound for the first action expansion at the maximum exceeds this scale.
+Proposition~\ref{prop:cap-transfer}, formula~\eqref{eq:cap-fine},
+shows that the scaled log ratio of gaps from this reference has a
+strictly positive limiting slope in the physical entrance ordinate.
+It pairs $y$ with $y-\Delta+o(1)$ on the other side at an \emph{exactly}
+common upper crossing. Every strict sign in a fixed finite list thus
+survives in one polynomial, and compact convergence preserves earlier
+hyperbolic cycles in a fixed disk. For highest odd degree $j=m-1$
+or $m-3$ the output has exact degree
+$\max(m+2,j+4)$. The outer length depends on the list and its sign
+margins. Example~\ref{ex:repelling} illustrates how later expansion
+can erase the entrance separation.
+
+\input{tex/return-geometry}
+
+\paragraph{Degree cost of a well.}
+De Maesschalck and Huzak use separated scales in their
+even-degree induction. Raising the degree by two preserves the simple
+zeros of their first-order integral and produces two more on the scale
+$x=X/\mu$, with $\mu\to0$
+\cite[\S3.1, Lemma~1]{DMH2015}.
+Our seed carries three ordered lists. At a new well the attracting path
+jumps from a minimum to an inner landing. Just above the maximum, the
+squared slope retained on the outer branch outweighs the entire
+action on the other side. Below the well and far above it this
+inequality reverses. These three levels extend the upper list by
+three changes and, with reversed comparison, the positive-entrance
+list by three. A negative flight traverses the whole profile and its
+integral supplies one opposite tail sign
+(Proposition~\ref{prop:well-step}). In decreasing physical ordinate the
+positive entrances precede the negative ones, with equal signs at the
+join. Closing this list at the exterior maximum realizes all seven
+additional cycles at a cost of two degrees.
+
+Section~\ref{sec:wells} constructs the seed and closes both parities.
+Its finite root and action inequalities are given there and in
+Appendix~\ref{app:cubic}. The electronic supplement supplies the
+standalone archive \texttt{certificates.tar.gz} for their exact replay.
+Section~\ref{sec:remote} reaches the same asymptotic coefficient with two
+fold windows at each prepared radius. In the opposite regime,
+Corollary~\ref{cor:intrinsic} bounds by $\lfloor(n-1)/2\rfloor$ the cycles
+on whose own horizontal projections the damping remains uniformly small.
+A field realizing the larger counts must exceed that threshold on the
+projection of at least one of its cycles.
+
+\input{tex/returns}
+\input{tex/transfer}
+\section{One-sided shallow wells}\label{sec:wells}
+\input{tex/octic-certificate}
+\input{tex/wells}
+\input{tex/parity-count}
+\input{tex/remote-powers}
+\appendix
+\input{tex/weak-return}
+\section{The split-cubic comparisons for the octic seed}\label{app:cubic}
+\input{tex/cubic-certificate}
+\section*{Declaration of generative AI and AI-assisted technologies in manuscript preparation}
+The author used OpenAI 6.2 Astra (via Codex) to explore candidate constructions, develop and check parts of the proofs, write reproducibility code, and revise the manuscript. Google Gemini 4 Carbon was used to critique draft manuscripts and identify issues in the arguments, presentation, and references. The author reviewed and revised the resulting material and takes full responsibility for the final manuscript.
+
+\input{tex/references}
+\end{document}

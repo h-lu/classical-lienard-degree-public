@@ -1,0 +1,4 @@
+fixed-diagnostic-field.json: the two action primitives agree in z. Mixed endpoints give a different value.
+outer-variant-field.json: the two action primitives agree in z. Mixed endpoints give a different value.
+Falling-interval endpoint variation equals minus the DMH primitive increment.
+For F=z^6+delta*z^5 at x=1, dI/ddelta at delta=0 is -4/3 and W(1)=2/3.

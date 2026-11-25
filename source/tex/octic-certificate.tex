@@ -1,0 +1,70 @@
+\subsection{The octic seed and its three sign lists}\label{subsec:octic-base}
+To place a balanced stationary inflection at $z=1$ in an even polynomial $E(z)$ of degree as small as eight while retaining the quadratic even germ $E(z)=\eta z^2+O(z^4)$ and cubic odd germ $C(z)=5\eta z^3+O(z^5)$ required by Proposition~\ref{prop:physical-quad}, write the unperturbed $u$-slope as $R(z)^2$ with $R(1)=0$. Balancing the first-order prefix action up to $z=1$ requires an odd profile $B(z)$ with $B(1)=0$ and $\int_0^1 R(z)^2 B'(z)\,\dd z=0$. Factoring $B(z)=R(z)V(z)$ with $V$ even gives $R^2 B'=R^2(R'V+RV')=\frac13(R^3V)'+\frac23 R^3 V'$; since $R(0)=R(1)=0$, integration by parts reduces $\int_0^1 R^2 B'\,\dd z=0$ to the single $R^3$-weighted moment $\int_0^1 R(z)^3 V'(z)\,\dd z=0$. This allows $R$ to begin in degree one while $B=RV$ begins in degree three.
+
+Explicitly, define the rational polynomials and constant
+\begin{equation}\label{eq:octic-polys}
+  \begin{aligned}
+    R(z) &= \tfrac32 z(1-z^2), &
+    B(z) &= 5z^3(1-z^2)\!\left(1-\tfrac{13}{10}z^2\right), &
+    H(z) &= z^5\!\left(1-\tfrac{65}{49}z^2\right),\\
+    D(z) &= 2 + \frac{304z^2-440z^4}{17}, &
+    Z(z) &= \frac{60166953}{4624}(z^2-z^4), &
+    g    &= \frac{147}{2}.
+  \end{aligned}
+\end{equation}
+Here $V(z)=\frac{10}{3}z^2(1-\frac{13}{10}z^2)$ has $V'(z)=\frac{20}{3}z(1-\frac{13}{5}z^2)$, whose two monomials cancel against $R(z)^3=\frac{27}{8}z^3(1-z^2)^3$ on $[0,1]$ because $\int_0^1 z^6(1-z^2)^3\,\dd z=\frac{5}{13}\int_0^1 z^4(1-z^2)^3\,\dd z$. For polynomials $U=\sum u_i z^i$ and $V=\sum v_j z^j$, use
+$\int_0^1 UV'\,\dd z=\sum_{i\ge0,\,j\ge1}u_i jv_j/(i+j)$.
+Substitution of~\eqref{eq:octic-polys} gives the exact identities
+\begin{equation}\label{eq:octic-moments}
+  \begin{gathered}
+    \int_0^1 R^2 B'\,\dd z = \int_0^1 R^2 H'\,\dd z = \int_0^1 D B'\,\dd z = 0,\qquad
+    4\int_0^1 (Z B' + g D H')\,\dd z = -9\cdot\frac{493}{2},\\
+    R_u(1/2) = -3,\qquad B_u(1/2) = 3,\qquad gH(1) = -24,\qquad D(1) = -6,
+  \end{gathered}
+\end{equation}
+where $h_u(u)$ denotes $\partial_u h(\sqrt{2u})=h'(z)/z$ at $z=\sqrt{2u}$. For $0<\eta\ll 1$, set
+\begin{equation}\label{eq:octic-family}
+  A(z) = R(z)^2 + \eta D(z) + \eta^{3/2} Z(z),\quad
+  E(z) = \int_0^z vA(v)\,\dd v,\quad
+  C(z) = \eta B(z) + g\eta^{3/2} H(z),
+\end{equation}
+and $G_s(z)=E(z)+sC(z)$. Since $D(0)=2$ and $Z(0)=0$, $E(z)=\eta z^2+O(z^4)$ has exact degree $\deg E=8$ with leading coefficient $[z^8]E=\frac{9}{32}>0$, and $C(z)=5\eta z^3+O(z^5)$ has exact degree $\deg C=7$ with leading coefficient $[z^7]C=\frac{13}{2}\eta+O(\eta^{3/2})>0$ for small $\eta>0$.
+
+\begin{lemma}[Balanced octic seed]\label{lem:octic-base}
+For all sufficiently small $\eta>0$ there are fixed profiles $G_s=E+sC$
+satisfying \textup{(H1)}--\textup{(H2)} and~\eqref{eq:quad-germs} with
+$\gamma_3=5$, $\deg E=8$, $[z^8]E=9/32$, $\deg C=7$, $[z^7]C>0$.
+Each side has precisely one maximum and one subsequent positive minimum.
+With $\xi=(-12,-7.62,-7.61,0,9.99,10.01,100,10^5)$, set
+$Y_i=E(1)+3\eta^{3/2}\xi_i$ for $0\le i\le7$, and $Y_*=33$.
+The nine positive levels are regular and ordered, and $Y_*$ is above all
+critical values. In increasing height the following signs hold simultaneously:
+\[
+\begin{array}{c|c|l}
+ &\text{samples}&\text{signs}\\ \hline
+ J_+^U-J_-^U &Y_0,\ldots,Y_7,Y_* &+,-,+,-,+,-,+,-,+\\
+ J_-^I-J_+^I &Y_0,Y_3,Y_6,Y_7,Y_* &-,+,-,+,-\\
+ N & w_0\text{ for a sufficiently large fixed }w_0>0 &-
+\end{array}
+\]
+\end{lemma}
+
+\begin{proof}
+Near $z=0$, $\partial_u G_s=A(z)+sC'(z)/z\ge c_1(z^2+\eta)>0$; away from $z=0$ and any fixed neighborhood of $z=1$ (including as $z\to\infty$), $R(z)^2$ dominates the $O(\eta)$ perturbations. In local coordinates $u=1/2+\sqrt\eta\,v$ and $Y=E(1)+3\eta^{3/2}\xi$, Taylor expansion using $R_u(1/2)^2=9$ and~\eqref{eq:octic-moments} shows that $(G_s(\sqrt{2u})-E(1))/(3\eta^{3/2})$ converges in $C^3$ on bounded $v$-intervals to
+\[
+  f_{\mathrm{oct},s}(v) = v^3 + (-2+s)v - 8s.
+\]
+Here $f_{\mathrm{oct},+}(v)=v^3-v-8$ and $f_{\mathrm{oct},-}(v)=v^3-3v+8$ are precisely the cubics $f_\pm$ of Lemma~\ref{lem:cubic-table}. Within a fixed neighborhood of $1/2$ but outside $|u-1/2|\le K_0\sqrt\eta$, the bound $R(z)^2\ge cK_0^2\eta$ for large fixed $K_0$ dominates the $O(\eta)$ slope perturbation, so each side $s=\pm 1$ acquires \emph{only} the two nondegenerate folds converging to those of $f_{\mathrm{oct},s}$ (with transverse landings converging to $-2k_\pm$), at heights tending to $\int_0^1 zR(z)^2\,\dd z=3/32>0$; in particular $G_s(z)>0$ for all $z>0$ and~(H1)--(H2) hold.
+
+Before jump deletions, the action difference up to $z=1$ is $\int_0^1 4A(z)C'(z)\,\dd z$. By~\eqref{eq:octic-moments}, its coefficients at $\eta$, $\eta^{3/2}$, and $\eta^2$ vanish identically, and its $\eta^{5/2}$ term equals $-9\Lambda\eta^{5/2}+O(\eta^3)$ ($\Lambda=493/2$). From $u=1/2$ to a local root $v$, integrating $(\partial_u G_s)^2\,\dd u$ contributes $9\eta^{5/2}P_{-2+s}(v)+o(\eta^{5/2})$, while the jump deletion and trapped upper stop converge to those in~\eqref{eq:cubic-actions}. Consequently, at each of the eight rational levels $\xi_m$ in Table~\ref{tab:cubic} (all regular after the indicated height rescaling, with $\xi_1=-7.62$ and $\xi_4=9.99$ inside the open fold windows $(\mu_+,M_+)$ and $(\mu_-,M_-)$, respectively),
+\[
+  J_+^X(E(1)+3\eta^{3/2}\xi_m) - J_-^X(E(1)+3\eta^{3/2}\xi_m) = 9\eta^{5/2} D_{\mathrm{cub}}^X(\xi_m) + o(\eta^{5/2})\qquad (X\in\{U,I\}).
+\]
+For small $\eta>0$, Lemma~\ref{lem:cubic-table} yields the eight upper signs $+,-,+,-,+,-,+,-$ of $J_+^U-J_-^U$ at $E(1)+3\eta^{3/2}\xi_m$ ($0\le m\le 7$) and, at the four indices $\xi\in\{-12,0,100,10^5\}$, the four signs $-,+,-,+$ of $J_-^I-J_+^I$.
+
+At the fixed height $Y_*=\int_0^2 zR(z)^2\,\dd z=33$ above all critical windows, expanding $v_s(Y_*)=2+O(\eta)$ as in Lemma~\ref{lem:tail-action}(i) gives $J_+^X(Y_*)-J_-^X(Y_*)=2\eta W_0(2)+O(\eta^{3/2})$ (since each local jump deletion is $O(\eta^{5/2})$), where
+\[
+  W_0(z) = \int_0^z\big(R(v)^2 B'(v) - (R(v)^2)' B(v)\big)\,\dd v = \frac{9}{8}z^5(z^2-1)^3(z^2-2),
+\]
+so $W_0(2)=1944>0$. Taking $\mathcal{Y}_U=\{E(1)+3\eta^{3/2}\xi_m:0\le m\le 7\}\cup\{Y_*\}$ and $\mathcal{Y}_I=\{E(1)+3\eta^{3/2}\xi: \xi\in\{-12,0,100,10^5\}\}\cup\{Y_*\}$ adds $+$ to $J_+^U-J_-^U$ ($8$ changes in total) and $-$ to $J_-^I-J_+^I$ ($4$ changes in total). Finally, since $[z^7]C>0$, Lemma~\ref{lem:tail-action}(i) gives $N(w_0)<0$ for a fixed large $w_0>0$.
+\end{proof}

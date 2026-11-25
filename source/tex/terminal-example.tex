@@ -1,0 +1,58 @@
+\begin{example}[Repelling passage with an oblique exit]\label{ex:repelling}
+To see the role of the margin $A-D$ in Lemma~\ref{lem:terminal-distortion},
+consider a time-dependent scalar equation, or equivalently its planar
+extension $\dot t=1$. Write $U=2+x$. Until $t=0$ take
+$\epsilon x'=-x$ and launch $x=q\in(0,1)$ at $t=-A+\delta y$,
+where $A>0$, $\delta\downarrow0$ and $\epsilon=o(\delta)$.
+The reference is $x=0$. On $0\le t\le1$ use
+$\epsilon x'=D x(1-x)$ with $D>0$. After $t=1$ take
+$\epsilon U'=-1$ and stop on the oblique line $U=\alpha+\gamma(t-1)$,
+with $0<\alpha<1$ and fixed $\gamma$. At $t=0$ the entering
+distance is $d_y=q e^{(-A+\delta y)/\epsilon}$. The exact logistic
+flow and the final straight flight give the terminal time gap
+\begin{equation}\label{eq:logistic-gap}
+ g_y=\frac{\epsilon}{1+\epsilon\gamma}\,
+        \frac{e^{D/\epsilon}d_y}{1+(e^{D/\epsilon}-1)d_y}.
+\end{equation}
+On the last flight $U-\alpha-\gamma(t-1)$ straightens the section and
+has uniformly negative fast velocity. On the repelling interval
+$(f_U)_+\le D$. Thus the lemma applies with a strictly positive
+margin for bounded $y$ when $D<A$.
+More precisely, for fixed $A,D$ and $y$,
+\[
+ \lim\frac{\epsilon}{\delta}\log(g_y/g_0)=
+ \begin{cases}
+ y,&D<A,\\
+ \min(y,0),&D=A,\\
+ 0,&D>A .
+ \end{cases}
+\]
+Indeed the denominator in~\eqref{eq:logistic-gap} is
+$1+q(1-e^{-D/\epsilon})e^{(D-A+\delta y)/\epsilon}$.
+At equality its logarithm, multiplied by $\epsilon/\delta$, tends to
+$\max(y,0)$. Above equality the denominators cancel the entire input
+slope. At $D=A$ a two-sided window of launches includes inputs wider
+than $q e^{-A/\epsilon}$ by the factor $e^{\delta y/\epsilon}$ for $y>0$.
+On the smaller bundle $0\le d\le d_0=q e^{-A/\epsilon}$, differentiating
+the passage in~\eqref{eq:logistic-gap} at $D=A$ gives
+\[
+  K'(0)/K'(d_0)=\big(1+q(1-e^{-A/\epsilon})\big)^2
+       \longrightarrow(1+q)^2.
+\]
+Thus the oscillation of
+$\epsilon\log K'$ at $D=A$ is
+$2\epsilon\log(1+q(1-e^{-A/\epsilon}))$. This is of order $\epsilon$,
+hence $o(\delta)$ on the smaller bundle. A nonnegative margin alone
+cannot guarantee exponential distortion control.
+
+For each sufficiently small $\epsilon>0$ a smooth planar field realizes
+the same gaps. Replace the two rates by
+smooth weights with disjoint time supports, equal to $1$ near the
+launch for the contracting rate, with integrals $A$ on $[-A,0]$
+and $D$ on $[0,1]$, respectively. After $t=1$ use fast velocity
+$-\chi((t-1)/\epsilon)$, with $\chi$ smoothly increasing from zero
+to one on $[0,1]$, constant outside. The common displacement during
+this ramp is at most one. Since $\alpha<1$, the ramp stays a fixed
+distance from the exit for small $\epsilon$. All hits occur on the
+following constant-speed flight and still satisfy~\eqref{eq:logistic-gap}.
+\end{example}

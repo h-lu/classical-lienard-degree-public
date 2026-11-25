@@ -1,0 +1,154 @@
+\section{A sharp bound in the weak full-return domain}\label{sec:weak}
+Lins, de Melo and Pugh describe a Poincar\'e construction realizing
+prescribed numbers of cycles for the classical equation in successive
+degrees~\cite[p.~336, account of \S3]{LMP1977}. The local small-amplitude
+problem for Li\'enard systems was studied by Zuppa, Blows and Lloyd,
+and Christopher and Lloyd~\cite{Zuppa1981,BL1984,CL1996}.
+For analytic damping Caubergh and Fran\c{c}oise give the triangular
+focus quantities. Modulo the preceding generators, the first surviving
+odd primitive coefficient determines the leading displacement.
+Their Proposition~8, Corollary~9 and Theorems~11--12 identify the return
+ideal and bound local cyclicity under the stated parameter hypotheses.
+The polynomial family of Theorem~12 has zero constant damping~\cite{CF2004}.
+
+There is already quantitative information on the return domain.
+Fran\c{c}oise studies damping $\sum_{j=1}^{D}\lambda_jx^j$, whose
+primitive has degree at most $D+1$ and whose constant damping vanishes.
+The even damping coefficients generate his Bautin ideal. He obtains a
+coefficient-weighted convergence radius and a bound for complex cycles
+in an explicit disc~\cite[Theorems~1.1, 2.3 and 3.8, (3.18)]{Fr2002}.
+For damping of exact degree $2\ell-1$, Caubergh and Dumortier bound
+the number of cycles meeting the exterior of a sufficiently large disk
+by $\ell$, uniformly on each compact coefficient family of that exact
+degree. They also obtain a uniform finite bound on the total number
+for such a family~\cite[Theorems~1--2]{CD2008}. Their cyclicity
+estimate for the two-saddle cycle at infinity uses division and
+differentiation~\cite[\S8, Theorem~9]{CD2008}.
+
+Cao, Chen and Tang give criteria for at most two cycles on bounded
+potential or half-width intervals with additional profile conditions
+\cite[Theorems~1.8--1.9]{CCT2026}.
+
+Here the linear coefficient of $F$ may vary. We bound real positive
+return zeros with multiplicity on an explicit full interval of heights
+for a single field by controlling the successive Wronskians there.
+
+At height $h$ the change of coordinates $(x,y)=h(X,Y)$ sends the coefficients to
+$(a_jh^{j-1})_{j=1}^n$. The following radius controls all heights of one polynomial
+for which this scaled vector is small. Put
+\begin{equation}\label{eq:weak-defs}
+  \sigma_a(h)=\sum_{j=1}^n |a_j|h^{j-1},\quad
+  \rho=2^{-(n+6)},\quad
+  L_d=(d+1)!(d+1)2^d,\quad
+  \delta_n=\frac{\rho^2}{72(n+2)d!\,L_d\,n^{d(d+1)/2}},
+\end{equation}
+where $d=\lfloor(n-1)/2\rfloor$, and denote by $\Pi_a(h)$ the first-return height from $(0,h)$ to the positive $y$-semiaxis whenever defined.
+
+\begin{theorem}[Sharp ceiling in the weak full return]\label{thm:weak}
+Let $n=\deg F\ge 1$ and $d=\lfloor(n-1)/2\rfloor$.
+\begin{enumerate}
+  \item[\textup{(i)}] At every height $h>0$ satisfying $\sigma_a(h)\le\delta_n$, the full return $\Pi_a(h)$ exists and depends real-analytically on $h$ and $a$.
+  \item[\textup{(ii)}] If $F$ has a nonzero odd part, then $\Pi_a(h)-h$ has at most $d$ zeros across the entire set $\{h>0:\sigma_a(h)\le\delta_n\}$ in that single field, counted with multiplicity.
+  \item[\textup{(iii)}] For every $n\ge 1$, the weak domain $\{h>0:\sigma_a(h)\le\delta_n\}$ can contain $d$ distinct hyperbolic limit cycles in a single field of exact degree $n$; for $n\ge 2$ the first odd perturbation in an analytic realization $F_\eps$ can be delayed to any prescribed order $\ell\ge 2$ while an even leading term enters at order~$\eps$.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}[Intrinsic orbit-damping threshold]\label{cor:intrinsic}
+Put $C_n=(4n)^n/n!$ and $\kappa_n=\delta_n/(2^{n-1}C_n)$. In any single field~\eqref{eq:lienard} of exact degree $n\ge 1$, at most $\lfloor(n-1)/2\rfloor$ isolated periodic orbits $\Gamma$ satisfy $\sup_{x\in I_\Gamma}|F'(x)|\le\kappa_n$ on their own horizontal projection $I_\Gamma=x(\Gamma)$.
+\end{corollary}
+
+\noindent Thus if a field has $k>d$ isolated cycles, at least $k-d$ of
+them have $|F'|>\kappa_n$ somewhere on their own horizontal projections.
+
+\begin{lemma}[Variation kernel at a fixed reversible center]\label{prop:center-kernel}
+Let $E\in\R[x]$ be an even polynomial with $E(0)=0$ whose field $X_E$ possesses a periodic orbit crossing the positive $y$-axis at $(0,H)$, $H>0$. On any nonempty open subinterval of $(0,H]$, the kernel of the first-variation operator $G\mapsto \partial_\lambda\big(\Pi_{E+\lambda G}(h)-h\big)\big|_{\lambda=0}$ on $\{G\in\R[x]:G(0)=0\}$ consists precisely of even polynomials $G$.
+\end{lemma}
+\subsection{Holomorphic factorization around the reversible subspace}\label{subsec:weak-factor}
+Fix $n\ge 1$ and $F(x)=\sum_{j=1}^n a_j x^j$. Rescaling $(x,y)=(hX,hY)$ for $h>0$ replaces $a_j$ by $b_j=a_j h^{j-1}$ and sends $(0,h)$ to $(0,1)$. In clockwise polar coordinates $X=r\sin\theta$, $Y=r\cos\theta$, put $Q(r,\theta)=\sum_{j=1}^n b_j r^{j-1}\sin^j\theta$; then~\eqref{eq:lienard} becomes
+\begin{equation}\label{eq:polar-ode}
+  \dot\theta = 1 - \cos\theta\,Q(r,\theta),\qquad
+  \frac{\dd r}{\dd\theta} = -\frac{r\sin\theta\,Q(r,\theta)}{1-\cos\theta\,Q(r,\theta)},\qquad r(0)=1.
+\end{equation}
+On the complex $\ell^1$ ball $\|b\|_1=\sum_{j=1}^n |b_j|<\rho=2^{-(n+6)}$ and the disk $|r|\le 2$, we have $|Q(r,\theta)|\le 2^{n-1}\|b\|_1<2^{-7}=1/128$ for all $\theta\in[0,2\pi]$, hence $|1-\cos\theta\,Q|\ge 127/128$ and $|\dd r/\dd\theta|\le 2(1/128)/(127/128)=2/127$. Continuation over $\theta\in[0,2\pi]$ keeps $|r(\theta)-1|\le 4\pi/127<1/4$, well inside $|r|\le 2$. Write $D(b)=r(2\pi;b)-1$ for the scaled displacement over a full turn.
+The earlier $\D(h)$ compares the two half-return magnitudes.
+By holomorphic parameter dependence for regular ODEs, $D$ is holomorphic on $\{\|b\|_1<\rho\}$ with $|D(b)|<1/4$. For real $b$ in this ball, $\dot\theta\ge 127/128>0$, so the scaled orbit completes one clockwise turn to $\theta=2\pi$ and
+\begin{equation}\label{eq:disp-scale}
+  \Pi_a(h) - h = h\,D\!\left((a_j h^{j-1})_{j=1}^n\right).
+\end{equation}
+
+\paragraph{Reversible periodic orbits.} Suppose $F$ is an even polynomial (at \emph{any} amplitude, not necessarily inside $\|b\|_1<\rho$). The reflection $S(x,y)=(-x,y)$ satisfies $X_F(S(x,y))=-DS\,X_F(x,y)$ because $F(-x)=F(x)$. Every forward right-half-plane arc from $(0,h)$ that reaches $(0,-w)$ ($w>0$) therefore closes into a periodic orbit when followed by its time-reversed reflection in $x<0$; since both axis hits $(0,h)$ and $(0,-w)$ are transverse, every nearby height $h'$ also reaches $\Sigma_-$ and closes by reflection. Taking a periodic orbit $\Gamma$ of $X_F$, Lemma~\ref{lem:half-returns}(i) gives its unique positive-$y$ crossing $(0,h)$, and its forward arc hits $\Sigma_-$ before returning (its $y$-minimum is negative on $x=0$ and $\Gamma$ meets $\Sigma_+$ only once), so $\Gamma$ lies in an open period annulus. 
+
+In particular, for every real even vector $b_{\mathrm{ev}}$ in $\{\|b\|_1<\rho\}$ (meaning $b_{2k+1}=0$ for all $k$), $D(b_{\mathrm{ev}})=0$, which extends to all complex even vectors in $\{\|b\|_1<\rho\}$ by the identity theorem. Write $b=b_{\mathrm{ev}}+b_{\mathrm{od}}$ where $b_{\mathrm{od}}$ retains the odd indices $2k+1$ ($0\le k\le d=\lfloor(n-1)/2\rfloor$). Differentiating~\eqref{eq:polar-ode} with respect to $b_j$ at $b=0$ (where $r\equiv 1$) gives $\partial_{b_j}r(2\pi;0)=-\int_0^{2\pi}\sin^{j+1}\theta\,\dd\theta$, which vanishes for even $j$ and equals $-2\pi c_k$ for $j=2k+1$, where
+\begin{equation}\label{eq:sine-moments}
+  c_k = \frac{1}{2\pi}\int_0^{2\pi}\sin^{2k+2}\theta\,\dd\theta = 4^{-(k+1)}\binom{2k+2}{k+1} > 0.
+\end{equation}
+Integrating along the segment $s\mapsto b_{\mathrm{ev}}+s b_{\mathrm{od}}$ ($s\in[0,1]$) from $D(b_{\mathrm{ev}})=0$ yields the exact holomorphic factorization
+\begin{equation}\label{eq:D-factor}
+  D(b) = \sum_{k=0}^d b_{2k+1} G_{2k+1}(b),\qquad
+  G_{2k+1}(b) = \int_0^1 (\partial_{b_{2k+1}}D)(b_{\mathrm{ev}}+s b_{\mathrm{od}})\,\dd s,
+\end{equation}
+with $G_{2k+1}(0)=-2\pi c_k$. For $\|b\|_1\le\rho/2$, varying one coordinate $b_i$ on a complex disk of radius $\rho/4$ stays inside $\{\|\tilde b\|_1<3\rho/4<\rho\}$ where $|D|<1/4$; Cauchy's integral estimate gives $|\partial_{b_i}D|\le (1/4)/(\rho/4)=1/\rho$ on $\{\|b\|_1\le\rho/2\}$, hence $|G_{2k+1}(b)|\le 1/\rho$ there. Applying Cauchy's estimate a second time on coordinate disks of radius $\rho/4$ around points of $\{\|b\|_1\le\rho/4\}$ gives $|\partial_{b_i}G_{2k+1}|\le 4/\rho^2$ on $\{\|b\|_1\le\rho/4\}$. Integrating along the ray from $0$ to $b$ in the $\ell^1$ norm yields
+\begin{equation}\label{eq:G-lip}
+  |G_{2k+1}(b) - G_{2k+1}(0)| \le \frac{4\|b\|_1}{\rho^2}\qquad (\|b\|_1\le\rho/4).
+\end{equation}
+
+\begin{remark}[First nonzero odd jet]\label{rem:odd-jet}
+If $a(\eps)$ depends analytically on $\eps$ near $0$ with $F_0=0$ and its first nonzero odd coefficient polynomial $O(x)=\sum_{k=0}^d o_{2k+1}x^{2k+1}$ enters at order $\eps^\ell$ ($\ell\ge 1$), then~\eqref{eq:disp-scale}--\eqref{eq:G-lip} give $(\Pi_{a(\eps)}(h)-h)/h=-2\pi\eps^\ell\sum_{k=0}^d c_k o_{2k+1}h^{2k}+O_R(\eps^{\ell+1})$ uniformly on $0<h\le R$: all earlier even jets contribute identically zero to the displacement. In particular, for $F_\eps=\eps f$, cancellation of the first-order displacement on an open height interval forces every odd coefficient of $f$ to vanish.
+\end{remark}
+
+\subsection{Counting zeros on the whole height interval}\label{subsec:weak-wronskian}
+
+\begin{proof}[Proof of Theorem~\ref{thm:weak}\textup{(i),(ii)}]
+Since $\delta_n<\rho/12<\rho$ in~\eqref{eq:weak-defs}, part~(i) already holds on $\{h>0:\sigma_a(h)\le\delta_n\}$, which, when nonempty, is an interval $(0,h_{\max}]$ or $(0,\infty)$ because $\sigma_a(h)$ is nondecreasing in $h>0$. Assume $F$ has a nonzero odd part. Setting $h=e^t$ ($t\in\R$ with $\sigma_a(e^t)\le\delta_n$), formulas~\eqref{eq:disp-scale} and~\eqref{eq:D-factor} write $(\Pi_a(e^t)-e^t)/e^t=\sum_{k=0}^d a_{2k+1} f_k(t)$, where
+\[
+  f_k(t) = e^{2kt} G_{2k+1}\!\left((a_j e^{(j-1)t})_{j=1}^n\right),\qquad 0\le k\le d.
+\]
+We prove that for every $1\le q\le d+1$, the Wronskian $W(f_0,\dots,f_{q-1})(t)=\det\big(f_k^{(r)}(t)\big)_{0\le r,k<q}$ is nonzero at every real $t$ with $\sigma:=\sigma_a(e^t)\le\delta_n$.
+
+Fix such a real $t$. On the complex disk $|\zeta|\le 1/n$, since $j-1\le n-1$ and $2k\le n-1$, we have $|e^{(j-1)\zeta}|\le e^{(n-1)/n}<3$ and $|e^{2k\zeta}|\le e^{(n-1)/n}<3$. Hence $\|b(e^{t+\zeta})\|_1\le 3\sigma\le 3\delta_n<\rho/4$. Writing $f_k(t+\zeta)=e^{2kt}\big[G_{2k+1}(0)e^{2k\zeta}+e^{2k\zeta}\big(G_{2k+1}(b(e^{t+\zeta}))-G_{2k+1}(0)\big)\big]$, estimate~\eqref{eq:G-lip} bounds the holomorphic remainder inside the bracket on $|\zeta|\le 1/n$ by $3\cdot 4(3\sigma)/\rho^2=36\sigma/\rho^2$. Applying Cauchy's derivative bound of order $r\le d$ at $\zeta=0$ on the disk of radius $1/n$ shows that after dividing column $k$ of $W(f_0,\dots,f_{q-1})(t)$ by $e^{2kt}G_{2k+1}(0)$ and row $r$ by $n^r$, the $(r,k)$ entry $M_{r,k}$ differs from $(2k/n)^r$ by at most
+\[
+  \eta := \frac{36\,r!\,\sigma}{|G_{2k+1}(0)|\,\rho^2} \le \frac{36(n+2)d!\,\sigma}{\rho^2},
+\]
+where we used $2\pi c_k>4^{-(k+1)}\binom{2k+2}{k+1}\ge 1/(2k+3)\ge 1/(n+2)$ because the central binomial coefficient is at least the average of the $2k+3$ binomial coefficients in row $2k+2$, whose sum is $4^{k+1}$. By~\eqref{eq:weak-defs}, $\eta\le 1/\big(2L_d n^{d(d+1)/2}\big)<1$. The limiting $q\times q$ Vandermonde determinant is
+\[
+  \det\!\left(\Big(\frac{2k}{n}\Big)^r\right)_{0\le r,k<q} = \prod_{0\le i<k<q}\frac{2(k-i)}{n} \ge n^{-q(q-1)/2} \ge n^{-d(d+1)/2},
+\]
+and every limiting entry satisfies $|(2k/n)^r|\le 1$. In each of the $q!$ permutation products of $\det M$, telescoping $\prod_{r=0}^{q-1} M_{r,\pi(r)} - \prod_{r=0}^{q-1}(2\pi(r)/n)^r$ bounds the total determinant perturbation by $q!\,q(1+\eta)^{q-1}\eta \le (d+1)!(d+1)2^d\eta = L_d\eta \le \tfrac12 n^{-d(d+1)/2}$, at most half the Vandermonde lower bound. Thus $\det M\neq 0$, and since $e^{2kt}G_{2k+1}(0)\neq 0$, $W(f_0,\dots,f_{q-1})(t)\neq 0$ for all $1\le q\le d+1$ (extending slightly past $h_{\max}$ by continuity so any zero at $h_{\max}$ lies inside an open nonvanishing Wronskian interval).
+
+Now factor $f_0\neq 0$ out of $W(f_0,\dots,f_s)$: multilinearity and column expansion along the first column $(1,0,\dots,0)^\top$ give $W\big((f_1/f_0)',\dots,(f_s/f_0)'\big)=W(f_0,\dots,f_s)/f_0^{s+1}\neq 0$. By induction on $d$ using Rolle's theorem with multiplicities after dividing by $f_0$, any nontrivial linear combination $\sum_{k=0}^d a_{2k+1} f_k(t)$ has at most $d$ real zeros counted with multiplicity on the admissible $t$-interval. Since $h\mapsto\log h$ is a real-analytic diffeomorphism and the prefactor $h=e^t$ is positive, $\Pi_a(h)-h$ has at most $d$ zeros counted with multiplicity on $\{h>0:\sigma_a(h)\le\delta_n\}$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:intrinsic}]
+Let $\Gamma$ be an isolated periodic orbit of~\eqref{eq:lienard} satisfying $\sup_{x\in I_\Gamma}|F'(x)|\le\kappa_n$. Set $A=\max_{(x,y)\in\Gamma}|x|>0$ and pick $s\in\{\pm 1\}$ with $sA\in I_\Gamma$. Since $(0,0)$ lies inside $\Gamma$, $[0,sA]\subset I_\Gamma$, so for every $t\in[0,1]$ the mean value theorem gives $|F(sAt)/A|\le t\sup_{I_\Gamma}|F'|\le\kappa_n$. Interpolating the polynomial $p(t)=F(sAt)/A=\sum_{j=1}^n (a_j s^j A^{j-1})t^j$ of degree at most $n$ at the $n+1$ nodes $t_i=i/n$ ($0\le i\le n$), each linear factor $nt-m$ ($m\neq i$) in the numerator of the $i$-th Lagrange basis polynomial $\ell_i(t)=\prod_{m\neq i}\frac{nt-m}{i-m}$ has coefficient $\ell^1$ sum $n+m\le 2n$, so $\|\ell_i\|_1\le\frac{(2n)^n}{i!(n-i)!}$; summing over $0\le i\le n$ gives $\sum_{i=0}^n\|\ell_i\|_1\le \frac{(2n)^n}{n!}\sum_{i=0}^n\binom{n}{i}=\frac{(4n)^n}{n!}=C_n$. Hence $\sigma_a(A)=\|p\|_1\le C_n\sup_{[0,1]}|p|\le C_n\kappa_n$. At the horizontal extremum $(sA,y_*)\in\Gamma$, $\dot x=0$ forces $y_*=F(sA)$, so $|y_*|/A\le\kappa_n<1/2$; rescaling~\eqref{eq:polar-ode} by $A$ instead of $h$ starts at radius $r_*\le\sqrt{1+\kappa_n^2}<3/2$ with $\|b(A)\|_1=\sigma_a(A)<\rho$, so $|\dd r/\dd\theta|\le 2/127$ up to the positive-$y$ crossing $(0,h_\Gamma)$ keeps $h_\Gamma/A<3/2+2\pi(2/127)<2$, i.e., $h_\Gamma<2A$. Therefore $\sigma_a(h_\Gamma)\le 2^{n-1}\sigma_a(A)\le 2^{n-1}C_n\kappa_n=\delta_n$. Every such orbit $\Gamma$ thus crosses $\Sigma_+$ inside $\{h>0:\sigma_a(h)\le\delta_n\}$, where Theorem~\ref{thm:weak}(ii) bounds the total count by $d$.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{prop:center-kernel}]
+By Lemma~\ref{lem:half-returns}(i) and reflection across the vertical axis, every $h\in(0,H]$ closes into an even-symmetric periodic orbit of $X_E$ whose right half-arc reaches $\Sigma_-$ transversely (any right arc failing to hit $\Sigma_-$ stays bounded inside the outer orbit $\Gamma_H$ and cannot approach $(0,0)$ since $E(x)=O(x^2)$ gives $E'(0)=0$, hence polar speed $\dot\varphi\to -1$). Thus $\Pi_{E+\lambda G}(h)$ is real-analytic in $(h,\lambda)$ on $(0,H]\times(-\lambda_0,\lambda_0)$ for small $\lambda_0$ on each compact subinterval of $(0,H]$, with $\Pi_{E+\lambda G}(h)\equiv h$ whenever $G$ is even. Conversely, if $G(0)=0$ has a nonzero odd part with lowest odd term $g_{2k+1}x^{2k+1}$ ($g_{2k+1}\neq 0$), choose $N\ge\max(\deg E,\deg G)$ and apply~\eqref{eq:disp-scale}--\eqref{eq:G-lip} at degree cutoff $N$ for sufficiently small $h>0$, where $\sigma_E(h)=O(h)\to 0$ because $E(x)=O(x^2)$ has zero linear term. Differentiating $\lambda\mapsto h D\big(((e_j+\lambda g_j)h^{j-1})_{j=1}^N\big)$ at $\lambda=0$ using $D(b_{\mathrm{ev}})\equiv 0$ and $G_{2m+1}(b_E(h))=-2\pi c_m+O(h)$ gives
+\[
+  \left.\partial_\lambda\big(\Pi_{E+\lambda G}(h)-h\big)\right|_{\lambda=0} = \sum_{m\ge k} g_{2m+1} h^{2m+1} G_{2m+1}(b_E(h)) = -2\pi c_k g_{2k+1} h^{2k+1} + o\!\left(h^{2k+1}\right) \neq 0
+\]
+as $h\downarrow 0$. Since $h\mapsto\partial_\lambda(\Pi_{E+\lambda G}(h)-h)|_{\lambda=0}$ is real-analytic on $(0,H]$, it cannot vanish on any nonempty open subinterval of $(0,H]$.
+\end{proof}
+
+\subsection{Attainment with a delayed odd perturbation}\label{subsec:weak-sharp}
+
+\begin{proof}[Proof of Theorem~\ref{thm:weak}\textup{(iii)}]
+For $n=1$ ($d=0$), $F(x)=\eps x$ with $0<\eps<\delta_1$ has $\sigma_a(1)=\eps<\delta_1$ and zero closed orbits. For $n\ge 2$ and any integer $\ell\ge 2$, choose $0<h_1<\dots<h_d<R=1$ (empty if $n=2$, $d=0$) and put $q(u)=\prod_{i=1}^d(u-h_i^2)=\sum_{k=0}^d q_k u^k$. Define
+\begin{equation}\label{eq:weak-realize}
+  F_\eps(x) = \eps x^{2\lfloor n/2\rfloor} + \eps^\ell\sum_{k=0}^d \frac{q_k}{c_k}\,x^{2k+1}\qquad (\eps>0).
+\end{equation}
+Since $q_d=1\neq 0$, the highest even and odd powers of $F_\eps$ are $2\lfloor n/2\rfloor$ and $2d+1=2\lfloor(n-1)/2\rfloor+1$, whose maximum is identically $n$ for every $\eps>0$. By~\eqref{eq:disp-scale}--\eqref{eq:G-lip}, for $\eps>0$ small enough that $\sigma_{F_\eps}(1)\le\delta_n$, we have
+\begin{equation}\label{eq:weak-cauchy-err}
+  \left|\frac{\Pi_{F_\eps}(h)-h}{h\eps^\ell} + 2\pi q(h^2)\right| \le \frac{4\,\sigma_{F_\eps}(h)}{\rho^2}\sum_{k=0}^d\left|\frac{q_k}{c_k}\right|h^{2k} = O(\eps)\qquad (0<h\le 1).
+\end{equation}
+On $d$ disjoint brackets $[h_i-\nu,h_i+\nu]\subset(0,1)$ around the simple roots $h_i$ of $q(h^2)$, $\Pi_{F_\eps}(h)-h$ therefore has opposite strict endpoint signs simultaneously for one small $\eps>0$. Since the total zero multiplicity on $(0,1]$ is at most $d$ by Theorem~\ref{thm:weak}(ii), each bracket contains \emph{exactly one} zero, which must be simple. By~\eqref{eq:polar-ode}, the scalar angular variational equation gives $\Pi_{F_\eps}'(h)>0$, so simplicity $(\Pi_{F_\eps}-I)'(r_i)\neq 0$ implies $\Pi_{F_\eps}'(r_i)\neq 1$, giving $d$ simultaneous hyperbolic limit cycles inside $\{h>0:\sigma_{F_\eps}(h)\le\delta_n\}$ (and satisfying Corollary~\ref{cor:intrinsic} for small $\eps$).
+\end{proof}
+
+\begin{remark}[Dilation]
+For $B(0)=B'(0)=0$ set $F_\eps(x)=B(\eps x)/\eps$.
+Its coefficients tend to zero. The map $(x,y)\mapsto(\eps x,\eps y)$
+takes its field to that of $B$, preserving multipliers. An orbit at height
+$H$ for $B$ has height $H/\eps$ for $F_\eps$ and
+$\sigma_{F_\eps}(H/\eps)=\sigma_B(H)$. Thus a cycle outside the weak
+domain stays outside under dilation.
+\end{remark}

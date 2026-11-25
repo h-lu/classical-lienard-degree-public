@@ -1,0 +1,82 @@
+\subsection{Assembly at exact degree}\label{subsec:prove-asymptotic}
+Write $t$ for the number of well insertions. The two assemblies also
+work for $t=0$, when they use only the original seed.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main-asymptotic} and Corollary~\ref{cor:octic-low}]
+
+Fix the profile of Lemma~\ref{lem:octic-base}, including its parameter $\eta$
+and the three finite lists. For each of $t$ insertions choose the model
+parameter and its regular samples first. Choose the new radius only after
+fixing all earlier radii and samples. Proposition~\ref{prop:well-step}
+then preserves their strict inequalities. After $t$ insertions at radii
+$Q_1\ll\dots\ll Q_t$ this gives normalized profiles $(E,C)$ of degrees $(8+2t,7+2t)$ with top odd sign $\beta=(-1)^t$. At this stage:
+\begin{itemize}
+  \item In increasing $Y$, $J_+^U-J_-^U$ starts $+$, has $8+3t$ changes, and ends $+\beta$;
+  \item In increasing $Y$, $J_-^I-J_+^I$ starts $-$, has $4+3t$ changes, and ends $-\beta$;
+  \item In increasing $w>0$ (i.e.\ decreasing ordinate $-Sw$), $N(w)$ starts $-$, has $t$ changes, and ends $-\beta$.
+\end{itemize}
+
+\emph{Odd output degree.}
+Let $n=11+2t$ with $t\ge0$. Keep the degrees $(m',j)=(8+2t,7+2t)$,
+so $g=m'-j=1$ and $p=2-g=1$. Fix $T$ above the samples and critical
+values. Proposition~\ref{prop:physical-quad} realizes all lists for the
+same large $L$ at a matched upper reference $ST$. Detune its zero to
+sign $-\beta$ within an arbitrarily small interval about $a_L$, keeping
+the incoming signs fixed. Proposition~\ref{prop:sard}(i) gives a
+polynomial $P$ with $q=9+3t$ compact hyperbolic cycles.
+\hypertarget{octic-core}{At $t=0$}, $P$ itself has exact degree eight:
+the eight changes from Lemma~\ref{lem:octic-base} and the detuned reference
+give nine hyperbolic cycles before the exterior transfer. Its top even
+coefficient is positive and its top odd coefficient $b$ has sign $\beta$.
+
+Read the entrance ordinates in decreasing order. Reversing the positive
+list preserves its $4+3t$ changes and leaves its sign at the lowest
+positive ordinate equal to $-1$. The negative list begins with $-1$,
+has $t$ changes and ends with $-\beta$. Thus the join adds zero changes
+and the whole list has $r=4+4t$. Its last sign $-\beta$ is opposite to
+the direct sign $\sgn(bp)=\beta$. Proposition~\ref{prop:cap-transfer}
+therefore gives exact degree $\max(m'+2,j+4)=11+2t$ and at least
+\[
+                 q+r+2=(9+3t)+(4+4t)+2=15+7t
+\]
+simultaneous hyperbolic cycles. \hypertarget{odd-closure}{Thus $t=0$ and
+$t=1$ give fifteen at degree eleven and twenty-two at degree thirteen.}
+
+\emph{Even output degree.}
+Let $n=12+2t$ with $t\ge0$. Before choosing $L$, add $\mu z^{m+2}$ to
+$E$, where $m=8+2t$ and $\mu>0$ is sufficiently small. Now
+$(m',j)=(10+2t,7+2t)$, $g=3$ and $p=-1$. Lemma~\ref{lem:tail-action}
+preserves the finite lists. At a new large regular level
+$Y_{\mathrm{far}}=E_{\mathrm{new}}(R)$, formula~\eqref{eq:tail-action}
+appends $-\beta$ to the upper list and $+\beta$ to the positive
+entrance list. They now have $9+3t$ and $5+3t$ changes respectively.
+Use Proposition~\ref{prop:physical-quad} at a common large $L$ and
+detune the upper reference to sign $+\beta$. Proposition~\ref{prop:sard}(i)
+gives $q=10+3t$ compact hyperbolic cycles. At $t=0$ this intermediate
+polynomial has exact degree ten and gives the ten-cycle entry of
+Corollary~\ref{cor:octic-low}. As above, joining the reversed
+positive list to the negative list adds zero changes. The resulting list
+has $5+4t$ changes and ends with $-\beta$.
+
+Choose a nonzero shift $\Delta$ of sign $-\beta$ small enough to keep
+these strict entrance signs at every fixed ordinate. Only now append
+$y_{\mathrm{tail}}=-w$ for sufficiently large $w$.
+Lemma~\ref{lem:incoming-rays}(iii) gives
+\[
+        I_{+,P}(-w)-I_{-,P}(-w-\Delta)=-\Delta+o(1).
+\]
+Its sign is $+\beta$, opposite to the preceding sign and to the direct
+sign $\sgn(bp)=-\beta$. Thus $r=6+4t$ and
+Proposition~\ref{prop:cap-transfer} gives exact degree
+$\max(m'+2,j+4)=12+2t$ and at least
+\[
+                  q+r+2=(10+3t)+(6+4t)+2=18+7t
+\]
+simultaneous hyperbolic cycles. At $t=0$ this exterior closure gives
+eighteen at degree twelve. The nineteen-cycle bound in Theorem~S1.1
+of the supplement uses a separate joint match.
+
+For even $n\ge14$ take $t=(n-12)/2$, and for odd $n\ge15$ take
+$t=(n-11)/2$. These substitutions give~\eqref{eq:parity-bounds},
+starting with $25$ and $29$ cycles respectively. Hyperbolic persistence gives the open sets in Theorem~\ref{thm:main-asymptotic}.
+\end{proof}

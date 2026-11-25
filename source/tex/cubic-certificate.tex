@@ -1,0 +1,45 @@
+\subsection{Retained actions of a split stationary inflection}\label{subsec:cubic}
+The same pair of cubic graphs describes the splitting inflection in the octic and sextic-based constructions. The truncation at an inner landing affects only launches inside an open fold window.
+
+For $a=-3k^2<0$ ($k=\sqrt{-a/3}>0$) and $b\in\R$, the cubic $f(v)=v^3+av+b$ has a local maximum $M=b+2k^3$ at $v=-k$, a local minimum $\mu=b-2k^3$ at $v=k$, and rising-branch landing $v=-2k$ solving $f(-2k)=\mu$. Let $P_a(v)=\int_0^v (3r^2+a)^2\,\dd r=\tfrac95 v^5+2av^3+a^2v$, which is strictly increasing on $\R$ since $P_a'(v)=(f'(v))^2\ge 0$. For $\xi\notin\{\mu,M\}$, let $v(\xi)$ be the largest real root of $f(v)=\xi$, and define the incoming and upper cubic actions
+\begin{equation}\label{eq:cubic-actions}
+  J_{a,b}^I(\xi) = P_a(v(\xi)) - \ind_{\{\xi>\mu\}}\big(P_a(k)-P_a(-2k)\big),\qquad
+  J_{a,b}^U(\xi) = \begin{cases}
+    P_a(-2k), & \mu<\xi<M,\\
+    J_{a,b}^I(\xi), & \xi\notin[\mu,M].
+  \end{cases}
+\end{equation}
+Put $\Lambda=493/2$ and define the equal-weight cubic differences
+\begin{equation}\label{eq:D-cub}
+  D_{\mathrm{cub}}^X(\xi) = J_{-1,-8}^X(\xi) - J_{-3,8}^X(\xi) - \frac{493}{2},\qquad X\in\{U,I\}.
+\end{equation}
+
+\begin{lemma}[Certified signs of the split-cubic comparison]\label{lem:cubic-table}
+At the eight rational levels $\xi_0<\dots<\xi_7$ in Table~\ref{tab:cubic}, every $\xi_m$ lies outside both critical sets $\{\mu_\pm,M_\pm\}$ of $f_+(v)=v^3-v-8$ ($[\mu_+,M_+]=[-8-\tfrac{2}{3\sqrt3},-8+\tfrac{2}{3\sqrt3}]\approx[-8.3849,-7.6151]$) and $f_-(v)=v^3-3v+8$ ($[\mu_-,M_-]=[6,10]$), and $D_{\mathrm{cub}}^U(\xi_m)$ belongs to the listed open rational intervals, alternating $+,-,+,-,+,-,+,-$ ($7$ changes). Moreover, at the four indices $m\in\{0,3,6,7\}$ ($\xi\in\{-12,0,100,10^5\}$), $\xi_m\notin[\mu_+,M_+]\cup[\mu_-,M_-]$, so $D_{\mathrm{cub}}^I(\xi_m)=D_{\mathrm{cub}}^U(\xi_m)$ alternates $+,-,+,-$ ($3$ changes).
+\end{lemma}
+
+\input{tex/cubic-table}
+
+\begin{proof}
+Take $N=10^5$. Squaring gives $57735/N<k_+=1/\sqrt3<57736/N$,
+and $k_-=1$. From $M=b+2k^3$, $\mu=b-2k^3$ we obtain
+$\mu_+\in(-8.385,-8.384)$, $M_+\in(-7.616,-7.615)$, and
+$[\mu_-,M_-]=[6,10]$. For each integer $j_s$ in the table,
+\[
+ f_s(j_s/N)<\xi<f_s((j_s+1)/N).
+\]
+Both ends lie on the increasing outer branch above the window, or on
+the increasing inner branch below it. These rational comparisons
+enclose the required root. To read off the action, use $P_a$ at the two
+endpoints. Above the window subtract
+$P_a(k)-P_a(-2k)=162k^5/5$ from both bounds, using the indicated
+enclosure of $k$ outwards. Below it use $P_a$ directly. At L an upper
+launch reaches the inner landing and contributes $P_a(-2k)=-138k^5/5$.
+Subtract the minus interval from the plus interval and then subtract
+$493/2$ as in~\eqref{eq:D-cub}. For example at $-7.62$ the plus
+contribution is the landing value and the minus root lies between
+$-289690/N$ and $-289689/N$. The resulting interval lies inside
+$(-0.838,-0.832)$. The same endpoint substitutions give the two bound
+rows. At the four indicated levels both launches retain identical
+pieces on each side.
+\end{proof}

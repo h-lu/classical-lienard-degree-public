@@ -1,0 +1,85 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth, font=\small, scale=0.95]
+  % Left panel: three inner regimes
+  \begin{scope}[shift={(0,0)}]
+    \node[anchor=south, font=\bfseries\small] at (2.85,3.92) {(a) Launches and incoming trajectories};
+    \draw[->,gray] (0,-1.05) -- (0,3.45) node[above,black] {$t=y/S$};
+    \draw[->,gray] (0,0) -- (5.85,0) node[right,black] {$z$};
+    % Profile G_s(z) with one fold window [mu_s, M_s]
+    \draw[line width=1.05pt, black!70]
+      (0,0) .. controls (0.48,0) and (0.95,0.61) .. (1.29,1.15)
+      .. controls (1.38,1.29) and (1.50,1.48) .. (1.59,1.62)
+      .. controls (1.72,1.82) and (1.82,2.05) .. (1.95,2.05)
+      .. controls (2.20,2.05) and (2.38,1.15) .. (2.65,1.15)
+      .. controls (2.83,1.15) and (3.00,1.42) .. (3.17,1.62)
+      .. controls (3.52,2.04) and (3.85,2.47) .. (4.24,2.95)
+      -- (4.48,3.25);
+    \node[right, font=\scriptsize] at (4.45,3.18) {$t=G_s(z)$};
+    % Reference T
+    \draw[thin, gray!70] (0,2.95) -- (4.24,2.95);
+    \node[left, font=\scriptsize] at (0,2.95) {$T$};
+    \fill (4.24,2.95) circle (1.5pt);
+    % Window levels M_s and mu_s
+    \draw[densely dotted, gray] (0,2.05) -- (1.95,2.05);
+    \draw[densely dotted, gray] (0,1.15) -- (2.65,1.15);
+    \node[left, font=\scriptsize] at (0,2.05) {$M_s$};
+    \node[left, font=\scriptsize] at (0,1.15) {$\mu_s$};
+    % Jump from minimum q_s to landing r_s
+    \draw[->, thick, black] (2.63,1.15) -- (1.35,1.15);
+    \fill (2.65,1.15) circle (1.5pt) node[below, font=\scriptsize] {$q_s$};
+    \fill (1.95,2.05) circle (1.5pt) node[above, font=\scriptsize] {$p_s$};
+    \fill (1.29,1.15) circle (1.5pt) node[above left, inner sep=1.5pt, font=\scriptsize] {$r_s$};
+    % 1. Trapped upper launch (solid + circle)
+    \draw[->, line width=0.9pt] (0.05,1.62) -- (1.58,1.62);
+    \fill[white] (0,1.62) circle (1.8pt); \draw (0,1.62) circle (1.8pt);
+    \node[above, font=\scriptsize] at (0.78,1.63) {$U$};
+    % 2. Positive incoming ray (dashed + square)
+    \draw[->, densely dashed, line width=0.9pt] (5.68,1.62) -- (3.23,1.62);
+    \fill ([xshift=-1.8pt,yshift=-1.8pt]3.17,1.62) rectangle ++(3.6pt,3.6pt);
+    \node[above, font=\scriptsize] at (4.92,1.63) {$I$};
+    % 3. Negative incoming flight (dotted + triangle)
+    \draw[->, dotted, line width=1.1pt] (5.68,-0.58) .. controls (3.6,-0.63) and (1.7,-0.70) .. (0.07,-0.82);
+    \node[below, font=\scriptsize] at (3.35,-0.68) {negative entrance (limit $t=-w$)};
+    \fill (0,-0.82) ++(-2pt,-1.6pt) -- ++(4pt,0) -- ++(-2pt,3.5pt) -- cycle;
+  \end{scope}
+
+  % Limiting profile for m=8 and c=5. Axes are affine in z and t.
+  \begin{scope}[shift={(8.15,0)}]
+    \node[anchor=south, font=\bfseries\small] at (2.85,3.92) {(b) Matching at an exterior maximum};
+    \begin{scope}[shift={(0,0.65)},x=4.45cm,y=1.75cm]
+      \draw[->,gray] (0,-1.08) -- (0,1.56) node[above,black] {$t=y/R^m$};
+      \draw[->,gray] (0,0) -- (1.34,0) node[right,black] {$z$};
+      \draw[line width=1pt,black!70] plot[domain=0:1.161,samples=100]
+        (\x,{(\x^8)*(5-4*\x*\x)});
+      \draw[densely dashed,gray] (.5,-.19) -- (.5,.57);
+      \node[above,font=\scriptsize] at (.5,.57) {$z_e=\tfrac12$};
+      \node[above,font=\scriptsize] at (1,1.07) {$z=1$};
+      \node[left,font=\scriptsize] at (0,1) {$E_c(1)$};
+      \node[left,font=\scriptsize] at (0,-.5) {$-\tfrac12$};
+      \node[left,font=\scriptsize] at (0,-1) {$-1$};
+      \fill (1,1) circle[radius=1.5pt];
+      \fill (.5,0) circle[radius=1.1pt];
+      \draw[->,line width=.85pt] (0,-1) -- (1.153220447,-1);
+      \draw[->,dotted,line width=1.05pt] (0,-.5) -- (1.137766572,-.5);
+      \draw[->,densely dashed,line width=.9pt] (.5,0) -- (1.118033989,0);
+      \fill (1.118033989,0) circle[radius=1.4pt]
+        node[above right,inner sep=2pt,font=\scriptsize] {$v(0)$};
+      \draw[->,line width=.85pt] plot[domain=1.146:1.069,samples=22]
+        (\x,{(\x^8)*(5-4*\x*\x)});
+      \draw[->,line width=.85pt] (1,1) -- (.005,1);
+    \end{scope}
+  \end{scope}
+\end{tikzpicture}
+\caption{(a) At the inner scale $z=|x|/L$, $t=y/S$, the upper launch $U$
+and the positive entrance $I$ reach different rising branches. A negative
+flight crosses the whole profile. (b) At the exterior scale
+$z=|x|/R$, $t=y/R^m$, the curve is the limiting profile of
+Proposition~\ref{prop:cap-transfer}, drawn for $m=8$, $c=5$.
+In backward time the solid launch from $t=-1$ sets the reference
+and the dotted launch from $t=-1/2$ gives the direct test. The dashed
+arrow from $z_e=1/2$ to $v(0)$ represents all bounded physical
+entrances in the limit. Each path then follows the falling branch to
+the maximum and crosses to the upper axis. Their limiting hit is
+$E_c(1)$. At finite $R$ the gaps from the reference distinguish them.}\label{fig:mechanisms}
+\end{figure}

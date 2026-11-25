@@ -1,0 +1,154 @@
+\section{Return maps and the cubic comparison}\label{sec:foundations}
+We use the right-half-plane fields $X_s=(y-F(sx),-x)$, $s=\pm1$.
+Time runs forward for $s=+$ and backward in the original left half-plane
+for $s=-$. Write $\Sigma_-$ for the open negative $y$-axis. The following forms of the return estimates specify the
+inputs needed below. Their proofs are in Sections~2 and~3 of the main article~\cite{MainArticle}.
+
+\subsection{Axis hits and a common linear parameter}
+\begin{lemma}[Half-returns]\label{lem:half-returns}
+(i) Each periodic orbit meets the open positive $y$-axis in exactly one point.
+(ii) Let $B_s(q,h)>0$ be the magnitude of a first lower-axis hit from $(q,h)$,
+and write $w_s(h)=B_s(0,h)$. At transverse first hits these functions
+are analytic. (iii) Between two returning axis launches the whole strip
+returns, with $w_s'(h)>0$. If $|F'(0)|<2$, one upper trap suffices down
+to zero. If also $F(sx)\to+\infty$, every axis launch $h>0$ and every
+off-axis launch $q>0$ has a lower hit. At fixed ordinate these hits are
+strictly ordered in $q$ on their domain.
+\end{lemma}
+Indeed, $y$ decreases strictly in $x>0$. Returning arcs are disjoint
+graphs there, with $\dot x=y\ne0$ at each axis crossing. Their order
+gives the trapping strip, and the angular velocity near the origin is
+strictly negative when $|F'(0)|<2$. At large positive $x$, coercivity
+bounds every forward arc. In the interior the variables $u=x^2/2$ and
+$x$ give
+\begin{align}
+ \frac{\dd u}{\dd(-y)}&=y-F(s\sqrt{2u}),\label{eq:scalar-u}\\
+ \frac{\dd y}{\dd x}&=\frac{x}{F(sx)-y}\quad\text{on an inward tail}.\label{eq:spatial-ode}
+\end{align}
+
+\begin{lemma}[Incoming trajectories]\label{lem:incoming-rays}
+For even-degree $P$, $m=\deg P\ge4$, $P(0)=0$, with positive leading
+coefficient and $|P'(0)|<2$, an incoming trajectory from infinity at
+ordinate $y$ has a unique transverse first hit $-I_{s,P}(y)$.
+(i) Its hit varies continuously with the ordinate and coefficients at
+fixed degree. (ii) If $P_\nu\to P$ in $C^1$ on compact sets and
+$P_\nu(sx)\ge c x^m$ on $[X_0,Z_\nu]$, $Z_\nu\to\infty$, launches
+from $(Z_\nu,y)$ converge in hit magnitude uniformly on compact ordinate
+intervals. (iii) $I_{s,P}(-w)=w+O(w^{2/m-1})$ as $w\to\infty$.
+\end{lemma}
+Inward integration of~\eqref{eq:spatial-ode} contracts vertical
+differences. Above a large fixed $X$ the drift is $O(X^{2-m})$
+uniformly on a bounded ordinate interval. Below $X$ one uses compact
+flow dependence up to a transverse hit. The same proof applies near
+any fixed finite list of transverse hits for the limiting polynomial,
+without a condition on its slope at zero (main paper, Corollary~2.2a).
+
+\begin{lemma}[Sensitivity of a half-return]\label{lem:rotational}
+For $F_a(x)=F_0(x)+ax$, $G_{s,a}(x)=F_a(sx)$, and a transverse first
+hit at time $T$ from a fixed launch,
+\begin{equation}\label{eq:rot-half}
+ B_s\,\partial_a B_s=-s\int_0^T x(t)^2
+          \exp\!\left(-\int_t^T G_{s,a}'(x(v))\,\dd v\right)\dd t .
+\end{equation}
+Thus $\partial_a\D<0$ wherever both axis half-returns exist.
+\end{lemma}
+This follows by varying the flow and projecting to the axis at the hit.
+The variational determinant is $-s x^2$ and the divergence is $-G_{s,a}'$.
+
+\begin{proposition}[Simultaneous reference detuning, Sard regularization, and odd-degree barrier]\label{prop:sard}
+Let $F_{a_*}(x)=\sum_{j=2}^n a_j x^j + a_* x$ have exact degree $n\ge 2$ ($a_n\neq 0$).
+\begin{enumerate}
+  \item[\textup{(i)}] Suppose $0<h_0<h_1<\dots<h_N$ lie in an open interval $I_h\subset(0,\infty)$ on which both transverse half-returns $w_\pm(h,a_*)$ exist. Assume there is a common sign $\sigma_{\mathrm{det}}\in\{+1,-1\}$ such that, after setting $\sigma_i=\sgn\D(h_i,a_*)$ when $\D(h_i,a_*)\neq 0$ and $\sigma_i=\sigma_{\mathrm{det}}$ at every matched reference height where $\D(h_i,a_*)=0$, the sequence $(\sigma_0,\dots,\sigma_N)$ strictly alternates ($\sigma_{i-1}\sigma_i=-1$ for $1\le i\le N$). Suppose in addition that $F_{a_*}$ already possesses $q_0\ge 0$ hyperbolic limit cycles contained in a compact region $K_0\subset\R^2$ disjoint from $\{(0,h):h\in[h_0,h_N]\}$. Then there is a regular value $a_{\rm reg}$ arbitrarily close to $a_*$ and an open neighborhood $\mathcal{V}\subset\{(c_1,\dots,c_n)\in\R^n:c_n\neq 0\}$ of the resulting field on which every system~\eqref{eq:lienard} has at least $q_0+N$ geometrically distinct hyperbolic limit cycles.
+  \item[\textup{(ii)}] Suppose $|a_*|<2$, $n$ is even, and $0<h_0<\dots<h_N$ have strict alternating signs $\D(h_i,a_*)$ ending with $\D(h_N,a_*)>0$. Then for each sufficiently small $\rho>0$ one can choose $a_{\mathrm{reg}}$ arbitrarily close to $a_*$ such that every system in an open exact-degree-$(n+1)$ neighborhood of $F_{a_{\mathrm{reg}}}(x)+\rho x^{n+1}$ has at least $N+1$ distinct hyperbolic limit cycles.
+\end{enumerate}
+Each open coefficient neighborhood in \textup{(i)} or \textup{(ii)} contains a rational vector by density.
+\end{proposition}
+Here $\D=w_+-w_-$. On the zero set $\partial_a\D<0$ gives
+a local graph $a=\alpha(h)$. A single regular value on the trapped
+return intervals makes the zeros simple, since $w_-'(h)>0$.
+Part (ii) uses the outer barrier in the main paper's Proposition~2.4.
+
+\subsection{Actions and exterior transfer}
+Set $\phi(u)=\Phi(\sqrt{2u})$ for a scaled half-profile $\Phi(z)$.
+On a rising branch shared with the reference, the \emph{action} is the
+magnitude of the reduced slow divergence integral. Its density in the
+increasing spatial coordinate is $\Phi'(z)^2\,\dd z/z=\phi'(u)^2\,\dd u$. An incoming trajectory follows the
+outermost rising root. At a minimum it jumps to the transverse inner
+landing, deleting the intervening open spatial interval. An axis launch
+inside a fold window meets the reference on the inner branch below that
+landing. With $r$ the landing of the window containing $Y$, this gives
+\begin{equation}\label{eq:JU-def}
+ J^U(Y)=
+ \begin{cases}
+  J^I(Y),&Y\ \text{outside the fold windows},\\
+  \text{retained action up to }r,&Y\ \text{inside a fold window}.
+ \end{cases}
+\end{equation}
+For two ordered solutions of $\epsilon u_t=\phi(u)-t$ one has exactly
+\begin{equation}\label{eq:secant-exact}
+ \epsilon(\log(u_1-u_2))'=[\phi]_{u_1,u_2}
+     =\frac{\phi(u_1)-\phi(u_2)}{u_1-u_2}.
+\end{equation}
+
+\begin{proposition}[Matched-maximum exterior transfer]\label{prop:cap-transfer}
+Let $P\in\R[x]$ have $P(0)=0$, even degree $m=\deg P\ge 6$ with leading coefficient $c=[x^m]P>0$, and highest odd power $j=m-g$ with $g\in\{1,3\}$ and $b=[x^j]P\neq 0$. Suppose $P$ possesses $q\ge 0$ hyperbolic limit cycles, and at a nonempty strictly decreasing finite list of ordinates $y_0>y_1>\dots>y_r$ and a real shift $\Delta\in\R$, both incoming trajectories in $I_{+,P}(y_i)-I_{-,P}(y_i-\Delta)$ exist, hit $\Sigma_-$ transversely, and exhibit $r$ strict sign changes ending with $\sigma=\sgn\big(I_{+,P}(y_r)-I_{-,P}(y_r-\Delta)\big)\in\{\pm 1\}$. Put $p=2-g\in\{+1,-1\}$. Then there is a nonempty open subset of exact-degree-$\max(m+2,j+4)$ polynomials (including rational polynomials) on which every field~\eqref{eq:lienard} has at least
+\begin{equation}\label{eq:cap-count}
+  q + r + 1 + \ind_{\{\sigma\neq\sgn(bp)\}}
+\end{equation}
+simultaneous hyperbolic limit cycles, retaining all $q$ compact cycles while placing the new upper crossings near $R^m\frac{2c}{m+2}\to+\infty$.
+\end{proposition}
+The two exterior coefficients match the pair of reference hits
+and one entrance pair. On each side the remaining entrances share
+the same terminal map $K$. At an intermediate regular height $b$
+their separations from the reference satisfy
+\begin{equation}\label{eq:entry-distortion}
+ \epsilon\log d(\alpha)=\int_\alpha^b\phi'(u(t))\,\dd t
+                    +O(\epsilon|\log\epsilon|),
+\end{equation}
+on the attracting passage in increasing $t$, with $u(t)$ the falling
+root. Differentiation of the upper-axis first hit gives
+\begin{equation}\label{eq:Ks-deriv}
+ K'(\xi)=\frac{\epsilon}{K(\xi)}\exp\!\left(
+ \epsilon^{-1}\int_b^{K(\xi)}\phi'(U(t;\xi))\,\dd t\right).
+\end{equation}
+
+\begin{lemma}[Common terminal section, main paper, Lemma~3.4]\label{lem:terminal-distortion}
+Let a whole section interval $B$ flow under $\epsilon U'=f(t,U)$ to a
+first downward crossing of $U=u_c$ and then to zero. Before crossing,
+assume bounded elapsed time and uniform bounds on $f,f_U,f_{UU}$;
+in a fixed crossing collar assume $f\le-\nu<0$ and $f_t$ bounded.
+On $[0,u_c]$ assume $f\le-\nu$ and $f,f_t,f_{tt}$ bounded and
+continuous in the inverse chart. Take these bounds between the arcs,
+with the regularity of the indicated derivatives on each piece of
+the pre-crossing flow. If $D$ bounds the time integral of an envelope
+of $(f_U)_+$ there and $|B|e^{D/\epsilon}$ is smaller than the
+collar width, then $\operatorname{osc}_B(\epsilon\log K')\le
+C|B|e^{D/\epsilon}$ and $K'>0$.
+\end{lemma}
+The estimate compares the two positive gaps throughout the interval
+spanned by the reference and the launches. In the exterior construction
+of the main paper the absolute gap expansion calibrates the two
+coefficients, and the gap-ratio expansion resolves physical entrances
+at scale $\tau^m$. Section~S5 gives the corresponding formulas for the
+joint degree-twelve construction.
+
+\subsection{Cubic data for the moving folds}
+For $a=-3k^2<0$ ($k=\sqrt{-a/3}>0$) and $b\in\R$, the cubic $f(v)=v^3+av+b$ has a local maximum $M=b+2k^3$ at $v=-k$, a local minimum $\mu=b-2k^3$ at $v=k$, and rising-branch landing $v=-2k$ solving $f(-2k)=\mu$. Let $P_a(v)=\int_0^v (3r^2+a)^2\,\dd r=\tfrac95 v^5+2av^3+a^2v$, which is strictly increasing on $\R$ since $P_a'(v)=(f'(v))^2\ge 0$. For $\xi\notin\{\mu,M\}$, let $v(\xi)$ be the largest real root of $f(v)=\xi$, and define the incoming and upper cubic actions
+\begin{equation}\label{eq:cubic-actions}
+  J_{a,b}^I(\xi) = P_a(v(\xi)) - \ind_{\{\xi>\mu\}}\big(P_a(k)-P_a(-2k)\big),\qquad
+  J_{a,b}^U(\xi) = \begin{cases}
+    P_a(-2k), & \mu<\xi<M,\\
+    J_{a,b}^I(\xi), & \xi\notin[\mu,M].
+  \end{cases}
+\end{equation}
+Put $\Lambda=493/2$ and define the equal-weight cubic differences
+\begin{equation}\label{eq:D-cub}
+  D_{\mathrm{cub}}^X(\xi) = J_{-1,-8}^X(\xi) - J_{-3,8}^X(\xi) - \frac{493}{2},\qquad X\in\{U,I\}.
+\end{equation}
+
+Table~\ref{tab:cubic} gives the rational intervals used below. To
+reproduce a row, isolate the largest root on its monotone branch by
+the listed endpoints ($j/10^5,(j+1)/10^5$), then apply the increasing primitive $P_a$ to the two
+endpoints. Inside an open fold window use $P_a(-2k)$ for the upper
+launch. Lemma~B.1 of the main article gives the root and jump bounds.
+\input{tex/cubic-table}

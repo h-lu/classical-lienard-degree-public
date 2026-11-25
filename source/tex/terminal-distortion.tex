@@ -1,0 +1,70 @@
+The following estimate measures the effect of the part of a passage shared
+by all launches. Write $x_+=\max(x,0)$ and $\operatorname{osc}_B f
+=\sup_B f-\inf_B f$.
+
+\begin{lemma}[Distortion of a common terminal section]\label{lem:terminal-distortion}
+Consider $\epsilon U'=f(t,U)$, with $t$ increasing and $0<\epsilon\le1$.
+A compact interval $B\subset(u_c,\infty)$ on $t=b$ flows to its first
+downward crossing of $U=u_c>0$
+and then to $U=0$. Denote these crossing times by $T(\xi)$ and $K(\xi)$
+for $U(b)=\xi\in B$. Suppose the following bounds are uniform, including
+over any family of parameters under consideration.
+\begin{enumerate}
+\item Before the crossing $f$ is piecewise continuous in $t$ and $C^2$
+in $U$. The elapsed time and $|f|,|f_U|,|f_{UU}|$ are bounded on
+the swept intervals.
+In a fixed collar of $u_c$ the field satisfies $f\le-\nu<0$ and
+$|f_t|$ is bounded. The smooth flow can be taken piecewise in $t$
+at fixed times outside the crossing collar.
+\item On the exit strip $0\le U\le u_c$, $u_c$ is bounded,
+$f\le-\nu$ and $f,f_t,f_{tt}$ are bounded and continuous in the
+inverse chart. Bounds in the collar and strip hold between the arcs.
+\end{enumerate}
+Let $a\ge0$ be an integrable majorant of $(f_U)_+$ between any two
+arcs still above $u_c$, and set $D=\int_b^{\max T}a(t)\,\dd t$.
+If $w=|B|e^{D/\epsilon}$ is smaller than the uniform width of the
+collar above $u_c$, then $K'>0$ and
+\begin{equation}\label{eq:terminal-distortion}
+ \operatorname{osc}_{B}(\epsilon\log K')\le Cw .
+\end{equation}
+In particular if $|B|\le C_0e^{-A/\epsilon}$ and $A-D\ge\gamma>0$,
+the right side is $O(e^{-\gamma/\epsilon})$.
+For $d_i=|\xi_*-\xi_i|>0$ and $g_i=|K(\xi_*)-K(\xi_i)|$ with
+$\xi_*,\xi_1,\xi_2\in B$, this gives
+\[
+ \left|\epsilon\log(g_1/g_2)-\epsilon\log(d_1/d_2)\right|\le Cw .
+\]
+\end{lemma}
+
+\begin{proof}
+At equal times before the earlier crossing, scalar variation of constants
+bounds the distance of two arcs by $w$. At that crossing the other arc
+is at most $w$ above $u_c$. It crosses within $\epsilon w/\nu$, by
+the collar inequality. Implicit differentiation gives
+\[
+ T'(\xi)=\frac{-\epsilon}{f(T(\xi),u_c)}
+ \exp\!\left(\epsilon^{-1}\int_b^{T(\xi)}f_U(t,U(t;\xi))\,\dd t\right).
+\]
+On the common time interval the two integrals differ by at most
+$\|f_{UU}\|_\infty (\max T-b)w$. Their unmatched ends cost
+$\|f_U\|_\infty\epsilon w/\nu$. The log of the section factor has
+oscillation at most $\|f_t\|_\infty\epsilon w/\nu^2$.
+
+On the last strip put $h(U,t)=1/f(t,U)$ and solve
+$t_U=\epsilon h(U,t)$ from $u_c$ to zero. The inverse flow $L$ has
+$\log L'(T)=\epsilon\int_{u_c}^0 h_t(U,t(U;T))\,\dd U$.
+Both $h_t$ and $h_{tt}$ are bounded. Two heights in this chart differ
+by at most $e^{\epsilon u_c\|h_t\|_\infty}|T_1-T_2|$, so this last
+logarithm is Lipschitz in $T$ with constant $O(\epsilon)$.
+Composing $K=L\circ T$ proves~\eqref{eq:terminal-distortion}.
+Each secant slope of $K$ lies between the extreme values of $K'$ on $B$,
+which proves the gap estimate. The inverse-chart proof uses only
+continuity in $U$ at the final section.
+\end{proof}
+
+In particular, to read a physical scale $\delta$ in the scaled
+logarithm of a ratio it suffices that both the entry-action error
+and $|B|e^{D/\epsilon}$ are $o(\delta)$. In the exterior transfer
+$\delta=\tau^m$ and the entry error is $O(\epsilon|\log\epsilon|)$.
+The estimate compares secants from one reference even when the absolute
+derivative of the terminal map is itself exponentially small.

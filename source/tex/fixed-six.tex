@@ -1,0 +1,409 @@
+\section{A fixed rational field and its finite certificates}\label{app:repro}
+
+\begin{proposition}[Six cycles at specified coefficients]\label{prop:fixed-six}
+In~\eqref{eq:deg12-poly} set $d=6/5$, $\sqrt\eta=10^{-40}$,
+$\theta=-10^{-20}$ and $a=(a_-+a_+)/2$ with $a_\pm$ from~\eqref{eq:seed-coeffs}.
+The resulting rational primitive has degree twelve. Its field has a
+hyperbolic cycle in each bracket of Table~\ref{tab:fixed-six} and a
+repelling hyperbolic cycle above those five.
+\end{proposition}
+
+For a forward arc of the reflected field with $G_s(x)=F(sx)$, let
+$\Lambda_s(h)=\int G_s'(x(\tau))\,\dd\tau$ from launch $(0,h)$ to
+its first lower-axis hit $(0,-w_s(h))$. This is the negative of the
+integrated divergence on that half-arc.
+
+\input{tex/fixed-six-table}
+
+\begin{proof}
+Liouville's formula with the normal velocities at the two sections
+gives $w_s'(h)=(h/w_s(h))e^{-\Lambda_s(h)}$. At a zero of
+$\D=w_+-w_-$ the full multiplier is therefore
+$e^{-(\Lambda_+-\Lambda_-)}$.
+
+\emph{Compact brackets.}
+Let $Q_s$ be the sextic from~\eqref{eq:seed-coeffs} at the same midpoint,
+reflected on side $s$. Summing the absolute differences of the
+coefficients weighted by $3^j$, first for $G_s-Q_s$ and then for its
+derivative, gives a bound $\delta=2\cdot10^{-74}$ for each on $|x|\le3$.
+The leading coefficient of the full primitive is negative.
+For each rational endpoint and for each entire height bracket we use
+the order-36 dyadic paths of Lemma~\ref{lem:seed}. In normalized time
+$0\le v\le1$ let $R$ bound the residual against the sextic vector
+field multiplied by the physical step $b$ (the residual is the path
+derivative minus $b$ times that field). Its polynomial coefficients
+through degree 216 are formed exactly on rational data. Round path
+coefficients to the $2^{-256}$ grid and error bounds outwards.
+The symmetric part of the sextic Jacobian is
+$\operatorname{diag}(-Q_s',0)$. The completed squares of
+Lemma~\ref{lem:seed} give logarithmic norm at most $\gamma=1$ for
+$x\ge-1/100$, and at most $1/250$ for $x\ge0$. Thus a valid radius is
+\[
+ e_{\rm out}=\frac{e_{\rm in}+R+b\delta}{1-b\gamma}.
+\]
+Indeed $e'\le b\gamma e+R+b\delta$ until first exit.
+Each accepted tube lies inside its domain; the smaller $\gamma$ is
+used only after verification of positivity with the wider tube.
+Centering the initial tube at the bracket midpoint with radius half
+its width covers every launch therein.
+
+Compose $Q_s'$ with the proposed $x(v)$, integrate its polynomial
+on each step, and enclose the coefficients by outward dyadic rounding.
+The additional radius in the integral is at most
+$b(\|Q_s''\|e_{\rm out}+\delta)$. The departure and intermediate
+tubes have $x>0$ after the initial crossing. On the final step the
+enclosed arc crosses $x=0$ with $-\dot x\ge v_0>0$. At the proposed
+event time found by bisection the true time differs by at most
+$(|x_{\rm app}|+e_{\rm out})/v_0$ in physical units. Multiply this
+bound by $\sup|G_s'|$ for the last integral and by $\sup|x|$ for the
+hit ordinate, in addition to the path error there. The resulting endpoint
+signs and full-interval integral differences are in Table~\ref{tab:fixed-six}.
+Order and continuity give a zero in each interval and the displayed
+multiplier formula proves simplicity.
+
+\emph{Outer section hits at the fixed scale.}
+Set $P_s(z)=F(sLz)/S$, $u=z^2/2$, $p_s(u)=P_s(\sqrt{2u})$,
+$t=y/S$, $\eps=L^2/S^2$, and put
+$\lambda=\sqrt\eta$, $K=10^7$, $c=10^{-4}$, $\rho=\lambda^4$, $\nu=\rho^2$.
+The rational profile bounds needed below are as follows. The maximum
+$M_s$ on $0\le u\le2$ occurs at $1.18<z_m<1.22$,
+$0.012<M_s<0.014$, and
+\[
+ P_s(d)\le M_s\le P_s(d)+m_{\rm lift},\qquad
+ m_{\rm lift}=(10^5\eta)^2/(2\cdot0.1).
+\]
+On $1.18\le z\le1.22$ one has $p_s''<-0.1$ with opposite signs of
+$p_s'$ at the ends; on $1.22\le z\le2$ one has $p_s'<-0.01$,
+$P_s(1.22)>0.01$, $P_s(2)<-2$. Further,
+$P_s>10^{-3}$ on $[1/2,1.22]$, $P_s<M_s-2c$ on $[0,1.11]$,
+$|p_s'|,|p_s''|<K$ on $1/2\le z\le2$, and
+$\int_0^{1.10}|P_s'|\,\dd z<2K$. These are finite polynomial
+comparisons. Use $p_s'=P_s'/z$, $p_s''=(zP_s''-P_s')/z^3$ away
+from zero. For a polynomial $Q(a+(b-a)v)=\sum_j c_j v^j$ of
+degree $k$, its Bernstein coefficients
+$\sum_{j\le i}\binom{i}{j}c_j/\binom{k}{j}$ bound it on $0\le v\le1$.
+The explicit even profile increases up to $d$; coefficient norms
+bound its perturbation, yielding the stated height margins below
+$z=1.18$. At $d$, $|p_s'(d^2/2)|\le10^5\eta$ and the curvature
+bound yields the lift. Translating $P_+(z)+10^{-3}z^{12}$ by $2$
+gives negative coefficients, proving the tail bound for $z\ge2$.
+
+On the plus side follow a launch from $(z,t)=(1/2,y/S)$,
+$-1\le y\le9$, backward in physical time. Then $t$ increases and
+$\eps u_t=p_+(u)-t$. The falling root $U(t)$ satisfies $|U'|\le1/\rho$
+up to $t=M_+-\rho$. Indeed its distance in $u$ from the maximum exceeds
+$20\rho$ there, since $200K\rho^2<\rho$. The curvature and outer
+slope bounds give $-p_+'\ge\rho$ on $[U(t)-\nu,2]$.
+The tube $|u-U(t)|\le\nu$ is invariant. Its boundary speed toward the
+root is at least $\rho\nu/\eps$. At launch the orbit is left of
+the tube. The bounds through $z=1.22$ and monotonicity thereafter
+give at least this speed until capture. Even allowing for the root
+speed, it covers distance $2$ within a height increase $\rho$ since
+$\eps<\rho^4/8$; the walls at $z=1/2$ and $u=2$ confine this
+initial passage. At $M_+-\rho$ the orbit is still away from the axis.
+From $t=M_++\rho$ onward it moves inward at speed at least
+$\rho/\eps$ and reaches the axis within $2\eps/\rho<\rho$
+if it has not already crossed. Boundedness and positive height near
+exit exclude an asymptotic stop. Write $\widehat h_+(y/S)$ for this
+scaled upper hit. Near exit, from $z=1.10$ to $0$, the inverse equation
+$\dd t/\dd u=-\eps/(t-p_+(u))$ has denominator $>c$.
+
+Order gives two physical heights
+$H_1=S\widehat h_+(9/S)<H_2=S\widehat h_+(-1/S)$: the earlier
+launch lies to the right of the section when the later one starts.
+Both are strictly inside the rational enclosure
+\[
+ \mathcal I=\big(S(P_+(d)-\rho),\ S(P_+(d)+m_{\rm lift}+2\rho)\big).
+\]
+Its lower endpoint exceeds $4.6$. At the rational upper endpoint
+$t\ge M_++2\rho$ initially. In forward time $\eps\,\dd u/\dd(-t)=t-p_+$,
+so the loss in height to $u=2$ is at most $2\eps/\rho<\rho$.
+From there the tail bound gives at most
+$\eps\int_2^\infty[10^{-3}(2u)^6]^{-1}\dd u=25\eps/256<\rho$
+before escape at positive height. The sign tests use $H_1,H_2$.
+
+\emph{Signs at the two hits.}
+The rational comparison $SP_-(d)>\sup\mathcal I$ makes $x=Ld$ a
+forward wall on the minus side. On both sides $G_s(x)>8x^6$ for
+$2\le x\le L/2$ and $G_s(x)>x^6/100$ on $L/2\le x\le Ld$.
+For these tests use the sextic coefficient error on $[2,10]$ with
+weights $10^j$, the factorization of $E'$ in~\eqref{eq:deg12-even}
+from $10$ to $L/2$, and $P_s>10^{-3}$ thereafter.
+At $8\le y\le9$, $v=x^2/2$ obeys $\dd v/\dd(-y)=y-G_s(x)$.
+For $v\ge50$ this is at most $-v^3/25$; for $2\le v\le50$ it is
+at most $-4v^3$. The descent needed to reach $x\le2$ is less than
+$25/(2\cdot50^2)+1/32<1$. The boundary at $x=2$ points inward
+throughout this range. Thus at $y=8$ the minus arc, as well as the
+plus arc through $(L/2,9)$, lies in $0\le x\le2$. The wall at $x=3$
+and the focus condition $|a|<2$ give compact returns. For their hit
+magnitudes $B_s(q,8)$ from $(q,8)$ the compact tubes above give
+\[
+ B_+(2,8)-B_-(0,8)<-2\cdot10^{-32},\qquad
+ 0.03<B_-(0,8)\le B_-(2,8)<0.1.
+\]
+Monotonicity in $q$ yields $\D(H_1)<0$. From $(L/2,-1)$ the plus
+arc moves inward to $x=2$ by the same tail bounds and returns inside
+the compact wall with magnitude $>1$. Hence $\D(H_2)>0$. Order
+and the bounding returns give continuity throughout $[H_1,H_2]$.
+Any zero in the internal bracket has common lower magnitude $<0.1$
+and plus section ordinate $y\in(-1,9)$.
+
+\emph{Multiplier of the outer zero.}
+In scaled coordinates $\eps \Lambda_s=\int p_s'(u)\,|\dd t|$.
+On the backward-tracked part of the plus arc the slope is negative;
+for $t\in[0.002,0.003]$ it is below $-0.01$ since the tube lies
+beyond $z=1.22$. This contributes at most $-10^{-5}$. The entrance
+and exit layers above $z=1.10$ cost at most $4K\rho$ in total, and
+the final inverse chart costs at most $2K\eps/c$ by the bound
+on $\int |P_+'|$. On the forward leg from $L/2$ to $x=2$ one has
+$|p_+'|<K$: on $0.01/L\le z\le d$ bound the singular linear
+coefficient divided by $z$ using $z\ge0.01/L$, and bound the
+remaining polynomial by its coefficient norm. The available physical
+height change is less than $9.1$, giving $10K/S$.
+
+On the minus side the initial passage to $x=0.01$ has $t-p_->0.009$
+while $t\ge0.01$; the height loss is at most
+$\eps(0.01/L)^2/(2\cdot0.009)<0.002$. The inverse chart contributes
+at most $2K\eps/0.009$ in absolute value. The boundary at $x=0.01$
+points right down to $y=8$. There $z\le d$ by the wall. On this
+portion $E'(z)/z\ge0$ and the correction to the slope has magnitude
+$<10^{-8}$ using $z\ge0.01/L$. The possible negative contribution
+is at most $0.014\cdot10^{-8}$ in magnitude.
+
+For either remaining compact arc, $|G_s'|<10^5$ on $[0,3]$.
+Above $x=0.01$ the time is at most $9.1/0.01$. After crossing
+inward through $x=0.01$ the monotonicity of $y$ prevents recrossing.
+Here $|G_s(x)/x|<0.2$ gives angular velocity at most $-0.9$, so
+the remaining time is less than five. Each compact part contributes
+less than $10^8\eps$ in absolute value. Substitution of the fixed
+scales gives
+\begin{align*}
+ \eps \Lambda_+ &\le -10^{-5}+4K\rho+2K\eps/c+10K/S+10^8\eps<-9\cdot10^{-6},\\
+ \eps \Lambda_- &\ge -2K\eps/0.009-0.014\cdot10^{-8}-10^8\eps>-10^{-6}.
+\end{align*}
+Thus $\eps(\Lambda_+-\Lambda_-)<-8\cdot10^{-6}$ at every zero in
+$(H_1,H_2)$. Its multiplier exceeds one. This bracket and the five
+compact brackets are disjoint.
+\end{proof}
+
+\subsection*{What the fixed-scale matching tests resolve}
+At $\lambda=\sqrt\eta=10^{-40}$ the signs on the parameter faces give
+a real solution of the three matching equations. At a match the entrance comparisons
+at $4/5,0,-20$ have signs $-,+,-$ and the direct launch gives $+$.
+The bounds below give necessary tolerances for mixed shoulder signs
+and for paired section hits in the stated windows. The eight shoulder
+signs used for nineteen cycles follow from the moving-fold estimate
+as $\eta\to0$ in Proposition~\ref{prop:moving-layer}. For the fixed-scale
+estimates take the closed parameter box
+\[
+ 1.19888999543\le d\le1.19888999544,\qquad
+ |\theta|\le10\lambda,\qquad a_-\le a\le a_+ .
+\]
+With $\beta=-K/\widehat B'(1)$ as in Section~\ref{subsec:deg12-prep},
+the scales $L=-a_5/(6a_6\beta\eta)$, $S=6a_6L^6$ and $\eps=L^2/S^2$
+from~\eqref{eq:deg12-poly} give $4.07\cdot10^{-781}<\eps<4.09\cdot10^{-781}$
+throughout this box.
+Write $H_s^*$ for the scaled upper hit traced backwards from
+$(u,t)=(0,-1)$. Let $g_s(r)$ be its positive separation from the
+upper hit traced from $(1/8,r)$, and $g_s^b$ its separation from
+the hit traced from $(0,-1/2)$.
+
+\emph{The common outer height.}
+On either side let $U(t)$ be the falling root of $p_s(U)=t$, let
+$z_m$ denote the maximizer and put $v_s(r)=\sqrt{2U(r)}$.
+The curvature, wall and tube bounds used in
+Proposition~\ref{prop:fixed-six} hold on the whole box by the same
+Bernstein and coefficient inequalities. For $-22\le Sr\le1$,
+and also for the direct launch with $r=-1/2$, they give
+\begin{equation}\label{eq:finite-gap-cost}
+ \left|-\eps\log g-
+   \int_{z_m}^{v_s(r)}\frac{P_s'(z)^2}{z}\,\dd z\right|<10K\rho .
+\end{equation}
+Indeed the reference has already reached its tube by the second launch.
+The initial $u$-separation lies in $(1/2,2)$. For the positive
+separation $b(t)$, $\eps(\log b)'$ equals the secant of $p_s$.
+The launch layer costs at most $K\rho$ in the secant integral.
+On the common tube the secant differs from $p_s'(U(t))$ by at most
+$K\nu$. Omitting the first and last $\rho$ of root tracking costs at most
+$2K\rho$. Up to the first inward crossing of $u_c=(1.10)^2/2$ the
+remaining layer costs at most $3K\rho$. The secant is bounded there
+because at least one $z$ exceeds $1/2$, so $2/(z_1+z_2)\le4$.
+Contraction on $[0.002,0.003]$ makes the separation $b_c$ at that
+crossing smaller than $2e^{-5\cdot10^{-6}/\eps}$. Both trajectories
+then lie below $z=1.11$, with inward speed between $c/\eps$ and
+$K/\eps$. Their crossing heights differ by between
+$\eps b_c/K$ and $\eps b_c/c$. In the last inverse chart,
+the logarithmic derivative of their height difference with respect to $u$
+is $\eps/[(t_1-p_s)(t_2-p_s)]\le\eps/c^2$. In $\eps\log$
+units this conversion and the initial factor together cost less than
+$6000\eps<K\rho$. Finally $t=P_s(z)$ gives the integral in
+\eqref{eq:finite-gap-cost}.
+
+For a rational enclosure, bracket $z_m$ by the signs of $P_s'$ on
+$[1.18,1.22]$ and the falling root by those of $P_s-r$ on $[1.22,2]$.
+Integrate the polynomial part of $P_s'^2/z$ exactly. The remaining
+term is $P_s'(0)^2\log(v_s/z_m)$ with $0<\log(v_s/z_m)<1$.
+Including the error in~\eqref{eq:finite-gap-cost} gives
+$0.0019<-\eps\log g_s(r)<0.0021$ and
+$1.3<-\eps\log g_s^b<1.4$. Thus equality of a pair of section
+hits in this window forces
+\[
+ |H_+^*-H_-^*|=|g_+(r_+)-g_-(r_-)|<e^{-4\cdot10^{777}} .
+\]
+The direct hit is within $e^{-3\cdot10^{780}}$ of its own reference.
+
+\emph{The inner shooting parameter.}
+Put $T=(E(1)+E(d))/2$ and fix $d,\theta$. At $a_-,a_+$ respectively
+the compact enclosures at $y=8$ give
+$\D(ST)>2\cdot10^{-32}$ and $\D(ST)<-6\cdot10^{-32}$, including the
+uniform $10^{-72}$ perturbation of the sextic on $[0,3]$ in the
+Taylor defect. The linear-parameter sensitivity in
+Lemma~\ref{lem:rotational} gives a unique $a_*$ with $\D(ST)=0$.
+Consider a shoulder launch from the eight levels in
+Proposition~\ref{prop:moving-layer} and the launch at $T$ on the same side.
+The shoulder levels lie in $(0.0108,0.0110)$ below $T$.
+The wall $z=1.18$ confines both launches. For $0.006\le t\le0.007$,
+outside $1/2\le z\le0.9$ the forward equation
+$\eps\,\dd u/\dd(-t)=t-p_s(u)$ points toward that strip with magnitude
+at least $10^{-4}$ on the right-hand side. Indeed $P_s<0.0019$ below its
+left edge and $P_s>0.0071$ above its right edge up to the wall, by
+the even profile and its perturbation bound. The distance in $u$ is
+less than $2$, so both arcs are inside by $t=0.006$. The boundary
+signs persist down to $0.002$, and on the strip $p_s'>0.005$.
+On the remaining descent to $y=8$, $z\le0.9$ and $x\ge0.1$ by the
+walls. The even slope is nonnegative and the correction exceeds
+$-10^{-8}$ there (use $z\ge0.1/L$ in the linear term).
+Integrating the secant equation in decreasing $t$ gives a separation
+in physical $x^2/2$ below $2L^2e^{-1.9\cdot10^{-5}/\eps}$ at $y=8$.
+
+On this last section the map from $x^2/2$ to the hit magnitude has
+derivative $e^{-\Lambda_s}/w_s$ by Liouville's formula, with the
+integral and the terminal magnitude now taken from $(x,8)$. For $0\le x\le2$,
+order and the endpoint tubes give $0.03<w_s<0.1$. The $x=0$ launch
+returns within $41$ time units, allowing $10^{-29}$ for the variation
+of the full field over the linear-parameter interval. A larger arc
+reaches that terminal ordinate at least as fast, since its $x(y)$ is
+larger. Afterwards $\dot x\le-0.03+0.015$ by $G_s'>-0.005$ on
+$[0,3]$, so the remaining time is at most $200$. The derivative is
+therefore at most $e^{1.25}/0.03<200$. Each shoulder hit lies below
+the corresponding reference in magnitude, by order. The two losses
+are each less than $400L^2e^{-1.9\cdot10^{-5}/\eps}
+<e^{-4\cdot10^{775}}$. Opposite signs at two shoulder heights force
+$|\D(ST)|$ below that same bound.
+
+In the formula for $|\partial_a w_s(ST)|$, retain the first
+$5\cdot10^{-7}$ time units after $y=8$. There $x\ge0.05$ by
+$|\dot x|<10^5$. The remaining compact time is less than $250$ and
+$|G_s'|<10^5$. Thus $-\partial_a\D(ST)>e^{-3\cdot10^7}$ throughout
+the shooting interval. The mean value theorem gives the necessary
+condition
+\[
+    |a-a_*(d,\theta)|<e^{-3\cdot10^{775}}
+\]
+for mixed shoulder signs at these fixed $d,\theta$. These estimates
+concern the specified box and these choices of sections.
+
+The remaining tests concern the faces of this box and the signs of
+individual outer samples. For example, at the two $d$ faces,
+\eqref{eq:finite-gap-cost} bounds $(\eps/\eta)\log[g_+(\Delta/S)/g_-(0)]$
+in $(-2.974,-2.972)10^{-13}$ and $(4.704,4.707)10^{-13}$, respectively.
+At the two $\theta$ faces the peak-lift bound places
+$(H_+^*-H_-^*)/\lambda^3$ in $(-46.75,-46.74)$ and $(92.96,92.97)$.
+Together with the shooting faces these signs give a real match by the
+same box argument as in Section~S5.
+
+After matching, section ordinates require finer control. At $b=0.003$
+write $b_s(r)$ for the separation in $u$ from the reference. A section
+launch reaches $z=1.22$ within $1500\eps$ in height since
+$p_s-t>0.0009$ on the launch segment. Thereafter
+$-p_s'\ge0.01$ between that wall and $z=2$, and $|U'|\le100$.
+Variation of constants gives distance at most $10002\eps$ from $U$
+after $400000\eps$ in height, including the launch layer.
+The secant integral then gives
+$|\eps\log b_s(r)-\int_r^b p_s'(U(t))\,\dd t|<10^{13}\eps$:
+the layer costs at most $2K(400000\eps)$ and the tracked error at
+most $10002K\eps$. From $b$ to the inward crossing of $u_c$ the
+whole interval stays within width $d_*=2e^{-2\cdot10^{-6}/\eps}$,
+using the contraction to $b$ and expansion at most $3K\rho$ in action
+thereafter. Its crossing times differ by at most $\eps d_*/c$.
+For the map from the section at $b$ to the scaled upper height $H$,
+the variational equation gives its derivative as
+$(\eps/H)\exp(\eps^{-1}\int_b^H p_s'(u(t))\,\dd t)$.
+One can first stop at positive $u$ and then take the limit in the
+inverse chart, because $\int_0^{u_c}|p_s'(u)|\,\dd u<2K$ there.
+In the common time interval the action difference is at most $Kd_*$,
+and in the remaining time interval it is at most $K\eps d_*/c$.
+In the inverse chart the height difference contracts. Substituting
+$\dd t=-\eps\,\dd u/(t-p_s)$ bounds the difference of the final
+actions by $2K\eps^2d_*/c^3$. The transverse prefactor in the
+derivative of the upper hit is $\eps/H$, with $H>0.01$, so its
+contribution to the oscillation of the scaled log derivative is at most
+$100\eps^2d_*/c$. Together these contributions are below $5Kd_*$.
+Taking the ratio for two launches now cancels the common terminal
+derivative up to this oscillation. With $E(v_0)=0$ on the falling
+branch and $c_d=-E'(v_0)/v_0>0.01$, it gives
+\[
+ \left|S\eps\log\frac{g_s(y_1/S)}{g_s(y_0/S)}
+          -c_d(y_1-y_0)\right|<10^{-55},\qquad -25\le y_i\le1 .
+\]
+Indeed the error from the preceding estimates is below
+$3\cdot10^{13}S\eps<10^{-280}$. The slope error over the physical
+interval of length $26$ is bounded by
+$26(\|R_s'\|+100K(\|R_s\|+25/S))<10^{-55}/2$, with $R_s=P_s-E$
+and coefficient norms on $[0,2]$. At a match, tests at
+$y-\Delta\pm10^{-12}$ therefore pair each of $4/5,0,-20$ with an
+opposite hit. The compact tubes with the $1/448$ tail allowance give
+their signs $-,+,-$. For the direct launch one uses the first variation
+of the action in~\eqref{eq:finite-gap-cost} along $E+\gamma R_s$.
+The peak term vanishes and the falling endpoint supplies
+$-(P'/z)R_s$ there. With $\mu=10^7\eta$ bounding $R_s,R_s'$,
+the falling root moves at speed at most $100\mu$ in $\gamma$.
+Differentiating the integral a second time bounds its interior term
+by $2\mu^2$ and the moving-boundary and endpoint terms together by
+$(1+500K)\mu^2$. The two Taylor remainders thus cost less than
+$10^5K\mu^2$. Including $20K\rho$ from the two gap estimates in the
+first-order comparison of Section~S5 gives
+$3.8<(\eps/\eta)\log(g_+^b/g_-^b)<5.5$. With common references
+the plus direct hit is lower, so the minus direct height has positive
+return sign. These tests certify particular comparisons at the fixed
+scale. The eight moving-fold signs used together in
+Theorem~\ref{thm:deg12} come from the asymptotic estimate of
+Proposition~\ref{prop:moving-layer}.
+
+At the two specified midpoints with $d=6/5$ and
+$\theta=\pm10^{-20}$, outside the box, the maxima differ already in
+height. More precisely $H_+^*-H_-^*$ is in $(6.99,7)10^{-100}$ for
+positive tilt and in $(-7,-6.99)10^{-100}$ for negative tilt. These
+intervals follow from $P_s(d)\le M_s\le P_s(d)+m_{\rm lift}$ and
+$M_s-\rho<H_s^*<M_s+2\rho$. The six-cycle certificate uses the two
+interior hits of Proposition~\ref{prop:fixed-six}. The nineteen-cycle
+argument uses the common matches and regularization of Section~S5.
+
+\paragraph{Reproducing the finite inequalities.}
+Unpack the certificate archive and verify its contents before running the programs.
+\begin{verbatim}
+tar -xzf certificates.tar.gz
+cd certificates
+sha256sum -c CERTIFICATE-SHA256SUMS
+./replay-all.sh
+python3 -B verification/check_action_coordinates.py
+\end{verbatim}
+The programs use Python's standard library. In \texttt{REPLAY.txt},
+\texttt{verify\_paper\_tables.py} checks the printed cubic and well
+root brackets, and \texttt{verify\_one\_sided\_wells.py} checks the
+octic moments. For Theorem~\ref{thm:deg12}, \texttt{verify\_seed.py}
+encloses all fourteen sextic half-arcs in Table~\ref{tab:seed};
+\texttt{verify\_entrance.py} bounds the tail from infinity to $x=2$
+by $1/448$. The joint-shoulder program checks the retained actions and
+turning comparison. The three matching equations, choice of regular
+value and nineteen zeros are proved in Section~\ref{subsec:deg12-finish}.
+For Proposition~\ref{prop:fixed-six} the directory
+\nolinkurl{verification/fixed-degree12/} contains the thirteen rational
+coefficients in \nolinkurl{inputs/outer-variant-field.json}, the five
+height brackets, the polynomial checks and the validated integrator.
+The fixed-field replay prints each integral enclosure and the outer
+inequality in \nolinkurl{verification/fixed-degree12-replay.txt}.
+Changing only $\theta$ in Proposition~\ref{prop:fixed-six} to
+$+10^{-20}$ gives the positive-tilt field, for which the same five
+compact brackets are certified. The weak-damping field of
+Appendix~\ref{sec:weak} has its own coefficients and brackets.

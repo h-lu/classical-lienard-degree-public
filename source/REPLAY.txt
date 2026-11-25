@@ -1,0 +1,99 @@
+checks/verify_entrance.py
+shift=3/500, y=4/5  (-1.1e-7, -5e-8)   539, 534, 539, 534 accepted Taylor steps
+shift=3/500, y=  0  (0.003, 0.008)   438, 443, 440, 443 accepted Taylor steps
+shift=3/500, y=-20  (-0.007, -0.001)   287, 285, 287, 285 accepted Taylor steps
+shift=0, y=  1  (-2.4e-9, -1.5e-9)   546, 536, 546, 536 accepted Taylor steps
+shift=0, y=  0  (0.008, 0.013)   438, 444, 440, 444 accepted Taylor steps
+checks/verify_fixed_sextic.py
+h0: +, signed magnitude > 2.15e-7, 142 + 141 Taylor steps
+h1: -, signed magnitude > 2.91e-24, 396 + 375 Taylor steps
+h2: +, signed magnitude > 3.32e-27, 433 + 405 Taylor steps
+h3: -, signed magnitude > 2.49e-28, 442 + 422 Taylor steps
+h4: +, signed magnitude > 1.37e-31, 475 + 448 Taylor steps
+h5: -, signed magnitude > 2.30e-33, 471 + 449 Taylor steps
+h6: +, signed magnitude > 2.30e-33, 472 + 457 Taylor steps
+Fixed rational sextic: six disjoint brackets for isolated cycles.
+checks/verify_joint_shoulder_cap.py
+Opposite cap-action faces on two rational brackets; terminal orientation checked.
+At r=1/4 the corrected action divided by beta is in (-3.1e-7,-2.8e-7) throughout the narrow box.
+Positive-tilt comparison profile: five compact signs, two shooting faces, three inward section comparisons.
+Full rational degree-12 profile passes both folds, landings and eight retained upper actions.
+Conditional count using the analytic matches and detuning: 20 alternating signs, 19 brackets.
+checks/verify_one_sided_wells.py
+well endpoint m=6: 100 B_3 in (22, 23)
+well endpoint m=8: 100 B_4 in (-9, -8)
+well endpoint m=10: 100 B_5 in (-36, -35)
+well endpoint m=12: 100 B_6 in (-61, -60)
+well endpoint m=14: 100 B_7 in (-82, -81)
+well endpoint m=16: 100 B_8 in (-102, -101)
+well endpoint m=18: 100 B_9 in (-119, -118)
+The outer-action enclosures are negative for m=8 through 18 and positive for m=6.
+Nearby well at a=1.998, Y=0.0076: positive retained action difference in (0.00038127,0.00038129).
+Figure 2 at a=1.9998, Y=0.0076: the retained action difference is in (-0.000017,-0.000016).
+The octic passes its moments, folds and actions, with a matched reference and a true negative sign.
+One degree-twelve input retains all core signs and has both triples of outer-action signs.
+Three actual negative incoming signs at L=10^10000 are -,+,-, with a shootable reference.
+The two parity counts agree through degree 630. Their gains over Proposition 5.1 are 2, 5, 5 and 8 in its four residue classes.
+checks/verify_outer.py
+X=1/4, sign -1, normalized action in (0.9999, 1.0001)
+X=3/5, sign +1, normalized action in (0.9999, 1.0001)
+X=1, sign -1, normalized action in (0.9999, 1.0001)
+checks/verify_paper_tables.py
+Independent inversion and the printed root brackets give all eight split-cubic enclosures.
+Printed rational root brackets and independent integration give the seven well bands (m=6 through 18).
+The five printed compact brackets, endpoint signs and full-interval divergence bounds match the fixed-field certificate.
+Published, hyperbolic: 2 4 5 6 7 8 9 10 11
+Palomar preprint, isolated: -- 6 7 7 8 8 9 9 10
+Hyperbolic comparison: 2 6 7 7 8 8 9 10 11
+This work, hyperbolic: 2 6 7 9 10 14 15 19 22
+Gain over the comparison: 0 0 0 2 2 6 6 9 11
+Octic closures: 11/15, 12/18; one well: 13/22, 14/25; next: 15/29, 16/32, 17/36.
+checks/verify_primary_sources.py
+De Maesschalck-Huzak sextic: three simple positive cubic roots by rational signs.
+Odani Example 3: corrected factorization holds on the identity grid.
+At mu=1, nu=5/2, z=0: actual = 3/8, printed = 15/2, normalized with 16 = 3/2.
+Palomar Appendix A: seven alternating strict interval gaps; the rounded seed lies outside the box.
+Quintic preprint: the two sharpness roots have normalized derivatives 6 and -48.
+checks/verify_remote_odd_powers.py
+Two separated cubic-germ inflections satisfy the exact odd moments and affine even constraints.
+One exact profile has all moving-height signs and five distant action signs -,+,-,+,-.
+Seven true negative entrance comparisons at L=10^3000 have signs -,+,-,+,+,+,+.
+At the same L the physical reference has opposite shooting signs at a=-1 and a=0.
+The oriented lists and tail give the four exact-degree counts of Proposition 5.1 for 1 <= h <= 149.
+checks/verify_seed.py
+h0, upper parameter   (2e-7, 3e-7)   142 + 141 steps
+h1, lower parameter   (-3e-24, -1e-24)   399 + 375 steps
+h2, upper parameter   (3e-27, 4e-27)   430 + 407 steps
+h3, lower parameter   (-3e-28, -2e-28)   444 + 414 steps
+h4, upper parameter   (6e-32, 8e-32)   475 + 448 steps
+high return, lower    (2e-32, 3e-32)   545 + 710 steps
+high return, upper    (-8e-32, -6e-32)   729 + 519 steps
+checks/verify_square_shoulders.py
+split cubic xi=-12: upper action in (81, 82)
+split cubic xi=-381/50: upper action in (-.85, -.82)
+split cubic xi=-761/100: upper action in (.40, .44)
+split cubic xi=0: upper action in (-79, -77)
+split cubic xi=999/100: upper action in (21, 23)
+split cubic xi=1001/100: upper action in (-.43, -.40)
+split cubic xi=100: upper action in (610, 615)
+split cubic xi=100000: upper action in (-98000, -96000)
+Rational cubic samples at skews 8 and 19683 give seven upper and three incoming changes.
+Two-shoulder flight integrals have the whole-ray signs +,-,+.
+Finite polynomial singular actions give the seven and three changes.
+Full seeded half-flights at eta=10^-600 have terminal signs -,+ uniformly on the shooting interval.
+Degree and both transfer counts agree, including parity and terminal sign.
+checks/verify_terminal_distortion.py
+k=8: nine exact gap ratios; scaled errors < 3/8; critical derivative ratio in (3/2,25/16).
+k=16: nine exact gap ratios; scaled errors < 3/16; critical derivative ratio in (3/2,25/16).
+k=32: nine exact gap ratios; scaled errors < 3/32; critical derivative ratio in (3/2,25/16).
+k=64: nine exact gap ratios; scaled errors < 3/64; critical derivative ratio in (3/2,25/16).
+checks/verify_unequal_cubic_layers.py
+Both finite degree-ten profiles pass two-fold, landing and retained-action tests.
+The full negative incoming difference is strictly negative for L>=10^200, uniformly in shooting.
+Seeded core: 14 at degree 10 and 22 at 13. Weighted core: 10 at 10 and 18 at 13.
+checks/verify_weak_return.py
+Sine moments and all prefix determinant margins pass at n = 1, 2, 7, 12, 16.
+The rational degree-12 polynomial is inside the explicit weak radius for all 0 < h <= 1.
+Physical damping on |x| <= 2 is below the intrinsic orbit threshold.
+Complex and real full-return bounds certify five disjoint brackets, each with one simple zero.
+The specified weak-damping polynomial has five hyperbolic cycles in the stated height range.

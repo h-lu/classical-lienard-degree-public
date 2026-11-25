@@ -1,0 +1,115 @@
+\subsection{One-sided shallow wells and retained-action reversal}\label{subsec:well-step}
+For even $m=2d\ge 8$, let $a\in(0,2)$ be the shape parameter of the
+new well. Its two local profiles on $v\ge0$ are
+\begin{equation}\label{eq:well-model}
+  f_\pm(v) = v^m(1 \pm av + v^2).
+\end{equation}
+Since $f_s'(v)=v^{m-1}\big(m+sa(m+1)v+(m+2)v^2\big)$, $f_+$ is strictly increasing on $v>0$, whereas for $\frac{2\sqrt{m(m+2)}}{m+1}<a<2$ the minus profile $f_-$ has one local maximum at $p_-<1$ and one positive local minimum $\mu_-=f_-(q_-)>0$ at $q_->p_-$ (see Figure~\ref{fig:well}). Outside $[\mu_-,M_-]=[f_-(q_-),f_-(p_-)]$, the upper and incoming actions coincide on both sides ($J_s^U=J_s^I=:J_s$).
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,font=\small,x=8.4cm,y=0.39cm]
+  \draw[->,gray] (0,0) -- (1.16,0) node[right,black] {$v$};
+  \draw[->,gray] (0,0) -- (0,10.2) node[above,black] {$10^3 f_\pm(v)$};
+  \foreach \vx in {0.2,0.4,0.6,0.8,1.0}
+    \draw[gray] (\vx,0) -- (\vx,-0.18) node[below,black,font=\scriptsize] {\vx};
+  \foreach \vy in {2,4,6,8,10}
+    \draw[gray] (0,\vy) -- (-0.012,\vy) node[left,black,font=\scriptsize] {\vy};
+  % The form (1-v)^2+(2-a)v avoids cancellation near the minimum.
+  \draw[densely dashed,line width=0.95pt] plot[domain=0:0.505,samples=80]
+    (\x,{1000*(\x)^8*(1+1.9998*\x+(\x)^2)});
+  \draw[line width=0.9pt,gray] plot[domain=0.390000:0.999097,samples=100]
+    (\x,{1000*(\x)^8*((1-\x)^2+0.0002*\x)});
+  \draw[line width=1.2pt] plot[domain=0:0.390000,samples=50]
+    (\x,{1000*(\x)^8*((1-\x)^2+0.0002*\x)});
+  \draw[line width=1.2pt] plot[domain=0.999097:1.073,samples=50]
+    (\x,{1000*(\x)^8*((1-\x)^2+0.0002*\x)});
+  \draw[densely dotted] (0,7.6) -- (1.065932,7.6);
+  \node[above,font=\scriptsize] at (0.20,7.6) {$10^3Y=7.6$};
+  \node[above right,font=\scriptsize] at (0.502,9.1) {$f_+$};
+  \node[right,font=\scriptsize] at (1.071,9.15) {$f_-$};
+  \draw[->,thick] (0.995,0.19919) -- (0.398,0.19919);
+  \node[above,font=\scriptsize] at (0.66,0.23) {jump};
+  \fill (0.390000,0.19919) circle (1.45pt) node[above left,font=\scriptsize] {$r_-$};
+  \fill (0.999097,0.19919) circle (1.45pt) node[above left,font=\scriptsize] {$q_-$};
+  \draw[thin,gray] (0.800723,4.78) -- (0.800723,6.54);
+  \fill (0.800723,6.73784) circle (1.5pt);
+  \node[font=\scriptsize] at (0.800723,4.42) {$(p_-,10^3 M_-)$};
+  \filldraw[fill=white] (0.491683,7.6) circle (1.8pt)
+    node[above left,font=\scriptsize] {$x_+$};
+  \fill ([xshift=-1.7pt,yshift=-1.7pt]1.065932,7.6) rectangle ++(3.4pt,3.4pt);
+  \node[above left,font=\scriptsize] at (1.065932,7.6) {$v_-$};
+\end{tikzpicture}
+\caption{The one-sided well at $m=8$, $a=1.9998$ and $Y=0.0076>M_-$.
+The two markers on the dotted line are the roots at the comparison height.
+The dashed graph contributes its full action up to $x_+$. On the solid
+graph the jump from $q_-$ to $r_-$ omits the grey arc. Integrating the
+squared slopes on the retained intervals gives
+$-1.7\cdot10^{-5}<J_+(Y)-J_-(Y)<-1.6\cdot10^{-5}$.}
+\label{fig:well}
+\end{figure}
+
+\begin{lemma}[Retained-action reversal at a one-sided well]\label{lem:well}
+For every even integer $m=2d\ge 8$, there exist $a\in(0,2)$ and three regular levels $0<Y_1<Y_2<Y_3$ (outside $[\mu_-,M_-]$, with $Y_2,Y_3>M_-$) at which $J_+(Y_i)-J_-(Y_i)$ for $f_\pm$ in~\eqref{eq:well-model} has strict signs $+,-,+$, while $\int_0^\infty v\big[(w+f_+(v))^{-1}-(w+f_-(v))^{-1}\big]\,\dd v<0$ for every $w>0$.
+\end{lemma}
+
+\begin{proof}
+At the limiting parameter $a=2$, $f_-(v)=v^{2d}(v-1)^2$ has its minimum $\mu_-=0$ at $q_-=1$ with inner landing $r_-=0$, and its maximum $M_-=t_*^2$ at $p_-=d/(d+1)$ where $t_*=(d/(d+1))^d/(d+1)$. Approaching $Y\downarrow M_-$ from above, the positive-side entry $x\in(0,1)$ and negative-side outer entry $v>1$ solve
+\[
+  x^d(1+x) = t_*,\qquad v^d(v-1) = t_*.
+\]
+We prove first that at $t=t_*$, the full plus action $\int_0^x f_+'(r)^2\,\dd r/r$ is strictly smaller than the retained minus outer action $\int_1^v f_-'(r)^2\,\dd r/r$.
+
+For $d\ge 10$, vary $0<t\le t_*$ and let $x(t)\in(0,1)$, $v(t)>1$ solve $x^d(1+x)=t$ and $v^d(v-1)=t$. Since $f_+'(x)\,\dd x=2t\,\dd t$ and $f_-'(v)\,\dd v=2t\,\dd t$, differentiating the two actions with respect to $Y=t^2$ ($\dd Y=2t\,\dd t$) gives $2t\,K_+(x(t))$ and $2t\,K_-(v(t))$, where
+\[
+  K_+(x) = \frac{f_+'(x)}{2tx} = x^{d-2}\big(d+(d+1)x\big),\qquad
+  K_-(v) = \frac{f_-'(v)}{2tv} = v^{d-2}\big((d+1)v-d\big).
+\]
+Since $v>1$, $K_-(v)>1^{d-2}(d+1-d)=1$ for all $0<t\le t_*$. Conversely, $K_+(x)$ increases strictly on $(0,1)$, and at $t=t_*$ we claim $x_*:=x(t_*)>2/3$: indeed for $d\ge 10$, $(2/3)^d(5/3)<1/(3(d+1))$ because $5(d+1)(2/3)^d$ decreases for $d\ge 10$ with $5\cdot 11\cdot(2/3)^{10}=56320/59049<1$, while $t_*=p_-^d/(d+1)>1/(3(d+1))$ because $(1+1/d)^d<e<3$. Using $x_*>2/3$ and $x_*^d=t_*/(1+x_*)$ gives
+\[
+  K_+(x_*) = \frac{t_*}{x_*^2}\!\left(d + \frac{x_*}{1+x_*}\right) < \frac{9}{4}\,\frac{p_-^d}{d+1}(d+1) = \frac{9}{4}\!\left(\frac{d}{d+1}\right)^{\!d} < 1,
+\]
+where the final inequality holds for all $d\ge 10$ since the first three binomial terms of $(1+1/d)^d$ equal $1+1+\frac{d-1}{2d}\ge 2+\frac{9}{20}=\frac{49}{20}>\frac{9}{4}$. Integrating $2t\,K_+(x(t))<2t<2t\,K_-(v(t))$ with respect to $Y=t^2$ from $0$ (where both actions vanish) to $t_*^2$ proves the strict inequality for all $d\ge 10$.
+
+For the remaining degrees set $P_s(r)=\int_0^r f_s'(w)^2\,\dd w/w$ at $a=2$ and
+$B_d=1-(P_-(v_*)-P_-(1))/P_+(x_*)$. In the following array an integer $j$
+denotes the root interval $[j/N,(j+1)/N]$, $N=10^6$.
+{\scriptsize\[
+\setlength{\arraycolsep}{3pt}
+\begin{array}{c|rrrrrrr}
+d &3&4&5&6&7&8&9\\\hline
+X &420319&484663&534554&574570&607498&635144&658736\\
+V &1083024&1063933&1051986&1043803&1037847&1033317&1029755\\
+100B_d & (22,23)&(-9,-8)&(-36,-35)&(-61,-60)&(-82,-81)&(-102,-101)&(-119,-118)
+\end{array}
+\]}
+Here each $X$ satisfies $X^d(N+X)<N^{d+1}t_*<(X+1)^d(N+X+1)$.
+For $V$ the same inequalities hold with $V-N$ and $V+1-N$ in the
+second factors. Monotonicity gives $x_*\in[X/N,(X+1)/N]$ and
+$v_*\in[V/N,(V+1)/N]$. Write $c_s=(m,2s(m+1),m+2)$.
+Since $P_s(r)=\sum_{i,j=0}^2 c_{s,i}c_{s,j}r^{2m-2+i+j}/(2m-2+i+j)$
+is increasing, the two rational bounds for $B_d$ are
+\[
+1-\frac{P_-((V+1)/N)-P_-(1)}{P_+(X/N)}
+\ \le B_d\le\
+1-\frac{P_-(V/N)-P_-(1)}{P_+((X+1)/N)} .
+\]
+Substitution gives the open intervals in the last row. The retained
+minus action is larger for $4\le d\le9$. This particular endpoint
+comparison reverses at $d=3$.
+
+Fix $Y_2>M_-(2)$ slightly above $t_*^2$ so that $P_+(x(Y_2))-\big(P_-(v(Y_2))-P_-(1)\big)<0$ at $a=2$. As $a\uparrow 2$, $q_-(a)\to 1$, $\mu_-(a)\to 0$, $r_-(a)\to 0$, and $M_-(a)\to t_*^2<Y_2$, so by continuity of the roots and integrals we may fix $a\in(0,2)$ near $2$ at which $Y_2>M_-(a)$ still has $J_+(Y_2)-J_-(Y_2)<0$. At small $Y_1\in(0,\mu_-(a))$ no jump is deleted. Here $E(v)=v^m(1+v^2)\sim v^m$ as $v\downarrow0$ and $C(v)=av^{m+1}$. The moving-endpoint calculation in the proof of~\eqref{eq:tail-action}, now at zero with leading even exponent $m$ and odd exponent $m+1$, gives $J_+(Y_1)-J_-(Y_1)\sim \frac{6ma}{2m-1}Y_1^{(2m-1)/m}>0$. At large $Y_3\gg M_-(a)$ the leading even and odd exponents are $m+2$ and $m+1$. Formula~\eqref{eq:tail-action} gives $J_+(Y_3)-J_-(Y_3)\sim\frac{2(m+2)a}{2m+1}Y_3^{(2m+1)/(m+2)}>0$. Finally, $f_+(v)-f_-(v)=2av^{m+1}>0$ on $v>0$ makes $(w+f_+(v))^{-1}-(w+f_-(v))^{-1}<0$ everywhere on $v>0$ for every $w>0$.
+\end{proof}
+
+\begin{proposition}[Two-degree induction step]\label{prop:well-step}
+Let $G_s=E+sC$ satisfy the hypotheses of Subsection~\ref{subsec:quad-realize} with even degree $\deg E=m\ge 8$, $[z^m]E=c>0$, highest odd degree $\deg C=m-1$, and $\sgn[z^{m-1}]C=\beta\in\{\pm 1\}$. Suppose the last outward signs of $(J_+^U-J_-^U,\,J_-^I-J_+^I,\,N)$ are $(\beta,-\beta,-\beta)$. Fix $a\in(0,2)$ from Lemma~\ref{lem:well}. Then for sufficiently large $Q>0$, the extended profiles
+\begin{equation}\label{eq:well-append}
+  E_{\mathrm{new}}(z) = E(z) + \frac{c}{Q^2}z^{m+2},\qquad
+  C_{\mathrm{new}}(z) = C(z) - \frac{\beta ac}{Q}z^{m+1}
+\end{equation}
+retain all hypotheses of Subsection~\ref{subsec:quad-realize} and all fixed earlier signs, have $(\deg E_{\mathrm{new}},\deg C_{\mathrm{new}})=(m+2,m+1)$ with $\sgn[z^{m+1}]C_{\mathrm{new}}=-\beta$, add $3$ upper changes, $3$ positive-incoming changes, and $1$ negative-incoming change, and end with terminal sign triple $(-\beta,\beta,\beta)$.
+\end{proposition}
+
+\begin{proof}
+Since $1-av+v^2\ge(1-a/2)(1+v^2)$ on $v\ge 0$ and lower terms satisfy $O(z^{m-1})$, $G_{s,\mathrm{new}}(z)\ge c_1 z^m(1+(z/Q)^2)$ for large $z$ uniformly in large $Q$, while $G_{s,\mathrm{new}}\to G_s$ in $C^3$ on compact sets. All earlier folds, landings, and positive samples therefore persist, and dominated convergence preserves all earlier $N(w)$ signs. Beyond a fixed compact set containing all old critical points, $G_{s,\mathrm{new}}'(z)/(cz^{m-1})=m-s\beta a(m+1)(z/Q)+(m+2)(z/Q)^2+O(1/z)$, which for large $Q$ creates \emph{only} one simple maximum and one subsequent positive minimum on side $s=\beta$ near $z/Q=p_-,q_-$ at heights $\asymp cQ^m\to+\infty$ (strictly above all old windows) and no critical points on side $s=-\beta$. Rescaling $z=Qv$ and height by $cQ^m$, $G_{s,\mathrm{new}}(Qv)/(cQ^m)\to f_{-s\beta}(v)$ in~\eqref{eq:well-model}; in action units $c^2 Q^{2m-2}$, the old bounded jump deletions cost $O(Q^{-(2m-2)})=o(1)$, so at $Y=cQ^m Y_i$ ($i=1,2,3$ from Lemma~\ref{lem:well}) $(J_+^U-J_-^U)/(c^2 Q^{2m-2})$ converges to $-\beta(J_+(Y_i)-J_-(Y_i))$, appending $-\beta(+,-,+)$ to the upper list ($3$ changes after $+\beta$) and its negative $\beta(+,-,+)$ to $J_-^I-J_+^I$ ($3$ changes after $-\beta$). At $w=cQ^m$ ($z=Qv$), $N_{\mathrm{new}}(cQ^m)/(c^{-1}Q^{2-m})$ converges by the uniform tail bound $1+(z/Q)^2$ to $-\beta\int_0^\infty v[(1+f_+)^{-1}-(1+f_-)^{-1}]\,\dd v$, which has sign $+\beta$ by Lemma~\ref{lem:well} ($1$ change after $-\beta$). The new terminal triple is $(-\beta,\beta,\beta)=(\beta_{\mathrm{new}},-\beta_{\mathrm{new}},-\beta_{\mathrm{new}})$.
+\end{proof}

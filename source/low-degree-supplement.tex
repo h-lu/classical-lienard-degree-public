@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+\input{tex/preamble}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\hypersetup{pdfauthor={Haibo Lu},pdftitle={Electronic supplementary material: Relative return gaps and a 7/2 asymptotic lower bound for hyperbolic limit cycles in classical Lienard systems},
+pdfsubject={Low-degree constructions, validated sextic input and a fixed rational certificate}}
+\title{\large Electronic supplementary material to\\[4pt]
+\Large Relative return gaps and a $7/2$ asymptotic lower bound for hyperbolic limit cycles in classical Li\'enard systems}
+\author{Haibo Lu\\[2pt]
+\small Shanghai Institute of Technology, Shanghai 201418, China\\
+\small Correspondence: \nolinkurl{luhaibo1985@gmail.com}\\
+\small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
+\date{24 November 2026}
+\begin{document}
+\maketitle
+\noindent This supplement to~\cite{MainArticle} gives the low-degree
+constructions, the validated sextic input and two rational examples
+at degree twelve.
+
+\section{Low-degree bounds}\label{sec:intro}
+For $F(0)=0$ consider
+\begin{equation}\label{eq:lienard}
+ \dot x=y-F(x),\qquad \dot y=-x,\qquad
+ F(x)=\sum_{j=1}^n a_jx^j,\quad a_n\ne0.
+\end{equation}
+Write $\HH(n)$ for the supremum, at exact primitive degree $n$, of the number
+of geometrically distinct hyperbolic cycles coexisting in a single field.
+The damping $F'$ has degree $n-1$.
+
+\begin{theorem}[Degree twelve]\label{thm:deg12}
+There is a nonempty open subset of $\{a\in\R^{12}:a_{12}\ne0\}$ on which
+every field~\eqref{eq:lienard} has at least nineteen hyperbolic limit cycles.
+The coefficients can in particular be chosen rational.
+\end{theorem}
+
+The proof starts from validated sextic shooting and entrance data. The
+fold-splitting parameter $\eta>0$ separates a stationary inflection at unit scaled radius
+into a local maximum and a local minimum on each half-profile.
+For every sufficiently small $\eta$, the proof solves three matching equations in one
+degree-twelve field, then chooses one regular linear coefficient for
+all nineteen brackets. Hyperbolic persistence gives the open set in
+Theorem~\ref{thm:deg12}. Its rational members are obtained by density.
+Two further results concern specified rational degree-twelve fields.
+Remark~\ref{rem:fixed-weak-witness} certifies exactly five cycles with
+upper heights in the weak full-return domain. All five are hyperbolic
+and have $0<h\le1$. Proposition~\ref{prop:fixed-six} gives
+at least six in the other field. Integral bounds prove hyperbolicity of five compact cycles
+and show that a sixth, outer cycle is repelling.
+
+\begin{proposition}\label{prop:low-deg}
+For the remaining degrees the following counts also hold on nonempty open
+sets of the respective exact-degree coefficient spaces:
+\[
+\begin{array}{c|rrrrrrrr}
+ n &5&6&7&8&9&10&11&13\\ \hline
+ \HH(n)\ \ge &2&6&7&9&10&14&15&22 .
+\end{array}
+\]
+\end{proposition}
+
+\paragraph{Proofs by degree.}
+For Proposition~\ref{prop:low-deg}, the quintic proof is below,
+degrees six and seven are treated in Section~\ref{subsec:seed},
+degree nine in Section~\ref{subsec:deg9} and degree ten in
+Section~\ref{subsec:deg10}. The entries at eight, eleven and
+thirteen follow from the compact realization and the odd closure
+in Corollary~1.2 and Section~4.3 of the main article~\cite{MainArticle}. After $t\ge0$ well insertions,
+the two closures there have exact degrees $11+2t,12+2t$ and yield
+$15+7t,18+7t$ hyperbolic cycles respectively. Indeed the odd closure
+has $9+3t$ compact cycles, $4+4t$ entrance changes and two end
+brackets. The even closure has $10+3t$ compact cycles, $6+4t$
+entrance changes (including the appended negative entrance) and
+two end brackets. At $t=0$ the compact counts alone give nine at
+eight and ten at ten. The sextic construction of Section~S4 improves
+the latter count to fourteen. The even closure gives eighteen at
+twelve and twenty-five at fourteen. Theorem~\ref{thm:deg12} gives
+nineteen at twelve by joint matching. Starting a further insertion
+requires the three specified lists with their terminal signs and
+profile degrees; a count of closed cycles alone does not supply them.
+
+A cycle crosses the positive vertical axis at a single height $h$.
+Reflection and reversal of time put both half-orbits in $x>0$.
+Their terminal magnitudes $w_s(h)>0$ on the lower axis agree when the orbit
+closes. Write $\D(h)=w_+(h)-w_-(h)$. Changing $a_1$ moves the two terminal
+ordinates in opposite directions. Hence sign changes can be regularized
+simultaneously at fixed sample heights. For an incoming trajectory we
+specify its limiting ordinate $y$ at $x=+\infty$ and write $I_s(y)$ for
+its terminal magnitude. A positive entrance can follow an outer rising
+branch past an upper trajectory trapped in a fold window. This supplies a
+second list of signs available at an exterior maximum.
+
+For Theorem~\ref{thm:deg12}, Lemmas~\ref{lem:seed} and~\ref{lem:seed-incoming}
+validate the sextic shooting and entrance data. Proposition~\ref{prop:moving-layer}
+transfers the eight split-cubic signs across the moving folds. First solve
+the inner shooting equation for $a$ at each $(d,\theta)$, then the two
+outer conditions~\eqref{eq:deg12-3matches} in $(d,\theta)$. Freeze the
+resulting twenty physical heights and $a_2,\ldots,a_{12}$. One increase
+of $a_1$ makes both matched zeros negative and preserves eighteen strict
+signs. One regular value gives the asserted coexistence
+(Section~\ref{subsec:deg12-finish}).
+
+Section~\ref{sec:foundations} collects the return estimates and the
+finite cubic data used here. Sections~S3--S5 give the sextic enclosures,
+moving-fold estimates and joint matching. The octic proof and its parity closures are in
+Section~4 of~\cite{MainArticle}; Section~S4 also gives a sextic route
+to degree thirteen. Appendix~\ref{sec:weak} gives an explicit
+weak-damping example. Appendix~\ref{app:repro} identifies the separate
+certificate archive and its inputs.
+
+\subsection{Two weak cycles at exact degree five}
+Odani gives two hyperbolic cycles in an odd quintic family
+\cite[Theorem~B and Example~3]{Odani1996}. The weak-return estimate
+below realizes the same count with a nonzero quartic term.
+\begin{proof}[Proof of Proposition~\ref{prop:low-deg} for $n=5$]
+Take $q(u)=(u-1/9)(u-4/9)$ and
+\[
+ F_\eps(x)=\eps x^4+\eps^2
+ \left(\tfrac{8}{81}x-\tfrac{40}{27}x^3+\tfrac{16}{5}x^5\right).
+\]
+For all small $\eps>0$ the leading coefficient is nonzero and the whole range
+$0<h\le1$ lies in the weak domain~\eqref{eq:weak-defs}. Formula~\eqref{eq:weak-cauchy-err}
+gives $(\Pi(h)-h)/(h\eps^2)=-2\pi q(h^2)+O(\eps)$ there. In disjoint
+fixed brackets about $1/3$ and $2/3$ the endpoints have opposite signs.
+Appendix~\ref{sec:weak} bounds their total multiplicity by two, so each
+bracket contains one simple fixed point. Its return multiplier is positive
+and different from one. Both cycles persist on an open exact-quintic set.
+\end{proof}
+
+\paragraph{Odani's quintic example.}
+For $F(x)=\mu(x^5-\nu x^3+x)$, $\mu\ne0$, $\nu\ge\sqrt5$, Theorem~B
+and Example~3 of~\cite[pp.~217--218, 230]{Odani1996} yield two
+hyperbolic cycles. The sign condition in that application compares two squared primitive values on p.~230. Write $z=x^2$,
+$c=\sqrt{\nu^2-4}$, $b=(\nu-c)/2$, $d=(3\nu-5c)/2$ and
+$\phi(x)=\sqrt{x^2+c}$. The last printed right-hand side is
+$c\mu^2(z-b)^2[5(z-d)^2+16(\nu^2-5)]$.
+Expanding the two squared primitives instead gives
+\[
+ F(\phi(x))^2-F(x)^2
+ =\frac{c\mu^2}{5}(z-b)^2\big[(5z-d)^2+4(\nu^2-5)\big].
+\]
+This factorization gives the required nonnegative sign for $\nu\ge\sqrt5$. At equality the
+second factor is a square, and its additional zero is isolated.
+At $\mu=1,\nu=5/2,z=0$ the difference equals $3/8$, whereas the printed
+expression gives $15/2$.
+
+\input{tex/low-degree-tools}
+\input{tex/sextic-and-joint-cap}
+
+\appendix
+\renewcommand{\thesection}{S\Alph{section}}
+\section{An explicit weak-damping field}\label{sec:weak}
+For a primitive $F(x)=\sum a_jx^j$ define $d=\lfloor(n-1)/2\rfloor$
+and $\Pi_F(h)$ as the first return height. The weak-domain estimate used
+here is Theorem~A.1 of the main paper. With
+\begin{equation}\label{eq:weak-defs}
+  \sigma_a(h)=\sum_{j=1}^n |a_j|h^{j-1},\quad
+  \rho=2^{-(n+6)},\quad
+  L_d=(d+1)!(d+1)2^d,\quad
+  \delta_n=\frac{\rho^2}{72(n+2)d!\,L_d\,n^{d(d+1)/2}},
+\end{equation}
+a nonzero odd part permits at most $d$ positive return zeros on
+$\sigma_a(h)\le\delta_n$, counted with multiplicity. Set
+$c_k=4^{-(k+1)}\binom{2k+2}{k+1}$ and
+$\kappa_n=\delta_n n!/[2^{n-1}(4n)^n]$.
+For $q(u)=\prod_{i=1}^d(u-h_i^2)=\sum_{k=0}^dq_k u^k$ the realizing
+polynomial and the uniform remainder are
+\begin{equation}\label{eq:weak-realize}
+  F_\eps(x) = \eps x^{2\lfloor n/2\rfloor} + \eps^\ell\sum_{k=0}^d \frac{q_k}{c_k}\,x^{2k+1}\qquad (\eps>0).
+\end{equation}
+\begin{equation}\label{eq:weak-cauchy-err}
+  \left|\frac{\Pi_{F_\eps}(h)-h}{h\eps^\ell} + 2\pi q(h^2)\right| \le \frac{4\,\sigma_{F_\eps}(h)}{\rho^2}\sum_{k=0}^d\left|\frac{q_k}{c_k}\right|h^{2k} = O(\eps)\qquad (0<h\le 1).
+\end{equation}
+The estimate holds when $\sigma_{F_\eps}(1)\le\delta_n$.
+\input{tex/weak-witness}
+
+\input{tex/fixed-six}
+\input{tex/references}
+\end{document}
